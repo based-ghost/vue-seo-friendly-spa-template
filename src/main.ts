@@ -4,7 +4,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import VueAnalytics from 'vue-analytics';
-import './config/registerServiceWorker';
+import './registerServiceWorker';
 import { googleConfig } from './config/google-analytics.config';
 
 // Vue Configuration flags
