@@ -38,7 +38,7 @@ module.exports = {
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
-          routes: ['/', '/posts'],
+          routes: ['/', '/posts', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
             renderAfterDocumentEvent: 'rendered',
           }),
@@ -93,7 +93,7 @@ module.exports = {
       msTileImage: 'img/icons/msapplication-icon-144x144.png',
     },
     workboxOptions: {
-      cacheId: 'BasedGhostDevelopment',
+      cacheId: 'basedghost',
       importWorkboxFrom: 'local',
       navigateFallback: 'shell.html',
       navigateFallbackWhitelist: [/^((?!\/404).)*$/],
