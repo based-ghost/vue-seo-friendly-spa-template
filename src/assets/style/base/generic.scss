@@ -232,6 +232,25 @@
     }
 }
 
+.is-not-found-tile-parent {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4rem !important;
+}
+
+.notification.is-danger {
+    border-radius: 6px;
+    padding: 1.25rem 0.25rem 1.25rem 0.25rem;
+
+    .title {
+        margin-left: 0.4rem;
+    }
+
+    .subtitle {
+        padding-top: .5rem;
+    }
+}
+
 .is-horizontal-center {
     justify-content: center;
     align-items: center;

@@ -95,8 +95,8 @@ module.exports = {
     workboxOptions: {
       cacheId: 'basedghost',
       importWorkboxFrom: 'local',
-      navigateFallback: 'shell.html',
-      navigateFallbackWhitelist: [/^((?!\/404).)*$/],
+      // navigateFallback: 'shell.html',
+      // navigateFallbackWhitelist: [/^((?!\/404).)*$/],
     },
   },
 };
