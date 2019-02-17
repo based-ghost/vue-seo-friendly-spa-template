@@ -90,6 +90,10 @@ import { RoutesConfig } from '../config/routes.config';
                     property: 'og:description',
                     content: RoutesConfig.Archive.meta.metaInfo.description,
                     vmid: 'og:description'
+                },
+                {
+                    name: 'description',
+                    content: RoutesConfig.Archive.meta.metaInfo.description
                 }
             ]
         }
