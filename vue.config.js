@@ -1,8 +1,9 @@
 /* eslint-disable no-param-reassign,import/no-extraneous-dependencies */
 const path = require('path');
 const cheerio = require('cheerio');
-const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
 module.exports = {
 
@@ -11,16 +12,21 @@ module.exports = {
     if (process.env.NODE_ENV !== 'production') {
       return {};
     }
+
     return {
+      devtool: false,
+      performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+      },
       plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.AggressiveMergingPlugin(),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-            //"sourceMap": false
+        new CompressionWebpackPlugin({
+          filename: "[path].gz[query]",
+          algorithm: "gzip",
+          test: /\.(js|css)$/,
+          threshold: 8192,
+          minRatio: 0.8 
         }),
         // https://github.com/webpack-contrib/copy-webpack-plugin
         new CopyWebpackPlugin([
@@ -28,12 +34,6 @@ module.exports = {
             from: 'public/manifest.json',
             to: 'manifest.webmanifest',
           },
-          // Necessary for `vue-cli-service build --modern`,
-          // or data isn’t available for Prerender SPA plugin.
-          // {
-          //   from: 'public/data/default.json',
-          //   to: 'data/default.json',
-          // },
         ]),
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
@@ -54,18 +54,6 @@ module.exports = {
         }),
       ],
     };
-  },
-
-  // https://cli.vuejs.org/guide/html-and-static-assets.html#relative-path-imports
-  // chainWebpack: (config) => {
-  //   config.module.rules.delete('svg');
-  //   config.module.rule('images')
-  //    . test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
-  // },
-
-  chainWebpack: (config) => {
-    config.module.rule('images')
-     .test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
   },
 
   css: {
