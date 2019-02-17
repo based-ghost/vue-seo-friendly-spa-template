@@ -10,7 +10,7 @@ Vue.use(Meta);
 
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  //base: process.env.BASE_URL,
   routes: [
       {
           path: RoutesConfig.Home.path,
