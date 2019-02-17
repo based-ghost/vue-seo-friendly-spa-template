@@ -12,7 +12,7 @@
         }
     },
     Archive: {
-        path: '/posts',
+        path: '/posts/',
         displayName: 'Post Archive',
         meta: {
             transitionName: 'pageSlideLeft',
