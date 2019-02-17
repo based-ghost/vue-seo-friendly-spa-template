@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# Visual Studio 2015 cache/options directory
+.vs/
+
 # local env files
 .env.local
 .env.*.local

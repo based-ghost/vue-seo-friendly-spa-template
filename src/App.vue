@@ -30,11 +30,11 @@ export default class App extends Vue {
     private scrolled: boolean = false;
     private isMobileDevice: boolean = false;
 
-    private created(): void {
+    public created(): void {
         this.checkForMobileDevice();
     }
 
-    private beforeDestroy(): void {
+    public beforeDestroy(): void {
         this.destroy();
     }
 
@@ -42,11 +42,11 @@ export default class App extends Vue {
         return this.isMobileDevice && this.scrolled;
     }
 
-    private handleScroll(): void {
+    public handleScroll(): void {
         this.scrolled = window.scrollY > 0;
     }
 
-    private backToTop(): void {
+    public backToTop(): void {
         const appRootElem = document.getElementById('app-root');
         if (appRootElem) {
             scrollTo(appRootElem);
