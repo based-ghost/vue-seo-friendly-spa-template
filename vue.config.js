@@ -56,7 +56,8 @@ module.exports = {
     };
   },
 
-  chainWebpack: (config) => {
+  // IMAGE COMPRESSION
+  /* chainWebpack: (config) => {
     const imgRule = config.module.rule('images');
     imgRule.use('file-loader')
            .loader('image-webpack-loader')
@@ -69,7 +70,7 @@ module.exports = {
                };
         return ret;
     })
-  },
+  }, */
 
   css: {
     loaderOptions: {
