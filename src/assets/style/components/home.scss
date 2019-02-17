@@ -1,0 +1,85 @@
+﻿.home-card {
+    margin-top: -3rem;
+}
+
+.dashboard-info {
+    padding: 1.25rem !important;
+}
+
+.hero.is-dark {
+    background-color: $color-hero-is-dark;
+
+    .hero-body {
+        padding: 2.5rem 1.5rem;
+
+        hr {
+            background-color: rgba(255, 255, 255, .7);
+            height: 1px;
+            margin: 2rem 0;
+        }
+
+        > .container div:last-child {
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            margin-left: 2rem;
+        }
+    }
+
+    .title {
+        color: #fff;
+        margin-bottom: 2.25rem;
+    }
+
+    .subtitle {
+        color: #fff;
+    }
+
+    .subtitle.merge-up {
+        margin-top: -1.25rem;
+    }
+
+    em {
+        color: $color-blue-highlight;
+        font-weight: 900;
+
+        &.open-brace {
+            padding-right: 5px;
+        }
+
+        &.close-brace {
+            padding-left: 5px;
+        }
+    }
+}
+
+.dashboard-info {
+    @include centerStackedColumnContent {
+        text-align: center;
+    }
+
+    .dashboard-content {
+        > ul {
+            margin-left: 1.25em;
+
+            @include centerStackedColumnContent {
+                margin-left: 0;
+                list-style: none;
+            }
+
+            li + li {
+                margin-top: 1rem;
+            }
+        }
+
+        > .recent-posts {
+            > li {
+                > a {
+                    &:hover {
+                        color: #002790;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "based-ghost-development-blog",
-  "short_name": "based-ghost-development-blog",
+  "name": "BasedGhostDevelopment",
+  "short_name": "BasedGhostDevelopment",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#f7f7f7",
+  "theme_color": "#61dafb"
 }
