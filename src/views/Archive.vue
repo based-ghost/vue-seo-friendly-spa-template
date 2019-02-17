@@ -12,7 +12,7 @@
             <div class="tile is-child box">
                 <div class="blog-thumbnail is-flex is-horizontal-center">
                     <figure class="entry-thumbnail">
-                        <img class="is-centered" src="../assets/img/react-aspcore.png">
+                        <img class="is-centered" src="../assets/img/react-aspcore.png" alt="">
                     </figure>
                 </div>
                 <p class="subtitle is-tile-subtitle has-text-centered">Building a SPA template with the following technology stack:</p>
@@ -40,7 +40,7 @@
             <div class="tile is-child box">
                 <div class="blog-thumbnail is-flex is-horizontal-center">
                     <figure class="entry-thumbnail">
-                        <img class="is-centered" src="../assets/img/vue-aspcore-2.png">
+                        <img class="is-centered" src="../assets/img/vue-aspcore-2.png" alt="">
                     </figure>
                 </div>
                 <p class="subtitle is-tile-subtitle has-text-centered">Building a SPA template with the following technology stack:</p>

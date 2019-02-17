@@ -8,7 +8,7 @@
                     <hr>
                     <h2 class="subtitle">This SPA is powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-bulma.png">
+                        <img src="../assets/img/vue-bulma.png" alt="">
                     </div>
                 </div>
             </div>
