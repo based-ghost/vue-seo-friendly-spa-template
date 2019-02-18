@@ -1,5 +1,9 @@
 ﻿.home-card {
     margin-top: -3rem;
+
+    @media screen and (min-width: 1088px) {
+        border-radius: 6px;
+    }
 }
 
 .dashboard-info {
@@ -15,7 +19,7 @@
         hr {
             background-color: rgba(255, 255, 255, .7);
             height: 1px;
-            margin: 2rem 0;
+            margin: 1.75rem 0;
         }
 
         > .container div:last-child {
@@ -27,7 +31,7 @@
 
     .title {
         color: #fff;
-        margin-bottom: 2.25rem;
+        margin-bottom: 2.5rem;
     }
 
     .subtitle {
@@ -53,18 +57,13 @@
 }
 
 .dashboard-info {
-    @include centerStackedColumnContent {
-        text-align: center;
-    }
+    margin-left: 0;
+    text-align: center;
 
     .dashboard-content {
         > ul {
-            margin-left: 1.25em;
-
-            @include centerStackedColumnContent {
-                margin-left: 0;
-                list-style: none;
-            }
+            margin-left: 0;
+            list-style: none;
 
             li + li {
                 margin-top: 1rem;

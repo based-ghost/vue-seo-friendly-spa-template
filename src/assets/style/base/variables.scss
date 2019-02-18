@@ -42,7 +42,7 @@ $color-blue-highlight: #61dafb;
 }
 
 @mixin renderTabletTitleText {
-    @media (max-width: 550px) and (min-width: 450px) {
+    @media (max-width: 769px) and (min-width: 450px) {
         @content;
     }
 }

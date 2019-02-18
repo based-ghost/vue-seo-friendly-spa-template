@@ -14,27 +14,27 @@
     }
 
     &.blog-title {
-        font-size: 2.25em;
+        font-size: 3em;
 
         @include renderTabletTitleText {
-            font-size: 2em;
+            font-size: 2.5em;
         }
 
         @include renderMobileTitleText {
-            font-size: 1.5em;
+            font-size: 2em;
         }
     }
 }
 
 .subtitle {
-    font-size: 1.35em;
+    font-size: 1.5em;
 
     @include renderTabletTitleText {
-        font-size: 1.2em;
+        font-size: 1.25em;
     }
 
     @include renderMobileTitleText {
-        font-size: 1em;
+        font-size: 1.125em;
     }
 
     &.is-tile-subtitle {
@@ -46,7 +46,7 @@
         }
 
         @include renderTabletTitleText {
-            font-size: 1.1em;
+            font-size: 1.125em;
         }
 
         @include renderMobileTitleText {
@@ -154,7 +154,7 @@
     > hr {
         height: 1px;
         margin: 2rem 0 .75rem 0;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.35);
     }
 
     .content {

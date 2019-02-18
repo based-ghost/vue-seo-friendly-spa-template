@@ -23,10 +23,10 @@
                                 <div class="content dashboard-content">
                                     <ul class="recent-posts">
                                         <li>
-                                            <a class="library-link" @click="$router.push('/posts/')">SPA created with React + Redux + TypeScript and ASP.NET Core 2.2</a>
+                                            <a class="library-link" @click="$router.push('/posts/')">SPA created with Vue + Vuex + TypeScript and ASP.NET Core 2.2</a>
                                         </li>
                                         <li>
-                                            <a class="library-link" @click="$router.push('/posts/')">SPA created with Vue + Vuex + TypeScript and ASP.NET Core 2.2</a>
+                                            <a class="library-link" @click="$router.push('/posts/')">SPA created with React + Redux + TypeScript and ASP.NET Core 2.2</a>
                                         </li>
                                     </ul>
                                 </div>

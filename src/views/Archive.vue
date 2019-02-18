@@ -6,7 +6,7 @@
                 <span class="title">Site In Development</span>
             </div>
             <div class="tile is-child">
-                <h1 class="title blog-title">Post Archive</h1>
+                <h1 class="title">Post Archive</h1>
                 <hr>
             </div>
             <div class="tile is-child box">
