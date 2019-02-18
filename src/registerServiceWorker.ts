@@ -3,15 +3,21 @@
 import { register } from 'register-service-worker';
 
 if (process.env.NODE_ENV === 'production') {
-  register(`${process.env.BASE_URL}service-worker.js`, {
-    ready() {
-      console.log('App is being served from cache by a service worker.\n' +
-        'For more details, visit https://goo.gl/AFskqB');
+  register('/service-worker.js', {
+    registrationOptions: { scope: './' },
+    ready(registration) {
+      console.log('Service worker is active.');
     },
-    cached() {
+    registered(registration) {
+      console.log('Service worker has been registered.');
+    },
+    cached(registration) {
       console.log('Content has been cached for offline use.');
     },
-    updated() {
+    updatefound(registration) {
+      console.log('New content is downloading.');
+    },
+    updated(registration) {
       console.log('New content is available; please refresh.');
     },
     offline() {
@@ -19,6 +25,6 @@ if (process.env.NODE_ENV === 'production') {
     },
     error(error) {
       console.error('Error during service worker registration:', error);
-    },
+    }
   });
 }
