@@ -112,6 +112,12 @@
         > span:last-child {
             margin-left: .5rem;
             margin-right: auto;
+
+            @include renderMobileNavView {
+                margin-left: 0;
+                padding-left: .25rem;
+                padding-right: .25rem;
+            }
         }
     }
 }
