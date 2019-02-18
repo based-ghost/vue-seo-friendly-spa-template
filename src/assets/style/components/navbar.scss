@@ -13,6 +13,10 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    @include renderMobileTitleText {
+        padding-right: 0rem;
+    }
 }
 
 .navbar-wrapper {
