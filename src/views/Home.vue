@@ -6,9 +6,9 @@
                     <h1 class="title blog-title"><em class="open-brace">{</em> {{sfcData.TITLE_MSG}} <em class="close-brace">}</em></h1>
                     <h2 class="subtitle">{{sfcData.SUB_TITLE_MSG}}</h2>
                     <hr>
-                    <h2 class="subtitle">This SPA is powered by...</h2>
+                    <h2 class="subtitle">SPA powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-bulma-netlify.png" alt="">
+                        <img src="../assets/img/vue-github-netlify.png" alt="" width="615">
                     </div>
                 </div>
             </div>
