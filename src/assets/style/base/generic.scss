@@ -14,7 +14,8 @@
     }
 
     &.blog-title {
-        font-size: 3em;
+        font-size: 2.95em;
+        letter-spacing: 0.01em;
 
         @include renderTabletTitleText {
             font-size: 2.5em;
@@ -28,6 +29,7 @@
 
 .subtitle {
     font-size: 1.5em;
+    letter-spacing: 0.01em;
 
     @include renderTabletTitleText {
         font-size: 1.25em;
