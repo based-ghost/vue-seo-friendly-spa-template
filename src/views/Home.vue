@@ -8,7 +8,7 @@
                     <hr>
                     <h2 class="subtitle">SPA powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-github-netlify.png" alt="" width="615">
+                        <img src="../assets/img/vue-github-netlify-spa.png" alt="" width="615">
                     </div>
                 </div>
             </div>
