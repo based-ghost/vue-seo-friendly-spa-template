@@ -35,7 +35,7 @@
         hr {
             background-color: rgba(255, 255, 255, .5);
             height: 1px;
-            margin: 1.75rem 0;
+            margin: 1.8rem 0;
         }
 
         > .container div:last-child {
@@ -47,7 +47,20 @@
 
     .title {
         color: #fff;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.55rem;
+
+        &.blog-title {
+            font-size: 3.1em;
+            letter-spacing: 0.01em;
+       
+            @include renderTabletTitleText {
+                font-size: 2.65em;
+            }
+    
+            @include renderMobileTitleText {
+                font-size: 2.15em;
+            }
+        }
     }
 
     .subtitle {
@@ -80,8 +93,8 @@
             font-size: 2.6rem;
             font-weight: 100;
             margin-left: 10px;
-            color: #7A7A7A;
-            background-color: #7A7A7A;
+            color: #878787;
+            background-color: #878787;
             -webkit-animation: blink 1s step-end infinite;
             animation: blink 1s step-end infinite;
 

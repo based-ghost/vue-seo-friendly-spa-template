@@ -8,7 +8,7 @@
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="605">
+                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="575">
                     </div>
                 </div>
             </div>

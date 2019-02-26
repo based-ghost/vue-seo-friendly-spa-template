@@ -14,20 +14,6 @@
     @include renderMobileTitleText {
         font-size: 1.5em;
     }
-
-    &.blog-title {
-        font-size: 3.1em;
-        letter-spacing: 0.01em;
-
-
-        @include renderTabletTitleText {
-            font-size: 2.65em;
-        }
-
-        @include renderMobileTitleText {
-            font-size: 2.15em;
-        }
-    }
 }
   
 .subtitle {
