@@ -67,7 +67,7 @@
 
 .library-link {
     font-weight: 500;
-    color: #1a1a1a;
+    color: $color-nav-bar;
     border-bottom: 2px solid rgba(97, 218, 251, 0.75);
 
     @include renderTabletTitleText {
@@ -81,7 +81,7 @@
     &:hover {
         text-decoration: none !important;
         background-color: rgba(97, 218, 251, 0.15);
-        color: #1a1a1a;
+        color: $color-nav-bar;
         border-bottom-color: $color-blue-highlight;
     }
 }
