@@ -11,6 +11,7 @@ Vue.use(Meta);
 
 export default new Router({
   mode: 'history',
+  linkExactActiveClass: 'is-active',
   routes: [
       {
           path: RoutesConfig.Home.path,

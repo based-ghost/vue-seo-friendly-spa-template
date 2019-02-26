@@ -1,10 +1,8 @@
-﻿/* COLOR */
-$color-body-bg: #f7f7f7;
-$color-hero-is-dark: #2b2e30;
-$color-nav-bar: #1C1F21;
+﻿$color-body-bg: #f7f7f7;
+$color-hero-is-dark: #282c34;
+$color-nav-bar: #20232a;
 $color-blue-highlight: #61dafb;
 
-/* MIXINS */
 @mixin renderFooter65Perc {
     @media (max-width: 1472px) {
         @content;

@@ -3,12 +3,12 @@
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title blog-title"><em class="open-brace">{</em> {{sfcData.TITLE_MSG}} <em class="close-brace">}</em></h1>
+                    <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em>{{sfcData.TITLE_MSG}}<em class="terminal"> _</em></h1>
                     <h2 class="subtitle">{{sfcData.SUB_TITLE_MSG}}</h2>
                     <hr>
-                    <h2 class="subtitle">SPA powered by...</h2>
+                    <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-github-netlify-spa.png" alt="" width="615">
+                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="605">
                     </div>
                 </div>
             </div>

@@ -75,7 +75,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "./src/assets/style/base/variables.scss";`
+        data: `@import "@/assets/style/base/variables.scss";`
       }
     }
   },

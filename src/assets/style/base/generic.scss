@@ -1,8 +1,10 @@
 ﻿html, body {
+    color: $color-hero-is-dark;
     background-color: $color-body-bg;
 }
 
 .title {
+    color: $color-hero-is-dark;
     font-weight: 700;
 
     @include renderTabletTitleText {
@@ -14,20 +16,22 @@
     }
 
     &.blog-title {
-        font-size: 2.95em;
+        font-size: 3.1em;
         letter-spacing: 0.01em;
 
+
         @include renderTabletTitleText {
-            font-size: 2.5em;
+            font-size: 2.65em;
         }
 
         @include renderMobileTitleText {
-            font-size: 2em;
+            font-size: 2.15em;
         }
     }
 }
-
+  
 .subtitle {
+    color: $color-hero-is-dark;
     font-size: 1.5em;
     letter-spacing: 0.01em;
 
@@ -71,11 +75,11 @@
 
     &.is-dark {
         color: #fff;
-        background-color: rgba(100, 100, 100, .95);
+        background-color: $color-hero-is-dark;
 
         &:hover {
             color: #fff;
-            background-color: rgba(90, 90, 90, 1);
+            background-color: $color-hero-is-dark;
         }
     }
 
@@ -114,15 +118,15 @@
 
     &.coffee {
         width: 15.5rem;
-        color: #D05210;
-        border-color: #D05210;
+        color: #CB4D0B;
+        border-color: #CB4D0B;
         background-color: transparent;
         vertical-align: middle;
 
         &:hover {
             color: #fff;
             border-color: transparent;
-            background-color: #D05210;
+            background-color: #CB4D0B;
         }
     }
 }
@@ -156,7 +160,7 @@
     > hr {
         height: 1px;
         margin: 2rem 0 .75rem 0;
-        background-color: rgba(0, 0, 0, 0.35);
+        background-color: rgba(0, 0, 0, 0.3);
     }
 
     .content {
@@ -210,7 +214,7 @@
     border-radius: 50%;
     bottom: 15px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-    color: #1C1F21;
+    color: $color-nav-bar;
     cursor: pointer;
     display: block;
     height: 3.1rem;

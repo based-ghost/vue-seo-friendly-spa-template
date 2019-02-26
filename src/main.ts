@@ -17,7 +17,7 @@ Vue.use(VueAnalytics, {
     checkDuplicatedScript: googleConfig.checkDuplicatedScript,
     router,
     debug: {
-        sendHitTask: (process.env.NODE_ENV === 'production') 
+        sendHitTask: (process.env.NODE_ENV === 'production')
     }
 });
 

@@ -44,12 +44,6 @@
     }
 }
 
-.router-link-exact-active {
-    color: $color-blue-highlight !important;
-    opacity: 1 !important;
-    border-bottom: 3px solid $color-blue-highlight !important;
-}
-
 .navbar-routes {
     font-size: 1.25rem;
     height: 100%;
@@ -103,8 +97,8 @@
 
         &.is-active {
             color: $color-blue-highlight !important;
-            background-color: transparent;
             opacity: 1 !important;
+            border-bottom: 3px solid $color-blue-highlight !important;
         }
 
         > span:first-child {

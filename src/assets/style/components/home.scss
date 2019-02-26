@@ -21,11 +21,11 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background-image: url(../assets/img/based-ghost-background.png); // Must be relative to file importing the scss file (Home.vue in this case)
+            background-image: url(../assets/img/based-ghost-background.png);
             background-repeat: no-repeat;
             background-position: 100% 100px;
             background-size: 35% auto;
-            opacity: 0.08;
+            opacity: 0.07;
         }
     }
 
@@ -33,7 +33,7 @@
         padding: 2.5rem 1.5rem;
 
         hr {
-            background-color: rgba(255, 255, 255, .7);
+            background-color: rgba(255, 255, 255, .5);
             height: 1px;
             margin: 1.75rem 0;
         }
@@ -51,7 +51,7 @@
     }
 
     .subtitle {
-        color: #fff;
+        color: whitesmoke;
     }
 
     .subtitle.merge-up {
@@ -59,18 +59,55 @@
     }
 
     em {
-        color: $color-blue-highlight;
-        font-weight: 900;
 
-        &.open-brace {
-            padding-right: 5px;
+        &.chevron {
+            font-weight: 700;
+            font-size: 2.7rem;
+            color: $color-blue-highlight;
+            padding-right: 12px;
+
+            @include renderTabletTitleText {
+                font-size: 2.3rem;
+            }
+    
+            @include renderMobileTitleText {
+                font-size: 1.9rem;
+                padding-right: 10px;
+            }
         }
 
-        &.close-brace {
-            padding-left: 5px;
+        &.terminal {
+            font-size: 2.6rem;
+            font-weight: 100;
+            margin-left: 10px;
+            color: #7A7A7A;
+            background-color: #7A7A7A;
+            -webkit-animation: blink 1s step-end infinite;
+            animation: blink 1s step-end infinite;
+
+            @include renderTabletTitleText {
+                font-size: 2.1rem;
+            }
+    
+            @include renderMobileTitleText {
+                font-size: 1.6rem;
+                margin-left: 6px;
+            }
         }
     }
 }
+
+@-webkit-keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
 
 .dashboard-info {
     margin-left: 0;

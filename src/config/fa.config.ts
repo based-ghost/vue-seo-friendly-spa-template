@@ -9,6 +9,7 @@ import {
     faMugHot,
     faFileAlt,
     faChevronUp,
+    faChevronRight,
     faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,6 +27,7 @@ library.add(
     faTwitter,
     faFileAlt,
     faChevronUp,
+    faChevronRight,
     faExclamationCircle,
 );
 
