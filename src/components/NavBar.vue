@@ -31,7 +31,3 @@ export default class NavBar extends Vue {
     public readonly routesConfig = RoutesConfig;
 }
 </script>
-
-<style lang="scss" scoped>
-    @import '../assets/style/components/navbar.scss';
-</style>

@@ -108,7 +108,3 @@ export default class Home extends Vue {
     public readonly sfcData = sfcGlobalData;
 }
 </script>
-
-<style lang="scss" scoped>
-    @import '../assets/style/components/home.scss';
-</style>

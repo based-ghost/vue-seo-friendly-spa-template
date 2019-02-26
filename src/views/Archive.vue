@@ -103,7 +103,3 @@ export default class Archive extends Vue {
     public readonly vendorUrls = vendorConfig;
 }
 </script>
-
-<style lang="scss" scoped>
-    @import '../assets/style/components/archive.scss';
-</style>
