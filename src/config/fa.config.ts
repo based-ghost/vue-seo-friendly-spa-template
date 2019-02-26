@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
     faCode,
     faHome,
-    faLock,
     faMugHot,
     faFileAlt,
+    faMailBulk,
     faChevronUp,
     faChevronRight,
     faExclamationCircle,
@@ -21,11 +21,11 @@ import {
 library.add(
     faCode,
     faHome,
-    faLock,
     faMugHot,
     faGithub,
     faTwitter,
     faFileAlt,
+    faMailBulk,
     faChevronUp,
     faChevronRight,
     faExclamationCircle,

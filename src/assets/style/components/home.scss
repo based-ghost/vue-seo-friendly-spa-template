@@ -33,7 +33,7 @@
         padding: 2.5rem 1.5rem;
 
         hr {
-            background-color: rgba(255, 255, 255, .5);
+            background-color: rgba(255, 255, 255, .35);
             height: 1px;
             margin: 1.8rem 0;
 
@@ -54,15 +54,15 @@
         margin-bottom: 2.55rem;
 
         &.blog-title {
-            font-size: 3.1em;
+            font-size: 3.45em;
             letter-spacing: 0.01em;
        
             @include renderTabletTitleText {
-                font-size: 2.65em;
+                font-size: 2.85em;
             }
     
             @include renderMobileTitleText {
-                font-size: 2.15em;
+                font-size: 2.2em;
             }
         }
     }
@@ -71,30 +71,25 @@
         color: whitesmoke;
     }
 
-    .subtitle.merge-up {
-        margin-top: -1.25rem;
-    }
-
     em {
-
         &.chevron {
-            font-weight: 700;
-            font-size: 2.7rem;
+            font-weight: 800;
+            font-size: 3.05rem;
             color: $color-blue-highlight;
             padding-right: 12px;
 
             @include renderTabletTitleText {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
     
             @include renderMobileTitleText {
-                font-size: 1.9rem;
+                font-size: 1.95rem;
                 padding-right: 10px;
             }
         }
 
         &.terminal {
-            font-size: 2.3rem;
+            font-size: 2.65rem;
             font-weight: 100;
             margin-left: 10px;
             color: #878787;
@@ -103,12 +98,68 @@
             animation: blink 1s step-end infinite;
 
             @include renderTabletTitleText {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
     
             @include renderMobileTitleText {
-                font-size: 1.6rem;
+                font-size: 1.65rem;
                 margin-left: 6px;
+            }
+        }
+    }
+}
+
+  .stacked-column-seperator {
+    background-color: whitesmoke;
+    margin: 1rem 0;
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+  }
+
+.dashboard-info {
+    margin-left: 0;
+
+    @include centerStackedColumnContent {
+        text-align: center;
+    }
+
+    > .title {
+        color: $color-hero-is-dark;
+        text-transform: uppercase;
+    }
+
+    .dashboard-content {
+        > ul {
+            margin-left: 0;
+            padding-left: 20px;
+            list-style: disc;
+
+            @include centerStackedColumnContent {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            &.fa-ul {
+                list-style: none;
+                padding-left: 25px;
+                
+                @include centerStackedColumnContent {
+                    padding-left: 0;
+                }
+
+                .fa-li {
+                    color: #1a1a1a;
+
+                    @include centerStackedColumnContent {
+                        display: none;
+                    }
+                }
+            }
+
+            li + li {
+                margin-top: 1rem;
             }
         }
     }
@@ -118,37 +169,10 @@
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
-  }
+}
   
   @keyframes blink {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
   }
-
-.dashboard-info {
-    margin-left: 0;
-    text-align: center;
-
-    .dashboard-content {
-        > ul {
-            margin-left: 0;
-            list-style: none;
-
-            li + li {
-                margin-top: 1rem;
-            }
-        }
-
-        > .recent-posts {
-            > li {
-                > a {
-                    &:hover {
-                        color: #002790;
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
-}

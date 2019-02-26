@@ -18,7 +18,7 @@
             transitionName: 'pageSlideLeft',
             icon: 'file-alt',
             metaInfo: {
-                title: 'Blog posts',
+                title: 'Blog Posts',
                 titleTemplate: '%s | BasedGhostDevelopment',
                 description: 'Blog posts cover web technologies used to create projects found on GitHub (based-ghost) by Matt Areddia - e.g. ASP.NET Core, Vue, Vuex, React, Redux, TypeScript'
             }

@@ -26,14 +26,13 @@
                     <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.aspcoreUrl">ASP.NET Core 2.2</a>
                 </p>
                 <div class="subtitle is-tile-content has-text-centered">
-                    <a class="button is-rounded is-source-code-link"
+                    <a class="button is-source-code-link"
                        target="_blank"
                        rel="noopener"
                        href="https://github.com/based-ghost/aspnet-core-react-redux-playground-template">
                         <span>
-                            <font-awesome-icon icon="code"></font-awesome-icon>
-                            Source Code
-                        </span>
+                            <font-awesome-icon icon="code"></font-awesome-icon> Source Code
+                        </span>  
                     </a>
                 </div>
             </div>
@@ -54,14 +53,13 @@
                     <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.aspcoreUrl">ASP.NET Core 2.2</a>
                 </p>
                 <div class="subtitle is-tile-content has-text-centered">
-                    <a class="button is-rounded is-source-code-link"
+                    <a class="button is-source-code-link"
                        target="_blank"
                        rel="noopener"
                        href="https://github.com/based-ghost/aspnet-core-vue-vuex-playground-template">
                         <span>
-                            <font-awesome-icon icon="code"></font-awesome-icon>
-                            Source Code
-                        </span>
+                            <font-awesome-icon icon="code"></font-awesome-icon> Source Code
+                        </span>                   
                     </a>
                 </div>
             </div>

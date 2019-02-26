@@ -49,90 +49,103 @@
 
 .button {
     font-weight: 600;
-
-    &.is-light {
-        font-family: monospace !important;
-        background-color: rgb(240, 240, 240);
-
-        &:hover {
-            background-color: rgb(232, 232, 232);
-        }
-    }
-
-    &.is-dark {
-        color: #fff;
-        background-color: $color-hero-is-dark;
-
-        &:hover {
-            color: #fff;
-            background-color: $color-hero-is-dark;
-        }
-    }
+    border-radius: 6px;
 
     &.is-source-code-link {
-        font-weight: 700;
         font-size: 1.15rem;
+        color: #000000;
         border-color: transparent;
-        font-family: monospace !important;
-        -webkit-font-smoothing: auto;
-        background-color: rgb(235, 235, 235);
+        background-color: $color-blue-highlight;
 
         &:hover {
+            color: #000000;
             border-color: transparent;
-            background-color: rgb(228, 228, 228);
-        }
-    }
-
-    &.github {
-        width: 15.5rem;
-        vertical-align: middle;
-    }
-
-    &.proton {
-        width: 15.5rem;
-        color: #686CAB;
-        border-color: #686CAB;
-        background-color: transparent;
-        vertical-align: middle;
-
-        &:hover {
-            color: #fff;
-            border-color: transparent;
-            background-color: #686CAB;
-        }
-    }
-
-    &.coffee {
-        width: 15.5rem;
-        color: #CB4D0B;
-        border-color: #CB4D0B;
-        background-color: transparent;
-        vertical-align: middle;
-
-        &:hover {
-            color: #fff;
-            border-color: transparent;
-            background-color: #CB4D0B;
+            background-color: #6EE7FF;
         }
     }
 }
 
 .library-link {
-    color: #3273dc;
-    border-bottom: 2px solid #3273dc;
+    font-weight: 500;
+    color: #1a1a1a;
+    border-bottom: 2px solid rgba(97, 218, 251, 0.7);
 
     @include renderTabletTitleText {
-        border-bottom: 1px solid #3273dc;
+        border-bottom: 1px solid rgba(97, 218, 251, 0.7);
     }
 
     @include renderMobileTitleText {
-        border-bottom: 1px solid #3273dc;
+        border-bottom: 1px solid rgba(97, 218, 251, 0.7);
     }
 
     &:hover {
         text-decoration: none !important;
-        background-color: rgba(50, 115, 220, 0.1);
-        color: #3273dc;
+        background-color: rgba(97, 218, 251, 0.1);
+        color: #1a1a1a;
+        border-bottom-color: $color-blue-highlight;
+    }
+}
+
+.github-link {
+    font-weight: 500;
+    color: #1a1a1a;
+    border-bottom: 2px solid rgba(26, 26, 26, 0.7);
+
+    @include renderTabletTitleText {
+        border-bottom: 1px solid rgba(26, 26, 26, 0.7);
+    }
+
+    @include renderMobileTitleText {
+        border-bottom: 1px solid rgba(26, 26, 26, 0.7);
+    }
+
+    &:hover {
+        text-decoration: none !important;
+        background-color: rgba(26, 26, 26, 0.1);
+        color: #1a1a1a;
+        border-bottom-color: #1a1a1a;
+    }
+}
+
+.proton-link {
+    font-weight: 500;
+    color: #1a1a1a;
+    border-bottom: 2px solid rgba(104, 108, 171, 0.7);
+
+    @include renderTabletTitleText {
+        border-bottom: 1px solid rgba(104, 108, 171, 0.7);
+    }
+
+    @include renderMobileTitleText {
+        border-bottom: 1px solid rgba(104, 108, 171, 0.7);
+    }
+
+    &:hover {
+        text-decoration: none !important;
+        background-color: rgba(104, 108, 171, 0.1);
+        color: #1a1a1a;
+        border-bottom-color: #686CAB;
+    }
+}
+
+.coffee-link {
+    font-weight: 500;
+    color: #1a1a1a;
+    border-bottom: 2px solid rgba(203, 77, 11, 0.7);
+
+    @include renderTabletTitleText {
+        border-bottom: 1px solid rgba(203, 77, 11, 0.7);
+    }
+
+    @include renderMobileTitleText {
+        border-bottom: 1px solid rgba(203, 77, 11, 0.7);
+    }
+
+    &:hover {
+        text-decoration: none !important;
+        background-color: rgba(203, 77, 11, 0.1);
+        color: #1a1a1a;
+        border-bottom-color: #CB4D0B;
     }
 }
 
@@ -200,7 +213,7 @@
     border-radius: 50%;
     bottom: 15px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-    color: $color-nav-bar;
+    color: #000000;
     cursor: pointer;
     display: block;
     height: 3.1rem;

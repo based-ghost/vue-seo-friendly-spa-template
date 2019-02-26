@@ -8,7 +8,7 @@
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="575">
+                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="570">
                     </div>
                 </div>
             </div>
@@ -28,40 +28,42 @@
                                         <li>
                                             <a class="library-link" @click="$router.push('/posts/')">SPA created with React + Redux + TypeScript and ASP.NET Core 2.2</a>
                                         </li>
+                                                                                <li>
+                                            <a class="library-link" @click="$router.push('/posts/')">All posts...</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="column dashboard-info is-half">
-                                <p class="title">Contact / Support</p>
+                            <hr class="stacked-column-seperator">
+                            <div class="column dashboard-info is-fourth">
+                                <p class="title">Contact</p>
                                 <div class="content dashboard-content">
-                                    <ul>
+                                    <ul class="fa-ul">
                                         <li>
-                                            <a class="button github is-dark is-rounded is-outlined"
-                                               target="_blank"
-                                               rel="noopener"
-                                               :href="sfcData.GITHUB_URL">
-                                                <span class="icon">
-                                                    <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon>
-                                                </span>
-                                                <span>GitHub (based-ghost)</span>
-                                            </a>
+                                            <span class="fa-li">
+                                                <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon>
+                                            </span>
+                                            <a class="github-link" target="_blank" rel="noopener" :href="sfcData.GITHUB_URL">GitHub (based-ghost)</a>                                            
                                         </li>
                                         <li>
-                                            <a class="button is-rounded coffee">
-                                                <span class="icon">
-                                                    <font-awesome-icon icon="mug-hot"></font-awesome-icon>
-                                                </span>
-                                                <span>Buy me a coffee</span>
-                                            </a>
+                                            <span class="fa-li">
+                                                <font-awesome-icon icon="mail-bulk"></font-awesome-icon>
+                                            </span>
+                                            <a class="proton-link" :href="sfcData.EMAIL">mareddia@protonmail.com</a>                                         
                                         </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr class="stacked-column-seperator">
+                            <div class="column dashboard-info is-fourth">
+                                <p class="title">Support</p>
+                                <div class="content dashboard-content">
+                                    <ul class="fa-ul">
                                         <li>
-                                            <a class="button is-rounded proton"
-                                               :href="sfcData.EMAIL">
-                                                <span class="icon">
-                                                    <font-awesome-icon icon="lock"></font-awesome-icon>
-                                                </span>
-                                                <span>mareddia@protonmail.com</span>
-                                            </a>
+                                            <span class="fa-li">
+                                                <font-awesome-icon icon="mug-hot"></font-awesome-icon>
+                                            </span>
+                                            <a class="coffee-link">Buy me a coffee</a>                                            
                                         </li>
                                     </ul>
                                 </div>
