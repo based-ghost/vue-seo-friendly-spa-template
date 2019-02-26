@@ -43,13 +43,13 @@
                                             <span class="fa-li">
                                                 <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon>
                                             </span>
-                                            <a class="github-link" target="_blank" rel="noopener" :href="sfcData.GITHUB_URL">GitHub (based-ghost)</a>                                            
+                                            <a class="library-link" target="_blank" rel="noopener" :href="sfcData.GITHUB_URL">GitHub (based-ghost)</a>                                            
                                         </li>
                                         <li>
                                             <span class="fa-li">
                                                 <font-awesome-icon icon="mail-bulk"></font-awesome-icon>
                                             </span>
-                                            <a class="proton-link" :href="sfcData.EMAIL">mareddia@protonmail.com</a>                                         
+                                            <a class="library-link" :href="sfcData.EMAIL">mareddia@protonmail.com</a>                                         
                                         </li>
                                     </ul>
                                 </div>
@@ -63,7 +63,7 @@
                                             <span class="fa-li">
                                                 <font-awesome-icon icon="mug-hot"></font-awesome-icon>
                                             </span>
-                                            <a class="coffee-link">Buy me a coffee</a>                                            
+                                            <a class="library-link">Buy me a coffee</a>                                            
                                         </li>
                                     </ul>
                                 </div>

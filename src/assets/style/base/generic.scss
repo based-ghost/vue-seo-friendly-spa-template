@@ -68,84 +68,21 @@
 .library-link {
     font-weight: 500;
     color: #1a1a1a;
-    border-bottom: 2px solid rgba(97, 218, 251, 0.7);
+    border-bottom: 2px solid rgba(97, 218, 251, 0.75);
 
     @include renderTabletTitleText {
-        border-bottom: 1px solid rgba(97, 218, 251, 0.7);
+        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
     }
 
     @include renderMobileTitleText {
-        border-bottom: 1px solid rgba(97, 218, 251, 0.7);
+        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
     }
 
     &:hover {
         text-decoration: none !important;
-        background-color: rgba(97, 218, 251, 0.1);
+        background-color: rgba(97, 218, 251, 0.15);
         color: #1a1a1a;
         border-bottom-color: $color-blue-highlight;
-    }
-}
-
-.github-link {
-    font-weight: 500;
-    color: #1a1a1a;
-    border-bottom: 2px solid rgba(26, 26, 26, 0.7);
-
-    @include renderTabletTitleText {
-        border-bottom: 1px solid rgba(26, 26, 26, 0.7);
-    }
-
-    @include renderMobileTitleText {
-        border-bottom: 1px solid rgba(26, 26, 26, 0.7);
-    }
-
-    &:hover {
-        text-decoration: none !important;
-        background-color: rgba(26, 26, 26, 0.1);
-        color: #1a1a1a;
-        border-bottom-color: #1a1a1a;
-    }
-}
-
-.proton-link {
-    font-weight: 500;
-    color: #1a1a1a;
-    border-bottom: 2px solid rgba(104, 108, 171, 0.7);
-
-    @include renderTabletTitleText {
-        border-bottom: 1px solid rgba(104, 108, 171, 0.7);
-    }
-
-    @include renderMobileTitleText {
-        border-bottom: 1px solid rgba(104, 108, 171, 0.7);
-    }
-
-    &:hover {
-        text-decoration: none !important;
-        background-color: rgba(104, 108, 171, 0.1);
-        color: #1a1a1a;
-        border-bottom-color: #686CAB;
-    }
-}
-
-.coffee-link {
-    font-weight: 500;
-    color: #1a1a1a;
-    border-bottom: 2px solid rgba(203, 77, 11, 0.7);
-
-    @include renderTabletTitleText {
-        border-bottom: 1px solid rgba(203, 77, 11, 0.7);
-    }
-
-    @include renderMobileTitleText {
-        border-bottom: 1px solid rgba(203, 77, 11, 0.7);
-    }
-
-    &:hover {
-        text-decoration: none !important;
-        background-color: rgba(203, 77, 11, 0.1);
-        color: #1a1a1a;
-        border-bottom-color: #CB4D0B;
     }
 }
 
