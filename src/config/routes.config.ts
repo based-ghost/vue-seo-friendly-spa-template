@@ -6,7 +6,7 @@
             transitionName: 'fade',
             icon: 'home',
             metaInfo: {
-                title: 'Modern web application development',
+                title: 'Web Application Development',
                 titleTemplate: '%s | BasedGhostDevelopment'
             }
         }
