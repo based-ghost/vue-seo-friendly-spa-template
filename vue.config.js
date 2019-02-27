@@ -37,7 +37,7 @@ module.exports = {
         ]),
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
-          staticDir: path.join(__dirname, 'dist'),
+          staticDir: config.output.path,
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
             renderAfterDocumentEvent: 'rendered',
