@@ -3,7 +3,7 @@
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em>{{sfcData.TITLE_MSG}}<em class="terminal"> _</em></h1>
+                    <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em>{{sfcData.TITLE_MSG}}<em class="terminal"> __</em></h1>
                     <h2 class="subtitle">{{sfcData.SUB_TITLE_MSG}}</h2>
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
