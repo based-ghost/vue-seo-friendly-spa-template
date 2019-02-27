@@ -50,7 +50,8 @@ module.exports = {
             // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
             const $ = cheerio.load(context.html);
             $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
-            $('style[type="text/css"]').remove();
+            $('head').children('style[type="text/css"]').remove();
+            //$('style[type="text/css"]').remove();
             context.html = $.html();
 
             return context;
