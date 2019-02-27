@@ -51,8 +51,13 @@ module.exports = {
             const $ = cheerio.load(context.html);
             $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
             $('head').children('style[type="text/css"]').remove();
-            context.html = $.html();
 
+            // Add data-server-rendered="true" to #app-root
+            const renderedApp = $('<div id="app-root" data-server-rendered="true"></div>');
+            $('#app-root').replaceWith(renderedApp);
+
+            // Extract html and return
+            context.html = $.html();
             return context;
           },
         }),
