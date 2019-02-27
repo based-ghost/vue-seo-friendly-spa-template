@@ -47,14 +47,15 @@ module.exports = {
               context.outputPath = path.join(config.output.path, '/404.html');
             }
             
-            // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
             const $ = cheerio.load(context.html);
-            $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
-            $('head').children('style[type="text/css"]').remove();
+            const headNode = $('head');
+
+            // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
+            headNode.children('[src*="https://www.google-analytics.com/analytics.js"]').remove();
+            headNode.children('style[type="text/css"]').remove();
 
             // Add data-server-rendered="true" to #app-root
-            const renderedApp = $('<div id="app-root" data-server-rendered="true"></div>');
-            $('#app-root').replaceWith(renderedApp);
+            $('#app-root').replaceWith($('<div id="app-root" data-server-rendered="true"></div>'));
 
             // Extract html and return
             context.html = $.html();
