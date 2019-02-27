@@ -50,9 +50,8 @@ module.exports = {
             const $ = cheerio.load(context.html);
             $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
 
-            //$('style[type="text/css"]').first().remove();
-            var fortAwesomeStyles = $('head').find($('style[type="text/css"]'));
-            if (fortAwesomeStyles && fortAwesomeStyles.length >= 2) {
+            var fortAwesomeStyles = $('style[type="text/css"]');
+            if (fortAwesomeStyles.length && fortAwesomeStyles.length >= 2) {
               fortAwesomeStyles.slice(1).remove();
             }
 
