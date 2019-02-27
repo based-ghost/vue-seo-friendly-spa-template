@@ -47,15 +47,12 @@ module.exports = {
               context.outputPath = path.join(config.output.path, '/404.html');
             }
             
+            // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
             const $ = cheerio.load(context.html);
             $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
-
-            var fortAwesomeStyles = $('style[type="text/css"]');
-            if (fortAwesomeStyles.length && fortAwesomeStyles.length >= 2) {
-              fortAwesomeStyles.slice(1).remove();
-            }
-
+            $('style[type="text/css"]').remove();
             context.html = $.html();
+
             return context;
           },
         }),
