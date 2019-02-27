@@ -37,7 +37,7 @@ module.exports = {
         ]),
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
-          staticDir: config.output.path,
+          staticDir: path.join(__dirname, 'dist'),
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
             renderAfterDocumentEvent: 'rendered',
@@ -51,7 +51,6 @@ module.exports = {
             const $ = cheerio.load(context.html);
             $('[src*="https://www.google-analytics.com/analytics.js"]').remove();
             $('head').children('style[type="text/css"]').remove();
-            //$('style[type="text/css"]').remove();
             context.html = $.html();
 
             return context;
