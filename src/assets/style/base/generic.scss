@@ -70,14 +70,6 @@
     color: $color-nav-bar;
     border-bottom: 2px solid rgba(97, 218, 251, 0.75);
 
-    @include renderTabletTitleText {
-        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
-    }
-
-    @include renderMobileTitleText {
-        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
-    }
-
     &:hover {
         text-decoration: none !important;
         background-color: rgba(97, 218, 251, 0.15);

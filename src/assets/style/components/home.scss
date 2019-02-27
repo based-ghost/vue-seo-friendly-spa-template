@@ -91,7 +91,7 @@
         &.terminal {
             font-size: 3.25rem;
             font-weight: 900;
-            color: $color-blue-highlight;
+            color: #D4D4D4;
             opacity: 0;
             -webkit-animation: cursor 1s step-end infinite;
             animation: cursor 1s step-end infinite;
@@ -170,10 +170,10 @@
 		opacity: 0;
 	}
 	50% {
-		opacity: .85;
+		opacity: .9;
 	}
 	90% {
-		opacity: .85;
+		opacity: .9;
 	}
 	100% {
 		opacity: 0;
@@ -188,10 +188,10 @@
 		opacity: 0;
 	}
 	50% {
-		opacity: .85;
+		opacity: .9;
 	}
 	90% {
-		opacity: .85;
+		opacity: .9;
 	}
 	100% {
 		opacity: 0;
