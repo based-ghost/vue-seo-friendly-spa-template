@@ -108,9 +108,10 @@
 }
 
   .stacked-column-seperator {
-    background-color: whitesmoke;
+    background-color: #ececec;
     margin: 1rem 0;
-
+    height: 1px;
+    
     @media (min-width: 769px) {
         display: none;
     }
@@ -122,10 +123,6 @@
     > .title {
         color: $color-hero-is-dark;
         text-transform: uppercase;
-
-        @include centerStackedColumnContent {
-            text-align: center;
-        }
     }
 
     .dashboard-content {

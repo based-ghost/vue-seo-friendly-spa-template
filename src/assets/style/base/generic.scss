@@ -66,8 +66,7 @@
 }
 
 .library-link {
-    font-weight: 500;
-    color: $color-nav-bar;
+    color: black;
     border-bottom: 2px solid rgba(97, 218, 251, 0.75);
 
     @include renderTabletTitleText {
