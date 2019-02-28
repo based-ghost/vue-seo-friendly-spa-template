@@ -40,8 +40,7 @@ module.exports = {
           staticDir: config.output.path,
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-            //renderAfterDocumentEvent: 'rendered',
-            //renderAfterElementExists: '#app-root',
+            renderAfterDocumentEvent: 'render-event',
           }),
           postProcess(context) {
             if (context.route === '/404') {
@@ -68,10 +67,10 @@ module.exports = {
   },
 
   // Handle SVGs to be handled exactly as other image types - inline svgs as long as smaller than 4096 bytes
-  chainWebpack: (config) => {
-    config.module.rules.delete('svg');
-    config.module.rule('images').test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
-  },
+  //chainWebpack: (config) => {
+  //  config.module.rules.delete('svg');
+  //  config.module.rule('images').test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
+  //},
 
   css: {
     loaderOptions: {

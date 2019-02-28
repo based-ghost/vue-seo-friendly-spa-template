@@ -25,11 +25,7 @@ Vue.use(VueAnalytics, {
 new Vue({
     router,
     render: (h) => h(App),
-    // mounted() {
-    //    document.dispatchEvent(new Event('rendered'));
-    // }
+    mounted() {
+        document.dispatchEvent(new Event('render-event'));
+    }
 }).$mount('#app-root');
-
-//document.addEventListener('DOMContentLoaded', () => {
- //   appRoot.$mount('#app-root');
-//});
