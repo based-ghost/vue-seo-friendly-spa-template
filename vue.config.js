@@ -66,21 +66,11 @@ module.exports = {
     };
   },
 
-  // IMAGE COMPRESSION
-  /* chainWebpack: (config) => {
-    const imgRule = config.module.rule('images');
-    imgRule.use('file-loader')
-           .loader('image-webpack-loader')
-           .tap(options => {
-               const ret = options || {};
-               ret.bypassOnDebug = true;
-               ret.pngquant = {
-                   quality: '65-90',
-                   speed: 4
-               };
-        return ret;
-    })
-  }, */
+  // Handle SVGs to be handled exactly as other image types - inline svgs as long as smaller than 4096 bytes
+  chainWebpack: (config) => {
+    config.module.rules.delete('svg');
+    config.module.rule('images').test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
+  },
 
   css: {
     loaderOptions: {
@@ -94,7 +84,7 @@ module.exports = {
   pwa: {
     name: 'BasedGhostDevelopment',
     themeColor: '#61dafb',
-    msTileColor: '#f7f7f7',
+    msTileColor: '#61dafb',
     iconPaths: {
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',

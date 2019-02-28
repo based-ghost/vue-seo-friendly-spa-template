@@ -4,7 +4,6 @@
 export const sfcGlobalData = {
     EMAIL: 'mailto:mareddia@protonmail.com',
     GITHUB_URL: 'https://github.com/based-ghost',
-    FOOTER_TEXT: 'BasedGhostDevelopment.com \u00A9 2019',
     TITLE_MSG: 'coding-blog',
     SUB_TITLE_MSG: "Howdy, I'm Matt Areddia - a Full-Stack .NET developer based out of Milwaukee, WI",
 };

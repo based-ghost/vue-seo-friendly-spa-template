@@ -11,12 +11,12 @@
                target="_blank"
                rel="noopener"
                aria-label="GitHub"
-               :href="parent.sfcData.GITHUB_URL">
+               href="https://github.com/based-ghost">
                 <span class="icon">
                     <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon>
                 </span>
             </a>
         </div>
-        <div class="content">{{parent.sfcData.FOOTER_TEXT}}</div>
+        <div class="content">BasedGhostDevelopment.com &copy; 2019</div>
     </footer>
 </template>

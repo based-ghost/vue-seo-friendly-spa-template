@@ -2,7 +2,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-wrapper">
             <div class="brand-wrapper">
-                <img src="../assets/img/based-ghost-blog-logo.png" width="230" alt="">
+                <img src="../assets/img/based-ghost-blog-logo.png" width="220" alt="">
             </div>
             <div class="navbar-routes">
                 <router-link :to="routesConfig.Home.path" class="navbar-item">

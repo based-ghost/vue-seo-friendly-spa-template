@@ -8,7 +8,7 @@
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
-                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="565">
+                        <img src="../assets/img/vue-github-netlify-smoke.png" alt="" width="550">
                     </div>
                 </div>
             </div>
@@ -95,12 +95,12 @@ import { RoutesConfig } from '../config/routes.config';
                 },
                 {
                     property: 'og:description',
-                    content: RoutesConfig.Home.meta.metaInfo.title,
+                    content: RoutesConfig.Home.meta.metaInfo.description,
                     vmid: 'og:description'
                 },
                 {
                     name: 'description',
-                    content: RoutesConfig.Home.meta.metaInfo.title
+                    content: RoutesConfig.Home.meta.metaInfo.description
                 }
             ]
         }

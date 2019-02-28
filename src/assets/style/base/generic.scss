@@ -55,12 +55,12 @@
         font-size: 1.15rem;
         color: #000000;
         border-color: transparent;
-        background-color: #6EE7FF;
+        background-color: $color-blue-highlight;
 
         &:hover {
             color: #000000;
             border-color: transparent;
-            background-color: #78F1FF;
+            background-color: #6EE7FF;
         }
     }
 }
@@ -69,6 +69,14 @@
     font-weight: 500;
     color: $color-nav-bar;
     border-bottom: 2px solid rgba(97, 218, 251, 0.75);
+
+    @include renderTabletTitleText {
+        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
+    }
+
+    @include renderMobileTitleText {
+        border-bottom: 1px solid rgba(97, 218, 251, 0.75);
+    }
 
     &:hover {
         text-decoration: none !important;

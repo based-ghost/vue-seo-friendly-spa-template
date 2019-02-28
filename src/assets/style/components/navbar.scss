@@ -79,6 +79,8 @@
         @include renderMobileNavView {
             font-size: .95rem;
             padding: 0.75rem 0.2rem 0.75rem 0.2rem;
+            border-bottom: 2px solid $color-nav-bar;
+            border-top: 4px solid $color-nav-bar;
         }
 
         &:not(:first-child) {
@@ -99,6 +101,10 @@
             color: $color-blue-highlight !important;
             opacity: 1 !important;
             border-bottom: 3px solid $color-blue-highlight !important;
+
+            @include renderMobileNavView {
+                border-bottom: 2px solid $color-blue-highlight !important;
+            }
         }
 
         > span:first-child {

@@ -62,7 +62,7 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 2.2em;
+                font-size: 2.10em;
             }
         }
     }
@@ -83,7 +83,7 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 1.95rem;
+                font-size: 1.85rem;
                 padding-right: 10px;
             }
         }
@@ -101,7 +101,7 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 2.15rem;
+                font-size: 2.05rem;
             }
         }
     }
@@ -119,13 +119,13 @@
 .dashboard-info {
     margin-left: 0;
 
-    @include centerStackedColumnContent {
-        text-align: center;
-    }
-
     > .title {
         color: $color-hero-is-dark;
         text-transform: uppercase;
+
+        @include centerStackedColumnContent {
+            text-align: center;
+        }
     }
 
     .dashboard-content {
@@ -135,24 +135,9 @@
             list-style: disc;
             color: black;
 
-            @include centerStackedColumnContent {
-                list-style: none;
-                padding-left: 0;
-            }
-
             &.fa-ul {
                 list-style: none;
                 padding-left: 25px;
-                
-                @include centerStackedColumnContent {
-                    padding-left: 0;
-                }
-
-                .fa-li {
-                    @include centerStackedColumnContent {
-                        display: none;
-                    }
-                }
             }
 
             li + li {

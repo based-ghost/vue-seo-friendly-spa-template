@@ -7,7 +7,8 @@
             icon: 'home',
             metaInfo: {
                 title: 'Web Application Development',
-                titleTemplate: '%s | BasedGhostDevelopment'
+                titleTemplate: '%s | BasedGhostDevelopment',
+                description: 'Software development and technology blog site - built and curated by Matt Areddia'
             }
         }
     },
