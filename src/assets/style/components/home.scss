@@ -54,21 +54,49 @@
         margin-bottom: 2.55rem;
 
         &.blog-title {
-            font-size: 3.45em;
-            letter-spacing: 0.01em;
-       
+            font-size: 3.5em;
+            letter-spacing: 0.015em;
+            padding-bottom: 1.25rem;
+            margin: auto;
+
             @include renderTabletTitleText {
-                font-size: 2.85em;
+                font-size: 2.9em;
             }
     
             @include renderMobileTitleText {
-                font-size: 2.15em;
+                font-size: 2.2em;
+            }
+
+            &::after {
+                content: '__';
+                letter-spacing: 0 !important;
+                font-size: 3.3rem;
+                font-weight: 900;
+                color: #D4D4D4;
+                margin-left: 5px;
+                white-space: nowrap;
+                -webkit-animation: cursor 1s step-end infinite;
+                animation: cursor 1s step-end infinite;
+    
+                @include renderTabletTitleText {
+                    font-size: 2.75rem;
+                }
+        
+                @include renderMobileTitleText {
+                    margin-left: 3px;
+                    font-weight: 600;
+                    font-size: 2.15rem;
+                }
             }
         }
     }
 
     .subtitle {
         color: whitesmoke;
+
+        &.blog-intro {
+            margin-top: -0.025rem;
+        }
     }
 
     em {
@@ -85,23 +113,6 @@
             @include renderMobileTitleText {
                 font-size: 1.90rem;
                 padding-right: 10px;
-            }
-        }
-
-        &.terminal {
-            font-size: 3.25rem;
-            font-weight: 900;
-            color: #D4D4D4;
-            opacity: 0;
-            -webkit-animation: cursor 1s step-end infinite;
-            animation: cursor 1s step-end infinite;
-
-            @include renderTabletTitleText {
-                font-size: 2.7rem;
-            }
-    
-            @include renderMobileTitleText {
-                font-size: 2.10rem;
             }
         }
     }
@@ -129,7 +140,7 @@
         > ul {
             margin-left: 0;
             padding-left: 20px;
-            list-style: disc;
+            list-style: disc outside;
             color: black;
 
             &.fa-ul {
@@ -152,10 +163,10 @@
 		opacity: 0;
 	}
 	50% {
-		opacity: .9;
+		opacity: 1;
 	}
 	90% {
-		opacity: .9;
+		opacity: 1;
 	}
 	100% {
 		opacity: 0;
@@ -170,10 +181,10 @@
 		opacity: 0;
 	}
 	50% {
-		opacity: .9;
+		opacity: 1;
 	}
 	90% {
-		opacity: .9;
+		opacity: 1;
 	}
 	100% {
 		opacity: 0;

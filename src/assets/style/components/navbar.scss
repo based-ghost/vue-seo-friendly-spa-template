@@ -142,9 +142,27 @@
     overflow: auto;
     position: absolute;
     width: 100%;
+    opacity: 0;
+    display: block !important;
+    visibility: hidden;
+    transition: opacity .35s ease-in-out;
 
-    > div {
-        float:right;
+    ul {
+        width: 100%;
+    }
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    hr {
+        background-color: #dbdbdb;
+        margin: .25rem 0;
+        height: 1px;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -154,26 +172,24 @@
 
 .navbar-item-mobile {
     cursor: pointer;
-    display: flex;
-    color: $color-hero-is-dark;
+    text-align: center;
+    color: $color-nav-bar;
     line-height: 1.5;
     position: relative;
-    padding: 0.75rem 0.75rem;
+    padding: 0.50rem 0;
     font-weight: 500;
+    display: block;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
 
     &.is-active {
         color: #3273dc;
-        background-color: transparent;
     }
 
-    > span {
-        margin-left: auto;
+    svg {
         margin-right: .5rem;
-
-        > svg {
-            margin-left: .5rem;
-        }
-    }
+    }   
 }
 
 .navbar-burger {

@@ -11,14 +11,19 @@
             </a>
         </div>
         <div :class="['navbar-menu', { 'is-active': menuOpen }]">
-            <div>
-                <router-link :to="routesConfig.Home.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
-                    <span>{{routesConfig.Home.displayName}}<font-awesome-icon :icon="routesConfig.Home.meta.icon"></font-awesome-icon></span>
-                </router-link>
-                <router-link :to="routesConfig.Archive.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
-                    <span>{{routesConfig.Archive.displayName}}<font-awesome-icon :icon="routesConfig.Archive.meta.icon"></font-awesome-icon></span>
-                </router-link>
-            </div>
+            <ul>
+                <li>
+                    <router-link :to="routesConfig.Home.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
+                        <span><font-awesome-icon :icon="routesConfig.Home.meta.icon"></font-awesome-icon>{{routesConfig.Home.displayName}}</span>
+                    </router-link>
+                </li>
+                <hr>
+                <li>
+                    <router-link :to="routesConfig.Archive.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
+                        <span><font-awesome-icon :icon="routesConfig.Archive.meta.icon"></font-awesome-icon>{{routesConfig.Archive.displayName}}</span>
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
