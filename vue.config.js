@@ -41,7 +41,7 @@ module.exports = {
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
             //renderAfterDocumentEvent: 'rendered',
-            renderAfterElementExists: '#app-root',
+            //renderAfterElementExists: '#app-root',
           }),
           postProcess(context) {
             if (context.route === '/404') {
