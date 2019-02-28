@@ -145,31 +145,31 @@
 }
 
 #back-to-top {
-    background: #61dafb;
+    background: $color-nav-bar;
     border-radius: 50%;
-    bottom: 15px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-    color: #000000;
+    bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+    color: $color-blue-highlight;
     cursor: pointer;
     display: block;
-    height: 3.1rem;
+    height: 3.35rem;
     opacity: 1;
     outline: none;
     position: fixed;
-    right: 15px;
+    right: 20px;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     transition: bottom .2s,opacity .2s;
     user-select: none;
-    width: 3.1rem;
+    width: 3.35rem;
     z-index: 9999;
 
     .back-to-top-icon {
-        display: block;
+        display: flex;
         fill: currentColor;
-        height: 1.6em;
-        margin: 0.75em auto auto auto;
-        width: 1.6em;
+        height: 1.8rem;
+        margin: 0.70rem auto auto auto;
+        width: 1.8rem;
     }
 }
 
