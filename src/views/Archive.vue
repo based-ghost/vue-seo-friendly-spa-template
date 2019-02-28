@@ -7,7 +7,6 @@
             </div>
             <div class="tile is-child">
                 <h1 class="title">Post Archive</h1>
-                <hr>
             </div>
             <div class="tile is-child box">
                 <div class="blog-thumbnail is-flex is-horizontal-center">

@@ -25,7 +25,7 @@
             background-repeat: no-repeat;
             background-position: 100% 100px;
             background-size: 35% auto;
-            opacity: 0.07;
+            opacity: 0.075;
         }
     }
 
@@ -33,7 +33,7 @@
         padding: 2.5rem 1.5rem;
 
         hr {
-            background-color: rgba(255, 255, 255, .35);
+            background-color: rgba(255, 255, 255, .4);
             height: 1px;
             margin: 1.8rem 0;
 
@@ -62,7 +62,7 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 2.10em;
+                font-size: 2.15em;
             }
         }
     }
@@ -83,7 +83,7 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 1.85rem;
+                font-size: 1.90rem;
                 padding-right: 10px;
             }
         }
@@ -101,14 +101,14 @@
             }
     
             @include renderMobileTitleText {
-                font-size: 2.05rem;
+                font-size: 2.10rem;
             }
         }
     }
 }
 
   .stacked-column-seperator {
-    background-color: #ececec;
+    background-color: #dbdbdb;
     margin: 1rem 0;
     height: 1px;
     
