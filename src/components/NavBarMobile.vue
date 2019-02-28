@@ -13,15 +13,19 @@
         <div :class="['navbar-menu', { 'is-active': menuOpen }]">
             <ul>
                 <li>
-                    <router-link :to="routesConfig.Home.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
+                    <a role="button" 
+                       @click="handleMobileRouteEvent($event, routesConfig.Home.path)" 
+                       :class="['navbar-item-mobile', { 'is-active':  this.$router.currentRoute.path === routesConfig.Home.path }]">
                         <span><font-awesome-icon :icon="routesConfig.Home.meta.icon"></font-awesome-icon>{{routesConfig.Home.displayName}}</span>
-                    </router-link>
+                    </a>
                 </li>
                 <hr>
                 <li>
-                    <router-link :to="routesConfig.Archive.path" @click.native="handleMobileRouteEvent" class="navbar-item-mobile">
+                    <a role="button" 
+                       @click="handleMobileRouteEvent($event, routesConfig.Archive.path)" 
+                       :class="['navbar-item-mobile', { 'is-active':  this.$router.currentRoute.path === routesConfig.Archive.path }]">
                         <span><font-awesome-icon :icon="routesConfig.Archive.meta.icon"></font-awesome-icon>{{routesConfig.Archive.displayName}}</span>
-                    </router-link>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -37,9 +41,15 @@ export default class NavBarMobile extends Vue {
     public menuOpen: boolean = false;
     public readonly routesConfig = RoutesConfig;
 
-    public handleMobileRouteEvent(): void {
-        Vue.nextTick(() => {
-            this.menuOpen = false;
+    public handleMobileRouteEvent(e: Event, routePath: string): void {
+        if (this.$router.currentRoute.path === routePath) {
+            e.preventDefault();
+            return;
+        }
+
+        this.menuOpen = false;
+        this.$nextTick(() => {
+            this.$router.push(routePath);
         });
     }
 }
