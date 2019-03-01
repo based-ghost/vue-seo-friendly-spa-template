@@ -83,8 +83,8 @@ module.exports = {
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
     name: 'BasedGhostDevelopment',
-    themeColor: '#61dafb',
-    msTileColor: '#61dafb',
+    themeColor: '#fff',
+    msTileColor: '#fff',
     iconPaths: {
       favicon32: 'img/icons/favicon-32x32.png',
       favicon16: 'img/icons/favicon-16x16.png',
