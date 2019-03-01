@@ -18,7 +18,7 @@
     "bulma": "^0.7.4",
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.7",
+    "vue": "^2.6.8",
     "vue-analytics": "^5.16.2",
     "vue-meta": "^1.5.8",
     "vue-property-decorator": "^7.3.0",
@@ -40,6 +40,6 @@
     "typescript": "^3.3.3333",
     "url-loader": "^1.1.2",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.7"
+    "vue-template-compiler": "^2.6.8"
   }
 }

@@ -53,14 +53,14 @@
 
     &.is-source-code-link {
         font-size: 1.15rem;
-        color: #000000;
+        color: $color-nav-bar;
         border-color: transparent;
-        background-color: $color-blue-highlight;
+        background-color: #E8E8E8;
 
         &:hover {
-            color: #000000;
+            color: $color-nav-bar;
             border-color: transparent;
-            background-color: #6EE7FF;
+            background-color: #EDEDED;
         }
     }
 }
