@@ -17,5 +17,6 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#61dafb"
+  "theme_color": "#61dafb",
+  "description": "Software development and technology blog site - built and curated by Matt Areddia"
 }

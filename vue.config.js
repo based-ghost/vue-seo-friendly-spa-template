@@ -29,12 +29,12 @@ module.exports = {
           minRatio: 0.8 
         }),
         // https://github.com/webpack-contrib/copy-webpack-plugin
-        new CopyWebpackPlugin([
-          {
-            from: 'public/manifest.json',
-            to: 'manifest.webmanifest',
-          },
-        ]),
+        //new CopyWebpackPlugin([
+        //  {
+        //    from: 'public/manifest.json',
+        //    to: 'manifest.webmanifest',
+        //  },
+        //]),
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
