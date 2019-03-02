@@ -58,7 +58,8 @@ module.exports = {
             headNode.children('link[rel="preload"][as="script"]').remove();
             //headNode.children('link[rel="preload"][as="style"]').remove();
             
-            // Remove nav element and allow client to add - otherwise mobile flashes desktop / Add data-server-rendered="true" to #app-root     
+            // Hide nav element and allow client to add - otherwise mobile flashes desktop / Add data-server-rendered="true" to #app-root
+            $('#navbar-routes').attr('style', 'visibility: hidden;');     
             $('#app-root').attr('data-server-rendered', 'true');
 
             // Extract html and return

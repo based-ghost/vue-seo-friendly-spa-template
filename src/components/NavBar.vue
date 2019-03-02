@@ -4,7 +4,7 @@
             <div class="brand-wrapper">
                 <img src="../assets/img/based-ghost-blog-logo.png" width="220" alt="">
             </div>
-            <div class="navbar-routes" :style="{ visibility: routesVisibility }">
+            <div id="navbar-routes" class="navbar-routes" :style="{ visibility: routesVisibility }">
                 <router-link :to="routesConfig.Home.path" class="navbar-item">
                     <span class="icon">
                         <font-awesome-icon :icon="routesConfig.Home.meta.icon"></font-awesome-icon>
