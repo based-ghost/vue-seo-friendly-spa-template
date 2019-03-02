@@ -31,7 +31,7 @@ export default class NavBar extends Vue {
     private routesVisibility: string = 'hidden';
     private readonly routesConfig = RoutesConfig;
 
-    public beforeMount(): void {
+    public created(): void {
         this.routesVisibility = 'visible';
     }
 }
