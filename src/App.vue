@@ -1,13 +1,15 @@
 <template>
     <div id="app-root">
-        <component :is="dynamicNavBarComponent"></component>
-        <transition :name="$route.meta.transitionName" mode="out-in">
-            <router-view></router-view>
-        </transition>
-        <div v-if="mobileDeviceScrolled" id="back-to-top" @click="backToTop()">
-            <font-awesome-icon class="back-to-top-icon" icon="chevron-up"></font-awesome-icon>
+        <component :is="dynamicNavBarComponent" @mobile-overlay="(show) => (showNavMenuOverlay = show)"></component>
+        <div :class="{ 'nav-menu-overlay': showNavMenuOverlay }">
+            <transition :name="$route.meta.transitionName" mode="out-in">
+                <router-view></router-view>
+            </transition>
+            <div v-if="mobileDeviceScrolled" id="back-to-top" @click="backToTop()">
+                <font-awesome-icon class="back-to-top-icon" icon="chevron-up"></font-awesome-icon>
+            </div>
+            <app-footer></app-footer>
         </div>
-        <app-footer></app-footer>
     </div>
 </template>
 
@@ -23,6 +25,7 @@ import scrollTo from './util/scrolling/smooth-scroll';
 })
 export default class App extends Vue {
     private dynamicNavBarComponent: any;
+    private showNavMenuOverlay: boolean = false;
     private mobileDeviceScrolled: boolean = false;
 
     public created(): void {

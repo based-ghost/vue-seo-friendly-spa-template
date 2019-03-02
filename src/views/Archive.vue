@@ -97,6 +97,6 @@ import { RoutesConfig } from '../config/routes.config';
     }
 })
 export default class Archive extends Vue {
-    public readonly urlData = urlConfig;
+    private readonly urlData = urlConfig;
 }
 </script>

@@ -107,6 +107,6 @@ import { RoutesConfig } from '../config/routes.config';
     }
 })
 export default class Home extends Vue {
-    public readonly urlData = urlConfig;
+    private readonly urlData = urlConfig;
 }
 </script>

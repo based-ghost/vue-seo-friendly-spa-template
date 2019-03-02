@@ -4,7 +4,7 @@
             <div class="brand-wrapper-mobile">
                 <img src="../assets/img/based-ghost-blog-logo.png" width="220" alt="">
             </div>      
-            <a role="button" aria-label="menu" :aria-expanded="menuOpen" @click="menuOpen = !menuOpen" :class="['navbar-burger', { 'is-active': menuOpen }]">
+            <a role="button" aria-label="menu" :aria-expanded="menuOpen" @click="toggleMenu" :class="['navbar-burger', { 'is-active': menuOpen }]">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -38,15 +38,16 @@ import { RoutesConfig } from '../config/routes.config';
 
 @Component
 export default class NavBarMobile extends Vue {
-    public menuOpen: boolean = false;
-    public readonly routesConfig = RoutesConfig;
+    private menuOpen: boolean = false;
+    private readonly routesConfig = RoutesConfig;
+
+    public toggleMenu(): void {
+        this.$emit('mobile-overlay', !this.menuOpen);
+        this.menuOpen = !this.menuOpen;
+    }
 
     public handleMobileRouteEvent(e: Event, routePath: string): void {
-        if (this.$router.currentRoute.path === routePath) {
-            e.preventDefault();
-            return;
-        }
-
+        this.$emit('mobile-overlay', !this.menuOpen);
         this.menuOpen = false;
         this.$nextTick(() => {
             this.$router.push(routePath);
