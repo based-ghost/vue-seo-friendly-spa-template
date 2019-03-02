@@ -28,7 +28,7 @@ export default class App extends Vue {
     private showNavMenuOverlay: boolean = false;
     private mobileDeviceScrolled: boolean = false;
 
-    public mounted(): void {
+    public beforeMount(): void {
         this.checkForMobileDevice();
     }
 
