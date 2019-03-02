@@ -20,11 +20,20 @@ Vue.use(VueAnalytics, {
     }
 });
 
-// Mount app to Vue instance (mounted() has callback to fire event that the prerender plugin listens for)
 new Vue({
+    el: '#app-root',
     router,
     render: (h) => h(App),
-    mounted() {
-        document.dispatchEvent(new Event('render-event'));
-    },
-}).$mount('#app-root');
+    mounted () {
+      document.dispatchEvent(new Event('render-event'))
+    }
+});
+
+// Mount app to Vue instance (mounted() has callback to fire event that the prerender plugin listens for)
+// new Vue({
+//     router,
+//     render: (h) => h(App),
+//     mounted() {
+//         document.dispatchEvent(new Event('render-event'));
+//     },
+// }).$mount('#app-root');
