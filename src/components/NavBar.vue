@@ -4,7 +4,7 @@
             <div class="brand-wrapper">
                 <img src="../assets/img/based-ghost-blog-logo.png" width="220" alt="">
             </div>
-            <div class="navbar-routes">
+            <div class="navbar-routes" :style="{ visibility: routesVisibility }">
                 <router-link :to="routesConfig.Home.path" class="navbar-item">
                     <span class="icon">
                         <font-awesome-icon :icon="routesConfig.Home.meta.icon"></font-awesome-icon>
@@ -28,6 +28,11 @@ import { RoutesConfig } from '../config/routes.config';
 
 @Component
 export default class NavBar extends Vue {
+    private routesVisibility: string = 'hidden';
     private readonly routesConfig = RoutesConfig;
+
+    public beforeMount(): void {
+        this.routesVisibility = 'visible';
+    }
 }
 </script>
