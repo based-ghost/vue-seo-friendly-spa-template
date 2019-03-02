@@ -14,7 +14,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import AppFooter from '@/components/Footer.vue';
-import { sfcGlobalData } from './config/constants';
 import scrollTo from './util/scrolling/smooth-scroll';
 
 @Component({
@@ -23,8 +22,6 @@ import scrollTo from './util/scrolling/smooth-scroll';
     }
 })
 export default class App extends Vue {
-    public readonly sfcData = sfcGlobalData;
-
     private dynamicNavBarComponent: any;
     private mobileDeviceScrolled: boolean = false;
 

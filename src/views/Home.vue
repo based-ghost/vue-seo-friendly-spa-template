@@ -3,8 +3,8 @@
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em><span>{{sfcData.TITLE_MSG}}</span></h1>
-                    <h2 class="subtitle blog-intro">{{sfcData.SUB_TITLE_MSG}}</h2>
+                    <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em><span>code-blog</span></h1>
+                    <h2 class="subtitle blog-intro">Howdy, I'm Matt Areddia - a Full-Stack .NET developer based out of Milwaukee, WI</h2>
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
@@ -43,13 +43,13 @@
                                             <span class="fa-li">
                                                 <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon>
                                             </span>
-                                            <a class="library-link" target="_blank" rel="noopener" :href="sfcData.GITHUB_URL">GitHub (based-ghost)</a>                                            
+                                            <a class="library-link" target="_blank" rel="noopener" :href="urlData.GITHUB">GitHub (based-ghost)</a>                                            
                                         </li>
                                         <li>
                                             <span class="fa-li">
                                                 <font-awesome-icon icon="mail-bulk"></font-awesome-icon>
                                             </span>
-                                            <a class="library-link" :href="sfcData.EMAIL">mareddia@protonmail.com</a>                                         
+                                            <a class="library-link" :href="urlData.EMAIL">mareddia@protonmail.com</a>                                         
                                         </li>
                                     </ul>
                                 </div>
@@ -78,7 +78,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { sfcGlobalData } from '../config/constants';
+import { urlConfig } from '../config/constants';
 import { RoutesConfig } from '../config/routes.config';
 
 @Component({
@@ -107,6 +107,6 @@ import { RoutesConfig } from '../config/routes.config';
     }
 })
 export default class Home extends Vue {
-    public readonly sfcData = sfcGlobalData;
+    public readonly urlData = urlConfig;
 }
 </script>

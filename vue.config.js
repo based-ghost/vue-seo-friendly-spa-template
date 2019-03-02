@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign,import/no-extraneous-dependencies */
 const path = require('path');
 const cheerio = require('cheerio');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
@@ -55,7 +55,8 @@ module.exports = {
             headNode.children('style[type="text/css"]').remove();
 
             // Add data-server-rendered="true" to #app-root
-            $('#app-root').replaceWith($('<div id="app-root" data-server-rendered="true"></div>'));
+            $('#app-root').attr('data-server-rendered', 'true');
+            //$('#app-root').replaceWith($('<div id="app-root" data-server-rendered="true"></div>'));
 
             // Extract html and return
             context.html = $.html();

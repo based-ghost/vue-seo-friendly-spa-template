@@ -16,13 +16,13 @@
                 </div>
                 <p class="subtitle is-tile-subtitle has-text-centered">Building a SPA template with the following technology stack:</p>
                 <p class="subtitle is-tile-subtitle has-text-centered">
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.reactUrl">React</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.REACT">React</a>
                     <span> + </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.reduxUrl">Redux</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.REDUX">Redux</a>
                     <span> + </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.typescriptUrl">TypeScript</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.TYPESCRIPT">TypeScript</a>
                     <span> and </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.aspcoreUrl">ASP.NET Core 2.2</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.ASPCORE">ASP.NET Core 2.2</a>
                 </p>
                 <div class="subtitle is-tile-content has-text-centered">
                     <a class="button is-source-code-link"
@@ -43,13 +43,13 @@
                 </div>
                 <p class="subtitle is-tile-subtitle has-text-centered">Building a SPA template with the following technology stack:</p>
                 <p class="subtitle is-tile-subtitle has-text-centered">
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.vueUrl">Vue</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.VUE">Vue</a>
                     <span> + </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.vuexUrl">Vuex</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.VUEX">Vuex</a>
                     <span> + </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.typescriptUrl">TypeScript</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.TYPESCRIPT">TypeScript</a>
                     <span> and </span>
-                    <a class="library-link" target="_blank" rel="noopener" :href="vendorUrls.aspcoreUrl">ASP.NET Core 2.2</a>
+                    <a class="library-link" target="_blank" rel="noopener" :href="urlData.ASPCORE">ASP.NET Core 2.2</a>
                 </p>
                 <div class="subtitle is-tile-content has-text-centered">
                     <a class="button is-source-code-link"
@@ -68,7 +68,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { vendorConfig } from '../config/constants';
+import { urlConfig } from '../config/constants';
 import { RoutesConfig } from '../config/routes.config';
 
 @Component({
@@ -97,6 +97,6 @@ import { RoutesConfig } from '../config/routes.config';
     }
 })
 export default class Archive extends Vue {
-    public readonly vendorUrls = vendorConfig;
+    public readonly urlData = urlConfig;
 }
 </script>

@@ -4,7 +4,6 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import VueAnalytics from 'vue-analytics';
-import { googleConfig } from './config/google-analytics.config';
 import './registerServiceWorker';
 
 // Vue Configuration flags
@@ -13,8 +12,8 @@ Vue.config.productionTip = (process.env.NODE_ENV === 'production');
 
 // Google Analytics Configuration (only enable tracking in production builds)
 Vue.use(VueAnalytics, {
-    id: googleConfig.id,
-    checkDuplicatedScript: googleConfig.checkDuplicatedScript,
+    id: 'UA-134661440-1',
+    checkDuplicatedScript: true,
     router,
     debug: {
         sendHitTask: (process.env.NODE_ENV === 'production')

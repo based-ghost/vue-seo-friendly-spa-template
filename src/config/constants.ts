@@ -1,21 +1,13 @@
 ﻿/**
- * Global data consumed by App component - used by functional components via exposed parent prop
+ * Config object holding my/vendor URLs
  */
-export const sfcGlobalData = {
+export const urlConfig = {
+    GITHUB: 'https://github.com/based-ghost',
     EMAIL: 'mailto:mareddia@protonmail.com',
-    GITHUB_URL: 'https://github.com/based-ghost',
-    TITLE_MSG: 'code-blog',
-    SUB_TITLE_MSG: "Howdy, I'm Matt Areddia - a Full-Stack .NET developer based out of Milwaukee, WI",
-};
-
-/**
- * Config object holding vendor URLs
- */
-export const vendorConfig = {
-    vueUrl: 'https://vuejs.org/',
-    vuexUrl: 'https://vuex.vuejs.org/',
-    reactUrl: 'https://reactjs.org/',
-    reduxUrl: 'https://redux.js.org/',
-    aspcoreUrl: 'https://www.asp.net/',
-    typescriptUrl: 'https://www.typescriptlang.org/',
+    VUE: 'https://vuejs.org/',
+    VUEX: 'https://vuex.vuejs.org/',
+    REACT: 'https://reactjs.org/',
+    REDUX: 'https://redux.js.org/',
+    ASPCORE: 'https://www.asp.net/',
+    TYPESCRIPT: 'https://www.typescriptlang.org/',
 };
