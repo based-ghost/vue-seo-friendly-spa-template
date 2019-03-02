@@ -58,8 +58,10 @@ module.exports = {
             headNode.children('link[rel="preload"][as="script"]').remove();
             //headNode.children('link[rel="preload"][as="style"]').remove();
             
-            // Add data-server-rendered="true" to #app-root
-            $('#app-root').attr('data-server-rendered', 'true');
+            // Remove nav element and allow client to add - otherwise mobile flashes desktop / Add data-server-rendered="true" to #app-root
+            const appRoot = $('#app-root');
+            appRoot.children('nav').remove();        
+            appRoot.attr('data-server-rendered', 'true');
 
             // Extract html and return
             context.html = $.html();
