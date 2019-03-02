@@ -52,8 +52,8 @@ module.exports = {
 
             // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
             headNode.children('[src*="https://www.google-analytics.com/analytics.js"]').remove();
-            //headNode.children('style[type="text/css"]').remove();
-
+            headNode.children('style[type="text/css"]').remove();
+            headNode.children('link[rel="preload"][as="script"]').remove();
             // Add data-server-rendered="true" to #app-root
             $('#app-root').attr('data-server-rendered', 'true');
             //$('#app-root').replaceWith($('<div id="app-root" data-server-rendered="true"></div>'));
