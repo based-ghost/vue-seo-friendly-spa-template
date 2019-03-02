@@ -40,7 +40,7 @@ module.exports = {
           staticDir: config.output.path,
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-            renderAfterDocumentEvent: 'render-event'
+            // renderAfterDocumentEvent: 'render-event'
           }),
           postProcess(context) {
             if (context.route === '/404') {
@@ -52,7 +52,7 @@ module.exports = {
 
             // Remove prerendered analytics tag and fortawesome styles tag (client will add and you will have duplicates)
             headNode.children('[src*="https://www.google-analytics.com/analytics.js"]').remove();
-            headNode.children('style[type="text/css"]').remove();
+            // headNode.children('style[type="text/css"]').remove();
 
             // Remove duplicate preload scripts (should be taken care of in .js bundle - this removes the preload warnings in Chrome)
             headNode.children('link[rel="preload"][as="script"]').remove();
