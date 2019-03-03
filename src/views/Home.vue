@@ -29,7 +29,7 @@
                                             <a class="library-link" @click="$router.push('/posts/')">SPA created with React + Redux + TypeScript and ASP.NET Core 2.2</a>
                                         </li>
                                         <li>
-                                            <a class="library-link" @click="$router.push('/posts/')">All posts...</a>
+                                            <a class="library-link" @click="$router.push('/posts/')">SEO best practices for SPAs and achieving a perfect 'Lighthouse' score</a>
                                         </li>
                                     </ul>
                                 </div>

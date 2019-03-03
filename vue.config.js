@@ -40,7 +40,6 @@ module.exports = {
           staticDir: config.output.path,
           routes: ['/', '/posts/', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-            skipThirdPartyRequests: true
             //renderAfterDocumentEvent: 'render-event'
           }),
           postProcess(context) {
