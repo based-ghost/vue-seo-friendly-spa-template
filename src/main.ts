@@ -1,5 +1,5 @@
-import './assets/style/main.scss';
 import './config/fa.config';
+import './assets/style/main.scss';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
