@@ -4,7 +4,7 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title blog-title"><em class="chevron"><font-awesome-icon icon="chevron-right"></font-awesome-icon></em><span>code-blog</span></h1>
-                    <h2 class="subtitle blog-intro">Howdy, I'm Matt Areddia - a Full-Stack .NET developer based out of Milwaukee, WI</h2>
+                    <h2 class="subtitle blog-intro">Matt Areddia - a Full-Stack .NET developer based out of Milwaukee, WI</h2>
                     <hr>
                     <h2 class="subtitle">Powered by...</h2>
                     <div class="is-flex is-horizontal-center">
