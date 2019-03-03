@@ -18,15 +18,15 @@
   
 .subtitle {
     color: $color-hero-is-dark;
-    font-size: 1.5em;
+    font-size: 1.6em;
     letter-spacing: 0.01em;
 
     @include renderTabletTitleText {
-        font-size: 1.25em;
+        font-size: 1.35em;
     }
 
     @include renderMobileTitleText {
-        font-size: 1.125em;
+        font-size: 1.165em;
     }
 
     &.is-tile-subtitle {
