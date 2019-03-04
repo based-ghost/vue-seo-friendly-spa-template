@@ -1,5 +1,5 @@
 ﻿import Vue from 'vue';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import {
@@ -17,6 +17,9 @@ import {
     faGithub,
     faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+
+// Prevents adding of @fortawesome/fontawesome-svg-core/styles.css - global css will have only what we need
+config.autoAddCss = false;
 
 library.add(
     faCode,

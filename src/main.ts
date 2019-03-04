@@ -1,10 +1,10 @@
-import './config/fa.config';
 import './assets/style/main.scss';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import VueAnalytics from 'vue-analytics';
 import './registerServiceWorker';
+import './config/fa.config';
 
 // Vue Configuration flags
 Vue.config.devtools = false;
