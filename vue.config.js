@@ -1,12 +1,10 @@
 /* eslint-disable no-param-reassign,import/no-extraneous-dependencies */
 const path = require('path');
 const cheerio = require('cheerio');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-
   // https://cli.vuejs.org/guide/webpack.html
   configureWebpack: (config) => {
     if (process.env.NODE_ENV !== 'production') {
@@ -28,19 +26,12 @@ module.exports = {
           threshold: 8192,
           minRatio: 0.8 
         }),
-        // https://github.com/webpack-contrib/copy-webpack-plugin
-        //new CopyWebpackPlugin([
-        //  {
-        //    from: 'public/manifest.json',
-        //    to: 'manifest.webmanifest',
-        //  },
-        //]),
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
-          routes: ['/', '/posts/', '/404'],
+          routes: ['/', '/about', '/404'],
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-            //renderAfterDocumentEvent: 'render-event'
+            renderAfterDocumentEvent: 'render-event'
           }),
           postProcess(context) {
             if (context.route === '/404') {
@@ -51,12 +42,15 @@ module.exports = {
 
             // Remove duplicate preload scripts (should be taken care of in .js bundle - this removes the preload warnings in Chrome)
             $('head').children('link[rel="preload"][as="script"]').remove();
-            
-            // Hide nav element and allow client to add - otherwise mobile flashes desktop / Add data-server-rendered="true" to #app-root
-            $('#navbar-routes').attr('style', 'visibility: hidden;');     
-            $('#app-root').attr('data-server-rendered', 'true');
 
-            // Extract html and return
+            // Add defer attribute to script tags (load performance improvement since .js resource loading can occur following first render)
+            $('script').each(function(i, elem) {
+                $(this).attr('defer', '');
+            });
+            
+            // Add data-server-rendered="true" to #app (dynamically add here rather than hard code in index.html)  
+            $('#app').attr('data-server-rendered', 'true');
+
             context.html = $.html();
             return context;
           },
@@ -65,23 +59,18 @@ module.exports = {
     };
   },
 
-  // Handle SVGs to be handled exactly as other image types - inline svgs as long as smaller than 4096 bytes
-  //chainWebpack: (config) => {
-  //  config.module.rules.delete('svg');
-  //  config.module.rule('images').test(/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/);
-  //},
-
+  // Load sass global variables/mixins - can then be referenced in style sheets / in-line style .vue style tags
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/assets/style/base/variables.scss";`
+        data: `@import "~@/assets/style/base/variables.scss";`
       }
     }
   },
 
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
-    name: 'BasedGhostDevelopment',
+    name: 'vue-seo-friendly-spa-template',
     themeColor: '#fff',
     msTileColor: '#fff',
     iconPaths: {
@@ -92,7 +81,7 @@ module.exports = {
       msTileImage: 'img/icons/msapplication-icon-144x144.png',
     },
     workboxOptions: {
-      cacheId: 'basedghost',
+      cacheId: 'VueSeoSpa',
       importWorkboxFrom: 'local',
       navigateFallback: 'index.html',
       navigateFallbackWhitelist: [/^((?!\/404).)*$/],

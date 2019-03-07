@@ -1,0 +1,25 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+      "tslint:recommended"
+    ],
+    "linterOptions": {
+      "exclude": [
+        "node_modules/**"
+      ]
+    },
+    "rules": {
+        "quotemark": false,
+        "ordered-imports": false,
+        "member-ordering": false,
+        "trailing-comma": false,
+        "eofline": false,
+        "no-string-literal": false,
+        "object-literal-sort-keys": false,
+        "no-consecutive-blank-lines": false,
+        "no-console": {
+            "severity": "warning",
+            "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+        }
+    }
+}

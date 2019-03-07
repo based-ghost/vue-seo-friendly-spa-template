@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.basedghostdevelopment.com/sitemap.xml
+Sitemap: https://www.vueseofriendlyspatemplate.com/sitemap.xml

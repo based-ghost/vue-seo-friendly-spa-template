@@ -6,23 +6,23 @@
             transitionName: 'fade',
             icon: 'home',
             metaInfo: {
-                title: 'Web Application Development',
-                titleTemplate: '%s | BasedGhostDevelopment',
-                description: 'Software development and technology blog site - built and curated by Matt Areddia'
-            }
-        }
+                title: 'Home',
+                titleTemplate: '%s | VueSeoFriendlySpaTemplate',
+                description: 'Home page description - limit of 160 characters (try for 150-155).',
+            },
+        },
     },
-    Archive: {
-        path: '/posts/',
-        displayName: 'Post Archive',
+    About: {
+        path: '/about',
+        displayName: 'About',
         meta: {
-            transitionName: 'pageSlideLeft',
-            icon: 'file-alt',
+            transitionName: 'pageSlideDown',
+            icon: 'info',
             metaInfo: {
-                title: 'Blog Posts',
-                titleTemplate: '%s | BasedGhostDevelopment',
-                description: 'Blog posts cover web technologies used to create projects found on GitHub (based-ghost) by Matt Areddia - e.g. ASP.NET Core, Vue, Vuex, React, Redux, TypeScript'
-            }
-        }
-    }
+                title: 'About',
+                titleTemplate: '%s | VueSeoFriendlySpaTemplate',
+                description: 'About page description - limit of 160 characters (try for 150-155).',
+            },
+        },
+    },
 };

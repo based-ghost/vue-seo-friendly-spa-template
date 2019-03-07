@@ -3,18 +3,15 @@ import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import {
-    faCode,
     faHome,
-    faMugHot,
-    faFileAlt,
-    faMailBulk,
-    faChevronUp,
-    faChevronRight,
+    faInfo,
+    faCheck,
     faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
     faGithub,
+    faMediumM,
     faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
@@ -22,15 +19,12 @@ import {
 config.autoAddCss = false;
 
 library.add(
-    faCode,
     faHome,
-    faMugHot,
+    faInfo,
+    faCheck,
     faGithub,
+    faMediumM,
     faTwitter,
-    faFileAlt,
-    faMailBulk,
-    faChevronUp,
-    faChevronRight,
     faExclamationCircle,
 );
 

@@ -1,51 +1,63 @@
-﻿.home-card {
-    margin-top: -3rem;
-
-    @media screen and (min-width: 1088px) {
-        border-radius: 6px;
-    }
-}
-
-.dashboard-info {
-    padding: 1.25rem !important;
-}
-
-.hero.is-dark {
+﻿.hero.is-dark {
     background-color: $color-hero-is-dark;
 
-    &::before {
-        @media (min-width: 1280px) {
-            content: " ";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: url(../../assets/img/based-ghost-background.png);
-            background-repeat: no-repeat;
-            background-position: 100% 100px;
-            background-size: 35% auto;
-            opacity: 0.075;
-        }
-    }
-
     .hero-body {
-        padding: 2.5rem 1.5rem;
+        padding: 2.25rem 1.5rem;
 
-        hr {
-            background-color: rgba(255, 255, 255, .4);
-            height: 1px;
-            margin: 1.8rem 0;
+        svg {
+            margin-right: .35rem;
+            font-size: 1.25em !important;
+            color: $color-green-highlight;
 
-            @include renderMobileTitleText {
-                margin: 1.75rem 0;
+            @include centerStackedColumnContent {
+                font-size: 1.075em !important;
             }
         }
 
-        > .container div:last-child {
-            margin-bottom: 2.15rem;
-            margin-right: 2rem;
-            margin-left: 2rem;
+        hr {
+            background-color: white;
+            height: 1px;
+            margin: 0 0 1.75em 0;
+            opacity: .5;    
+        }
+
+        .blog-title-img {
+            padding-bottom: .5rem;
+        }
+
+        .subtitle {
+            color: #fff;
+            font-size: 1.25em;
+
+            @include centerStackedColumnContent {
+                line-height: 1.60;
+                font-size: 1.025em;
+            }
+
+            &:first-of-type {
+                margin-top: -0.025rem;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: .90rem;
+
+                @include centerStackedColumnContent {
+                    margin-bottom: .80rem;
+                }
+            }
+        }
+
+        code {
+            background-color: #4E525A;
+            color: $color-green-highlight;
+            font-size: 1em;
+            font-weight: 600;
+            padding: 0.085em 0.12em 0.085em;
+            font-family: inherit;
+
+            @include centerStackedColumnContent {
+                font-size: .95em;
+            }
         }
     }
 
@@ -54,139 +66,50 @@
         margin-bottom: 2.55rem;
 
         &.blog-title {
-            font-size: 3.5em;
+            font-size: 3em;
+            font-family: Segoe Script;
+            -moz-osx-font-smoothing: auto;
+            -webkit-font-smoothing: auto;
             letter-spacing: 0.015em;
-            padding-bottom: 1.25rem;
+            padding-bottom: 1.5rem;
             margin: auto;
-
-            @include renderTabletTitleText {
-                font-size: 2.9em;
-            }
     
             @include renderMobileTitleText {
-                font-size: 2.2em;
-            }
-
-            &::after {
-                content: '__';
-                letter-spacing: 0 !important;
-                font-size: 3.3rem;
-                font-weight: 900;
-                color: #D4D4D4;
-                margin-left: 5px;
-                white-space: nowrap;
-                -webkit-animation: cursor 1s step-end infinite;
-                animation: cursor 1s step-end infinite;
-    
-                @include renderTabletTitleText {
-                    font-size: 2.75rem;
-                }
-        
-                @include renderMobileTitleText {
-                    margin-left: 3px;
-                    font-weight: 600;
-                    font-size: 2.15rem;
-                }
-            }
-        }
-    }
-
-    .subtitle {
-        color: whitesmoke;
-
-        &.blog-intro {
-            margin-top: -0.025rem;
-        }
-    }
-
-    em {
-        &.chevron {
-            font-weight: 800;
-            font-size: 3.05rem;
-            color: $color-blue-highlight;
-            padding-right: 12px;
-
-            @include renderTabletTitleText {
-                font-size: 2.5rem;
-            }
-    
-            @include renderMobileTitleText {
-                font-size: 1.90rem;
-                padding-right: 10px;
+                font-size: 2em;
             }
         }
     }
 }
 
-  .stacked-column-seperator {
-    background-color: #dbdbdb;
-    margin: 1rem 0;
-    height: 1px;
-    
-    @media (min-width: 769px) {
-        display: none;
-    }
-  }
+.dashboard-content {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 
-.dashboard-info {
-    margin-left: 0;
-
-    > .title {
-        color: $color-hero-is-dark;
-        text-transform: uppercase;
+    code {
+        background-color: rgba(103, 222, 169, .25);
+        color: black;
     }
 
-    .dashboard-content {
-        > ul {
-            margin-left: 0;
-            padding-left: 20px;
-            list-style: disc outside;
-            color: black;
+    hr {
+        background-color: #dbdbdb;
+        margin: 1rem 0;
+        height: 1px;
+    }
 
-            &.fa-ul {
-                list-style: none;
-                padding-left: 25px;
+    > .columns {
+        > .column {
+            padding: 2rem !important;
+
+            > .title {
+                color: #6d6d6d;
+                font-weight: 600;
             }
+        }
 
-            li + li {
-                margin-top: 1rem;
+        > hr {          
+            @media (min-width: 769px) {
+                display: none;
             }
         }
     }
-}
-
-@-webkit-keyframes cursor {
-    0% {
-		opacity: 0;
-	}
-	40% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	90% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes cursor {
-	0% {
-		opacity: 0;
-	}
-	40% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	90% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
 }

@@ -1,6 +1,6 @@
 {
-  "name": "BasedGhostDevelopment",
-  "short_name": "BasedGhost",
+  "name": "vue-seo-friendly-spa-template",
+  "short_name": "VueSeoSpa",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
@@ -13,9 +13,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#fff",
-  "description": "Software development and technology blog site - built and curated by Matt Areddia"
+  "description": "Vue.js PWA/SPA template configured for SEO"
 }

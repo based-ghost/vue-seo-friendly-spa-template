@@ -1,25 +1,6 @@
-﻿$color-body-bg: #f7f7f7;
-$color-hero-is-dark: #282c34;
+﻿$color-hero-is-dark: #282c34;
 $color-nav-bar: #20232a;
-$color-blue-highlight: #61dafb;
-
-@mixin renderFooter65Perc {
-    @media (max-width: 1472px) {
-        @content;
-    }
-}
-
-@mixin renderFooter80Perc {
-    @media (max-width: 1280px) {
-        @content;
-    }
-}
-
-@mixin renderFooter100Perc {
-    @media (max-width: 1088px) {
-        @content;
-    }
-}
+$color-green-highlight: #67DEA9;
 
 @mixin removeNavBarPadding {
     @media (max-width: 1099px) {
