@@ -2,7 +2,7 @@
 Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli)
 
 
-![](/src/assets/img/vue-seo-friendly-demo-2.gif)
+![](demo/vue-seo-friendly-demo-2.gif)
 
 
 ## General Overview
