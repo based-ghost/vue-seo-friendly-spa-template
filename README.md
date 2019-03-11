@@ -9,9 +9,10 @@ Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). 
 This template mimics the setup I went through when experimenting with the creation of my own static front-end blog site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live here: https://basedghostdevelopment.com. After playing around with this process & technologies I figured I'd build a higher-level (yet still feature-rich) abstraction of that project for quick re-use in the future.
 
 ## Technology Stack Overview
-- created via the [`vue-cli`](https://cli.vuejs.org/)
+[`vue-cli`](https://cli.vuejs.org/) - initial scaffolding
 
-- [`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
+
+[`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
   
 I have it configured to use a utility function called `buildMetaInfo` which you pass an object to at the top of the component like this for example:
 
@@ -26,7 +27,8 @@ I have it configured to use a utility function called `buildMetaInfo` which you 
     export default class About extends Vue { }
 ```
 
-- [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics) - Google Analytics manager plugin. The plugin isn't just a wrapper of the Google Analytics API, but provides a solution to issues that most of the time you don't want to deal with or you not even know you have to deal with.
+
+[`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics) - Google Analytics manager plugin. The plugin isn't just a wrapper of the Google Analytics API, but provides a solution to issues that most of the time you don't want to deal with or you not even know you have to deal with.
 
 I have it configured in the main.ts file:
 
@@ -44,7 +46,9 @@ I have it configured in the main.ts file:
         },
     });
 ```
-- [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin) - Prerenders static HTML in a single-page application. This is a more straightforward substitue for SSR (Server Side Rendering) and the primary benefit is SEO.
+
+
+[`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin) - Prerenders static HTML in a single-page application. This is a more straightforward substitue for SSR (Server Side Rendering) and the primary benefit is SEO.
 
 Configured in the app as follows:
 
