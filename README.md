@@ -10,10 +10,12 @@ This template mimics the setup I went through when experimenting with the creati
 
 ## Technology Stack Overview
 
-#### vue-cli
+### vue-cli
+
 initial scaffolding
 
-#### vue-meta
+### vue-meta
+
 [`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
   
 I have it configured to use a utility function called `buildMetaInfo` which you pass an object to at the top of the component like this for example:
@@ -29,7 +31,8 @@ I have it configured to use a utility function called `buildMetaInfo` which you 
     export default class About extends Vue { }
 ```
 
-#### vue-analytics
+### vue-analytics
+
 [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics) - Google Analytics manager plugin. The plugin isn't just a wrapper of the Google Analytics API, but provides a solution to issues that most of the time you don't want to deal with or you not even know you have to deal with.
 
 I have it configured in the main.ts file:
@@ -49,7 +52,8 @@ I have it configured in the main.ts file:
     });
 ```
 
-#### prerender-spa-plugin
+### prerender-spa-plugin
+
 [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin) - Prerenders static HTML in a single-page application. This is a more straightforward substitue for SSR (Server Side Rendering) and the primary benefit is SEO.
 
 Configured in the app as follows:
