@@ -17,7 +17,7 @@
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.8",
-    "vue-analytics": "^5.16.3",
+    "vue-analytics": "^5.16.4",
     "vue-meta": "^1.5.8",
     "vue-property-decorator": "^8.0.0",
     "vue-router": "^3.0.2"
