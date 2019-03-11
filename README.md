@@ -58,7 +58,7 @@ I have it configured in the main.ts file:
 
 Configured in the app as follows:
 
-`Main.ts` - need to fire an event after the app is mounted to let the prerenderer know when to pick up from
+`Main.ts` - *need to fire an event after the app is mounted to let the prerenderer know when to pick up from - (the mounted callback below is only needed if you need to await the result of an async request. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal).
 
 ```typescript
 // Mount app to Vue instance
