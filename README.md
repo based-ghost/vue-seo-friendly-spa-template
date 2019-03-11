@@ -18,8 +18,9 @@ initial scaffolding
 
 [`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
   
-I have it configured to use a utility function called `buildMetaInfo` which you pass an object to at the top of the component like this for example:
+I have it configured to use a utility function called `buildMetaInfo` which returns an object of type `MetaInfo` - in the component options of the component, you must declare the `metaInfo()` method, which must return an object of type `MetaInfo`:
 
+e.g. `About.vue`
 ```typescript
     import { buildMetaInfo } from '@/utils/metaInfo';
 
@@ -35,8 +36,7 @@ I have it configured to use a utility function called `buildMetaInfo` which you 
 
 [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics) - Google Analytics manager plugin. The plugin isn't just a wrapper of the Google Analytics API, but provides a solution to issues that most of the time you don't want to deal with or you not even know you have to deal with.
 
-I have it configured in the main.ts file:
-
+`main.ts`
 ```typescript
     import Vue from 'vue';
     import router from '@/router';
