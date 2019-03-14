@@ -36,6 +36,12 @@ e.g. `About.vue`
 
 [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics) - Google Analytics manager plugin. The plugin isn't just a wrapper of the Google Analytics API, but provides a solution to issues that most of the time you don't want to deal with or you not even know you have to deal with.
 
+My preferred configuration:
+- id: replace with your GA tracking code
+- checkDuplicatedScript: checks if the GA script has already been added/loaded before injecting - this is especially useful when you are using prerendering or SSR. You wont need to worry about removing a duplicate script tag or delaying the injection.
+- router (pass the vue-router object and the plugin will handle route tracking/collection automatically).
+- debug/sendHitTask: this controls when to actually fire GA collection requests - I configure it to only fire in production builds.
+
 `main.ts`
 ```typescript
     import Vue from 'vue';
