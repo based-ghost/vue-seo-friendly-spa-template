@@ -1,5 +1,5 @@
 {
-  "name": "vue-seo-friendly-spa-template",
+  "name": "VueSeoFriendlySpaTemplate",
   "version": "0.1.0",
   "description": "Vue.js PWA/SPA template configured for SEO",
   "scripts": {
@@ -16,7 +16,7 @@
     "bulma": "^0.7.4",
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.8",
+    "vue": "^2.6.9",
     "vue-analytics": "^5.16.4",
     "vue-meta": "^1.5.8",
     "vue-property-decorator": "^8.0.0",
@@ -38,6 +38,6 @@
     "typescript": "^3.3.3333",
     "url-loader": "^1.1.2",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.8"
+    "vue-template-compiler": "^2.6.9"
   }
 }

@@ -70,7 +70,7 @@ module.exports = {
 
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
-    name: 'vue-seo-friendly-spa-template',
+    name: 'VueSeoFriendlySpaTemplate',
     themeColor: '#fff',
     msTileColor: '#fff',
     iconPaths: {
