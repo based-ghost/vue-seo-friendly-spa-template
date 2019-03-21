@@ -9,14 +9,14 @@
     "sitemap": "node sitemap-generator"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-brands-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/vue-fontawesome": "^0.1.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.16",
+    "@fortawesome/free-brands-svg-icons": "^5.8.0",
+    "@fortawesome/free-solid-svg-icons": "^5.8.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "bulma": "^0.7.4",
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.9",
+    "vue": "^2.6.10",
     "vue-analytics": "^5.16.4",
     "vue-meta": "^1.5.8",
     "vue-property-decorator": "^8.0.0",
@@ -35,9 +35,9 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.1.0",
     "sitemap-generator": "^8.3.3",
-    "typescript": "^3.3.3333",
+    "typescript": "^3.3.4000",
     "url-loader": "^1.1.2",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.9"
+    "vue-template-compiler": "^2.6.10"
   }
 }

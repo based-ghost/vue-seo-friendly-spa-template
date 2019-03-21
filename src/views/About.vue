@@ -13,12 +13,12 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { RoutesConfig } from '@/config/routes.config';
+    import { routesConfig } from '@/config/routes.config';
     import { buildMetaInfo } from '@/utils/metaInfo';
 
     @Component({
         metaInfo() {
-            return buildMetaInfo(RoutesConfig.About.meta.metaInfo);
+            return buildMetaInfo(routesConfig.About.meta.metaInfo);
         },
     })
     export default class About extends Vue { }

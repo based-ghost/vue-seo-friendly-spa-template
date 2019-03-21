@@ -1,4 +1,4 @@
-﻿export const RoutesConfig = {
+﻿export const routesConfig = {
     Home: {
         path: '/',
         displayName: 'Home',
