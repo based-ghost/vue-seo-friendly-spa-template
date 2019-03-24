@@ -5,10 +5,7 @@ import App from '@/App.vue';
 import router from '@/router';
 import Meta from 'vue-meta';
 import VueAnalytics from 'vue-analytics';
-import '@/registerServiceWorker';
-
-// Vue Configuration flags
-Vue.config.productionTip = (process.env.NODE_ENV === 'production');
+import './registerServiceWorker';
 
 // Register vue-meta
 Vue.use(Meta);
@@ -25,6 +22,9 @@ Vue.use(VueAnalytics, {
         sendHitTask: (process.env.NODE_ENV === 'production'),
     },
 });
+
+// Vue Configuration flags
+Vue.config.productionTip = false;
 
 // Mount app to Vue instance
 // mounted() has callback to fire event that the prerender plugin listens for in order to take its snapshot
