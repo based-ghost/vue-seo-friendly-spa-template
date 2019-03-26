@@ -91,7 +91,7 @@ renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
 
 Remainder of the configuration takes place in `vue.config.js` file where the plugin is added and configured. In the `postProcess` callback I am editing the prerendered content using `cheerio` so you can load the raw prerendered html string into a usable document and modify it using JQuery-like syntax, rather than parsing a long string and calling .replace. I found that adding a `defer` attribute to all the `script tags` is optimal since the initial render will not need any javascript loaded - this will allow the browser to load the scripts when needed and improve initial load performance.
 
-NOTE: I didn't get around to do much in the way of testing, but from what I have seen it also makes sense to remove the google-analytics script from the prerendered html and allow the client to add the script later and use it immediately. Appeared to speed up the initial load times.
+<strong>Note:</strong> I didn't get around to do much in the way of testing, but from what I have seen it also makes sense to remove the google-analytics script from the prerendered html and allow the client to add the script later and use it immediately. Appeared to speed up the initial load times.
 
  ALso, I found that dynamically adding the `data-server-rendered='true'` attribute in the `postProcess` (rather than hard-coding in the index.html file) seems to work - this lets the client know that this nodes contents was rendered on server and to hydrate the html with changes, rather than render/replace.
 
