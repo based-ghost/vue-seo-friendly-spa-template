@@ -5,7 +5,7 @@
         <div class="container has-text-centered">
           <div class="blog-title-img is-flex is-horizontal-center">
             <figure class="image is-154x154">
-              <img src="../assets/img/logo.png" alt="" />
+              <img src="@/assets/img/logo.png" alt="" />
             </figure>
           </div>
           <h1 class="title blog-title">SEO Friendly SPA</h1>

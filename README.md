@@ -1,9 +1,9 @@
 # vue-seo-friendly-spa-template
 Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). You can find the React version here: [react-seo-friendly-spa-template](https://github.com/based-ghost/react-seo-friendly-spa-template)
 
+## Demo
 
 ![demo](./demo/vue-seo-friendly-demo-2.gif)
-
 
 ## General Overview
 This template mimics the setup I went through when experimenting with the creation of my own static front-end blog site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live here: https://basedghostdevelopment.com. After playing around with this process & technologies I figured I'd build a higher-level (yet still feature-rich) abstraction of that project for quick re-use in the future.
@@ -89,7 +89,11 @@ renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
 }),
 ```
 
-Remainder of the configuration takes place in `vue.config.js` file where the plugin is added and configured. In the `postProcess` callback I am editing the prerendered content using `cheerio` so you can load the raw prerendered html string into a usable document and modify it using JQuery-like syntax, rather than parsing a long string and calling .replace. I found that adding a `defer` attribute to all the `script tags` is optimal since the initial render will not need any javascript loaded (the google analytics script will have the async attribute, so this will override the defer action and load in time for initial render) - this will allow the browser to load the scripts when needed and improve initial load performance. I also found that dynamically adding the `data-server-rendered='true'` attribute in the `postProcess` (rather than hard-coding in the index.html file) seems to work - this lets the client know that this nodes contents was rendered on server and to hydrate the html with changes, rather than render/replace.
+Remainder of the configuration takes place in `vue.config.js` file where the plugin is added and configured. In the `postProcess` callback I am editing the prerendered content using `cheerio` so you can load the raw prerendered html string into a usable document and modify it using JQuery-like syntax, rather than parsing a long string and calling .replace. I found that adding a `defer` attribute to all the `script tags` is optimal since the initial render will not need any javascript loaded - this will allow the browser to load the scripts when needed and improve initial load performance.
+
+NOTE: I didn't get around to do much in the way of testing, but from what I have seen it also makes sense to remove the google-analytics script from the prerendered html and allow the client to add the script later and use it immediately. Appeared to speed up the initial load times.
+
+ ALso, I found that dynamically adding the `data-server-rendered='true'` attribute in the `postProcess` (rather than hard-coding in the index.html file) seems to work - this lets the client know that this nodes contents was rendered on server and to hydrate the html with changes, rather than render/replace.
 
 ## Scripts
 

@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
-        <img src="../assets/img/vue-seo-template.png" width="215" alt="" />
+        <img src="@/assets/img/vue-seo-template.png" width="215" alt="" />
       </div>
       <div id="navbar-routes" class="navbar-routes">
         <router-link :to="routes.Home.path" class="navbar-item">

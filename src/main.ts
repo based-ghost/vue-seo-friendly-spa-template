@@ -5,7 +5,7 @@ import App from '@/App.vue';
 import router from '@/router';
 import Meta from 'vue-meta';
 import VueAnalytics from 'vue-analytics';
-import './registerServiceWorker';
+import '@/registerServiceWorker';
 
 // Register vue-meta
 Vue.use(Meta);

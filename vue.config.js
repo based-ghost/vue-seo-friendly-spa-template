@@ -1,9 +1,8 @@
 /* eslint-disable no-param-reassign,import/no-extraneous-dependencies */
 const path = require('path');
 const cheerio = require('cheerio');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
-// const CompressionWebpackPlugin = require("compression-webpack-plugin");
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   // https://cli.vuejs.org/guide/webpack.html
@@ -21,19 +20,12 @@ module.exports = {
       },
       plugins: [
       // https://github.com/webpack-contrib/copy-webpack-plugin
-      new CopyWebpackPlugin([
+      /* new CopyWebpackPlugin([
         {
           from: 'public/manifest.json',
           to: 'manifest.webmanifest',
         },
-      ]),
-      /* new CompressionWebpackPlugin({
-          filename: "[path].gz[query]",
-          algorithm: "gzip",
-          test: /\.(js|css)$/,
-          threshold: 8192,
-          minRatio: 0.8 
-        }), */
+      ]), */
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
@@ -47,9 +39,12 @@ module.exports = {
             }
             
             const $ = cheerio.load(context.html);
-
+            const headEl = $('head');
+            
             // Remove duplicate preload scripts (should be taken care of in .js bundle - this removes the preload warnings in Chrome)
-            $('head').children('link[rel="preload"][as="script"]').remove();
+            // Remove google analytics script (will be readded by client)
+            headEl.children('link[rel="preload"][as="script"]').remove();
+            headEl.children('script[src*="google-analytics"]').remove();
 
             // Add defer attribute to script tags (load performance improvement since .js resource loading can occur following first render)
             $('script').each(function(i, elem) {
@@ -78,21 +73,13 @@ module.exports = {
 
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
-    name: 'VueSeoFriendlySpaTemplate',
-    themeColor: '#fff',
-    msTileColor: '#fff',
-    iconPaths: {
-      favicon32: 'img/icons/favicon-32x32.png',
-      favicon16: 'img/icons/favicon-16x16.png',
-      appleTouchIcon: 'img/icons/apple-touch-icon-152x152.png',
-      maskIcon: 'img/icons/safari-pinned-tab.svg',
-      msTileImage: 'img/icons/msapplication-icon-144x144.png',
-    },
+    workboxPluginMode: 'GenerateSW',
     workboxOptions: {
-      cacheId: 'VueSeoSpa',
+      skipWaiting: true,
+      cacheId: 'vue-seo',
       importWorkboxFrom: 'local',
       navigateFallback: 'index.html',
       navigateFallbackWhitelist: [/^((?!\/404).)*$/],
-    },
-  },
+    }
+  }
 };
