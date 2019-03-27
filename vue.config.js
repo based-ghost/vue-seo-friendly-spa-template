@@ -73,6 +73,9 @@ module.exports = {
 
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
+    name: 'VueSeoFriendlySpaTemplate',
+    themeColor: '#fff',
+    msTileColor: '#fff',
     workboxPluginMode: 'GenerateSW',
     workboxOptions: {
       skipWaiting: true,
