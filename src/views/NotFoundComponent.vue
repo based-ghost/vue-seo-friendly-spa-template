@@ -3,7 +3,7 @@
     <div class="tile is-parent is-notification-tile-parent is-vertical is-8">
       <div class="notification is-danger">
         <div class="title">
-          <font-awesome-icon icon="exclamation-circle"/>404 Not Found
+          <font-awesome-icon icon="exclamation-circle"/> 404 Not Found
         </div>
         <p class="subtitle">The requested page could not be found.</p>
       </div>

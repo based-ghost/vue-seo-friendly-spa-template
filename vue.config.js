@@ -2,7 +2,6 @@
 const path = require('path');
 const cheerio = require('cheerio');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   // https://cli.vuejs.org/guide/webpack.html
@@ -19,13 +18,6 @@ module.exports = {
         maxAssetSize: 512000
       },
       plugins: [
-      // https://github.com/webpack-contrib/copy-webpack-plugin
-      /* new CopyWebpackPlugin([
-        {
-          from: 'public/manifest.json',
-          to: 'manifest.webmanifest',
-        },
-      ]), */
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,

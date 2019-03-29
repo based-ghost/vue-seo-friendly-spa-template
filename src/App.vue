@@ -19,5 +19,5 @@ import AppFooter from "@/components/Footer.vue";
     AppFooter
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue { }
 </script>
