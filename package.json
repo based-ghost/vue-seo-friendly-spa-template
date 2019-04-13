@@ -20,7 +20,7 @@
     "vue-analytics": "^5.16.4",
     "vue-meta": "^1.6.0",
     "vue-property-decorator": "^8.1.0",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.5",
@@ -35,7 +35,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.1.0",
     "sitemap-generator": "^8.3.3",
-    "typescript": "^3.4.2",
+    "typescript": "^3.4.3",
     "url-loader": "^1.1.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10"
