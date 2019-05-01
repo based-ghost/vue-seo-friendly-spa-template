@@ -3,7 +3,7 @@
     <div class="tile is-parent is-notification-tile-parent is-vertical is-8">
       <div class="notification is-primary">
         <div class="title">
-          <font-awesome-icon icon="info"/> About Page
+          <font-awesome-icon icon="info"/>About Page
         </div>
         <p class="subtitle">About page/application/company description.</p>
       </div>
@@ -21,5 +21,5 @@ import { buildMetaInfo } from "@/utils/metaInfo";
     return buildMetaInfo(routesConfig.About.meta.metaInfo);
   }
 })
-export default class About extends Vue { }
+export default class About extends Vue {}
 </script>
