@@ -13,7 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
-    "bulma": "^0.7.4",
+    "bulma": "^0.7.5",
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
