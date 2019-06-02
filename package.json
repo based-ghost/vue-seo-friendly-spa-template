@@ -17,7 +17,7 @@
     "cheerio": "^1.0.0-rc.2",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
-    "vue-analytics": "^5.16.4",
+    "vue-analytics": "^5.17.0",
     "vue-meta": "^1.6.0",
     "vue-property-decorator": "^8.1.1",
     "vue-router": "^3.0.6"
@@ -29,12 +29,12 @@
     "@vue/cli-service": "^3.8.0",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
-    "image-webpack-loader": "^4.6.0",
+    "image-webpack-loader": "^5.0.0",
     "node-sass": "^4.12.0",
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.1.0",
     "sitemap-generator": "^8.4.0",
-    "typescript": "^3.4.5",
+    "typescript": "^3.5.1",
     "url-loader": "^1.1.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10"
