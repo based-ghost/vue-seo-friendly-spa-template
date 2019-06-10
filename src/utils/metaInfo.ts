@@ -8,7 +8,6 @@ export const buildMetaInfo = (routeMetaInfo: object = {}): MetaInfo => {
             {
                 property: 'og:title',
                 content:  '',
-                template: '',
                 vmid: 'og:title',
             },
             {
@@ -34,7 +33,6 @@ export const buildMetaInfo = (routeMetaInfo: object = {}): MetaInfo => {
     metaInfo.title = title;
     metaInfo.titleTemplate = titleTemplate;
     metaInfo.meta[0].content = title;
-    metaInfo.meta[0].template = titleTemplate;
     metaInfo.meta[1].content = description;
     metaInfo.meta[2].content = description;
 

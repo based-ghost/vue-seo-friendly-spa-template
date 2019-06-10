@@ -85,9 +85,7 @@ import { routesConfig } from "@/config/routes.config";
 import { buildMetaInfo } from "@/utils/metaInfo";
 
 @Component({
-  metaInfo() {
-    return buildMetaInfo(routesConfig.Home.meta.metaInfo);
-  }
+  metaInfo: () => buildMetaInfo(routesConfig.Home.meta.metaInfo)
 })
 export default class Home extends Vue {}
 </script>

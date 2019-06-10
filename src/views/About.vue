@@ -17,9 +17,7 @@ import { routesConfig } from "@/config/routes.config";
 import { buildMetaInfo } from "@/utils/metaInfo";
 
 @Component({
-  metaInfo() {
-    return buildMetaInfo(routesConfig.About.meta.metaInfo);
-  }
+  metaInfo: () => buildMetaInfo(routesConfig.About.meta.metaInfo)
 })
 export default class About extends Vue {}
 </script>

@@ -16,9 +16,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { buildMetaInfo } from "@/utils/metaInfo";
 
 @Component({
-  metaInfo() {
-    return buildMetaInfo();
-  }
+  metaInfo: () => buildMetaInfo()
 })
 export default class NotFoundComponent extends Vue {
   private mounted(): void {
