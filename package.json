@@ -23,10 +23,10 @@
     "vue-router": "^3.0.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-babel": "^3.9.2",
     "@vue/cli-plugin-pwa": "^3.9.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-service": "^3.9.2",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
     "image-webpack-loader": "^5.0.0",
