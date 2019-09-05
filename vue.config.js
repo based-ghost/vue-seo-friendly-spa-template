@@ -54,14 +54,18 @@ module.exports = {
     };
   },
 
+  
   // Load sass global variables/mixins - can then be referenced in style sheets / in-line style .vue style tags
-  css: {
+  // NO LONGER VALID CONFIGURATION AFTER RECENT UPDATE TO SASS-LOADER PACKAGE
+  // IMPORT VARIABLES AND MIXINS TOWARDS BEGINNING OF SASS IMPORTS FOR NOW
+  
+  /* css: {
     loaderOptions: {
       sass: {
         data: `@import "~@/assets/style/base/variables.scss";`
       }
     }
-  },
+  }, */
 
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {

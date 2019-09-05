@@ -1,4 +1,7 @@
-﻿// Bulma imports
+﻿// Custom variables/mixins imports
+@import 'base/variables.scss';
+
+// Bulma imports
 @import '~bulma/sass/utilities/_all.sass';
 @import '~bulma/sass/base/_all.sass';
 @import '~bulma/sass/elements/box.sass';
