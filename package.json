@@ -9,9 +9,9 @@
     "sitemap": "node sitemap-generator"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "^0.1.7",
     "bulma": "^0.7.5",
     "cheerio": "^1.0.0-rc.2",
@@ -34,7 +34,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^8.0.0",
     "sitemap-generator": "^8.4.0",
-    "typescript": "^3.6.2",
+    "typescript": "^3.6.3",
     "url-loader": "^2.1.0",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10"
