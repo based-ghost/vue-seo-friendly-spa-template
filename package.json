@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/vue-fontawesome": "^0.1.7",
+    "@fortawesome/vue-fontawesome": "^0.1.8",
     "bulma": "^0.8.0",
     "cheerio": "^1.0.0-rc.3",
     "register-service-worker": "^1.6.2",
@@ -34,7 +34,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^8.0.0",
     "sitemap-generator": "^8.4.2",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.2",
     "url-loader": "^2.2.0",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10"
