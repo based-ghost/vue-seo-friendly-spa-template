@@ -2,20 +2,24 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
-        <img src="@/assets/img/vue-seo-template.png" width="215" alt="Vue SEO Logo" />
+        <img
+          width="215"
+          alt="Vue SEO Logo"
+          src="@/assets/img/vue-seo-template.png"
+        />
       </div>
       <div id="navbar-routes" class="navbar-routes">
-        <router-link :to="routes.Home.path" class="navbar-item">
+        <router-link :to="routesConfig.Home.path" class="navbar-item">
           <span class="icon">
-            <font-awesome-icon :icon="routes.Home.meta.icon"/>
+            <font-awesome-icon :icon="routesConfig.Home.meta.icon"/>
           </span>
-          <span>{{routes.Home.displayName}}</span>
+          <span>{{routesConfig.Home.name}}</span>
         </router-link>
-        <router-link :to="routes.About.path" class="navbar-item">
+        <router-link :to="routesConfig.About.path" class="navbar-item">
           <span class="icon">
-            <font-awesome-icon :icon="routes.About.meta.icon"/>
+            <font-awesome-icon :icon="routesConfig.About.meta.icon"/>
           </span>
-          <span>{{routes.About.displayName}}</span>
+          <span>{{routesConfig.About.name}}</span>
         </router-link>
       </div>
     </div>
@@ -24,10 +28,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { routesConfig } from "@/config/routes.config";
+import { RoutesConfig } from "@/config/routes.config";
 
 @Component
 export default class NavBar extends Vue {
-  private readonly routes = routesConfig;
+  public readonly routesConfig: RoutesConfig = RoutesConfig;
 }
 </script>

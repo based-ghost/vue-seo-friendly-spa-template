@@ -81,11 +81,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { routesConfig } from "@/config/routes.config";
-import { buildMetaInfo } from "@/utils/metaInfo";
+import { MetaInfoHome } from "@/config/metaInfo.config";
 
 @Component({
-  metaInfo: () => buildMetaInfo(routesConfig.Home.meta.metaInfo)
+  metaInfo: MetaInfoHome
 })
-export default class Home extends Vue {}
+export default class Home extends Vue { }
 </script>

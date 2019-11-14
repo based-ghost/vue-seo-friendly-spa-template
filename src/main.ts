@@ -1,10 +1,10 @@
-import "@/assets/style/main.scss";
-import "@/config/fa.config";
 import Vue from "vue";
+import "@/assets/style/main.scss";
 import App from "@/App.vue";
 import router from "@/router";
 import Meta from "vue-meta";
 import VueAnalytics from "vue-analytics";
+import "@/config/fa.config";
 import "@/registerServiceWorker";
 
 // Register vue-meta
@@ -19,19 +19,13 @@ Vue.use(VueAnalytics, {
   checkDuplicatedScript: true,
   router,
   debug: {
-    sendHitTask: process.env.NODE_ENV === "production"
-  }
+    sendHitTask: (process.env.NODE_ENV === "production"),
+  },
 });
 
-// Vue Configuration flags
 Vue.config.productionTip = false;
 
-// Mount app to Vue instance
-// mounted() has callback to fire event that the prerender plugin listens for in order to take its snapshot
 new Vue({
   router,
   render: (h) => h(App),
-  mounted() {
-    document.dispatchEvent(new Event("render-event"));
-  }
 }).$mount("#app");

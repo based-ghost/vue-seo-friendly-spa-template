@@ -16,6 +16,5 @@
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#fff",
-  "description": "Vue.js PWA/SPA template configured for SEO"
+  "theme_color": "#fff"
 }

@@ -10,8 +10,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import NavBar from "@/components/NavBar.vue";
-import AppFooter from "@/components/Footer.vue";
+import { AppFooter, NavBar } from "@/components";
 
 @Component({
   components: {
@@ -19,5 +18,5 @@ import AppFooter from "@/components/Footer.vue";
     AppFooter
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue { }
 </script>

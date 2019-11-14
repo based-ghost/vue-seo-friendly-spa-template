@@ -1,9 +1,10 @@
 <template>
   <section class="container">
-    <div class="tile is-parent is-notification-tile-parent is-vertical is-8">
-      <div class="notification is-primary">
-        <div class="title">
-          <font-awesome-icon icon="info"/>About Page
+    <div class="tile is-parent is-8 is-vertical is-notification-tile">
+      <div class="notification tile is-child is-primary">
+        <div>
+          <font-awesome-icon icon="info" size="2x" />
+          <span class="title">About Page</span>
         </div>
         <p class="subtitle">About page/application/company description.</p>
       </div>
@@ -13,11 +14,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { routesConfig } from "@/config/routes.config";
-import { buildMetaInfo } from "@/utils/metaInfo";
+import { MetaInfoAbout } from "@/config/metaInfo.config";
 
 @Component({
-  metaInfo: () => buildMetaInfo(routesConfig.About.meta.metaInfo)
+  metaInfo: MetaInfoAbout
 })
-export default class About extends Vue {}
+export default class About extends Vue { }
 </script>

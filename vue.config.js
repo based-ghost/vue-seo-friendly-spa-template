@@ -22,26 +22,19 @@ module.exports = {
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about", "/404"],
-          renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-            renderAfterDocumentEvent: "render-event"
-          }),
+          renderer: new PrerenderSPAPlugin.PuppeteerRenderer({}),
           postProcess(context) {
             if (context.route === "/404") {
               context.outputPath = path.join(config.output.path, "/404.html");
             }
 
             const $ = cheerio.load(context.html);
-            const headEl = $("head");
 
             // Remove duplicate preload scripts (should be taken care of in .js bundle - this removes the preload warnings in Chrome)
             // Remove google analytics script (will be readded by client)
+            const headEl = $("head");
             headEl.children('link[rel="preload"][as="script"]').remove();
             headEl.children('script[src*="google-analytics"]').remove();
-
-            // Add defer attribute to script tags (load performance improvement since .js resource loading can occur following first render)
-            $("script").each(function() {
-              $(this).attr("defer", "");
-            });
 
             // Add data-server-rendered="true" to #app (dynamically add here rather than hard code in index.html)
             $("#app").attr("data-server-rendered", "true");
@@ -54,19 +47,6 @@ module.exports = {
     };
   },
 
-  
-  // Load sass global variables/mixins - can then be referenced in style sheets / in-line style .vue style tags
-  // NO LONGER VALID CONFIGURATION AFTER RECENT UPDATE TO SASS-LOADER PACKAGE
-  // IMPORT VARIABLES AND MIXINS TOWARDS BEGINNING OF SASS IMPORTS FOR NOW
-  
-  /* css: {
-    loaderOptions: {
-      sass: {
-        data: `@import "~@/assets/style/base/variables.scss";`
-      }
-    }
-  }, */
-
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
     name: "VueSeoFriendlySpaTemplate",
@@ -75,9 +55,9 @@ module.exports = {
     workboxPluginMode: "GenerateSW",
     workboxOptions: {
       skipWaiting: true,
-      cacheId: "vue-seo",
+      cacheId: "VueSeoSpa",
       importWorkboxFrom: "local",
-      navigateFallback: "index.html",
+      navigateFallback: "/index.html",
       navigateFallbackWhitelist: [/^((?!\/404).)*$/]
     }
   }
