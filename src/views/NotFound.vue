@@ -1,7 +1,7 @@
 <template>
   <section class="container view-wrapper">
     <div class="tile is-parent is-8 is-vertical is-notification-tile is-not-found-tile">
-      <div :class="['notification tile is-child is-danger', {'rubberBand-animation': isLocation404}]">
+      <div :class="`notification tile is-child is-danger ${isLocation404 ? 'rubberBand-animation' : 'hide'}`">
         <div>
           <font-awesome-icon icon="exclamation-circle" size="2x" />
           <span class="title">404 Not Found</span>

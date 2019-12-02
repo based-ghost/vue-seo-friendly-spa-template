@@ -28,7 +28,7 @@
     "@vue/cli-plugin-pwa": "^4.1.1",
     "@vue/cli-plugin-typescript": "^4.1.1",
     "@vue/cli-service": "^4.1.1",
-    "css-loader": "^3.2.0",
+    "css-loader": "^3.2.1",
     "file-loader": "^4.3.0",
     "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.13.0",

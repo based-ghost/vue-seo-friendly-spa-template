@@ -6,8 +6,8 @@
           <div class="is-flex is-horizontal-center">
             <figure class="image is-158x158">
               <font-awesome-icon
+                class="vue-svg"
                 :icon="['fab', 'vuejs']"
-                class="vue-svg pulse-vue-logo-animation"
               />
             </figure>
           </div>
