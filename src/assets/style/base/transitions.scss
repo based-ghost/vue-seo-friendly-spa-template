@@ -12,17 +12,22 @@
   animation: rubberBand 1s;
 }
 
+.pulse-vue-logo-animation {
+  transform: scale(1);
+  animation: heartbeatPulse 1.25s infinite;
+}
+
 .pageSlideDown-enter-active {
-  animation: page-enter-slideDown both cubic-bezier(0.4, 0, 0, 1.5);
+  animation: pageEnterSlideDown both cubic-bezier(0.4, 0, 0, 1.5);
   animation-duration: 0.35s;
 }
 
 .pageSlideDown-leave-active {
-  animation: page-leave-fadeOut ease;
+  animation: pageLeaveFadeOut ease;
   animation-duration: 0.25s;
 }
 
-@keyframes page-leave-fadeOut {
+@keyframes pageLeaveFadeOut {
   from {
     opacity: 1;
   }
@@ -31,13 +36,28 @@
   }
 }
 
-@keyframes page-enter-slideDown {
+@keyframes pageEnterSlideDown {
   from {
     opacity: 0;
     transform: translate3d(0, -150px, 0);
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes heartbeatPulse {
+  0% {
+    transform: scale(0.95);
+    color: rgba(103, 222, 169, 0.8);
+  }
+  70% {
+    transform: scale(1);
+    color: $color-green-highlight;
+  }
+  100% {
+    transform: scale(0.95);
+    color: rgba(103, 222, 169, 0.8);
   }
 }
 

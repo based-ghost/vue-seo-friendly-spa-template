@@ -1,26 +1,28 @@
 {
-    "defaultSeverity": "warning",
-    "extends": [
-      "tslint:recommended"
-    ],
-    "linterOptions": {
-      "exclude": [
-        "node_modules/**"
-      ]
-    },
-    "rules": {
-        "interface-over-type-literal": false,
-        "quotemark": false,
-        "ordered-imports": false,
-        "member-ordering": false,
-        "trailing-comma": false,
-        "eofline": false,
-        "no-string-literal": false,
-        "object-literal-sort-keys": false,
-        "no-consecutive-blank-lines": false,
-        "no-console": {
-            "severity": "warning",
-            "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
-        }
+  "defaultSeverity": "warning",
+  "extends": ["tslint:recommended"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "src/**/**/*.tsx",
+      "src/**/**/*.ts",
+      "src/**/*.tsx",
+      "src/*.tsx"
+    ]
+  },
+  "rules": {
+    "interface-over-type-literal": false,
+    "quotemark": false,
+    "ordered-imports": false,
+    "member-ordering": false,
+    "trailing-comma": false,
+    "eofline": false,
+    "no-string-literal": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "no-console": {
+      "severity": "warning",
+      "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
     }
+  }
 }

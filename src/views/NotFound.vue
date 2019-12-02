@@ -1,10 +1,7 @@
 <template>
-  <section class="container">
+  <section class="container view-wrapper">
     <div class="tile is-parent is-8 is-vertical is-notification-tile is-not-found-tile">
-      <div
-        class="notification tile is-child is-danger"
-        :class="{ 'rubberBand-animation': isLocation404 }"
-      >
+      <div :class="['notification tile is-child is-danger', {'rubberBand-animation': isLocation404}]">
         <div>
           <font-awesome-icon icon="exclamation-circle" size="2x" />
           <span class="title">404 Not Found</span>
@@ -20,14 +17,14 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class NotFound extends Vue {
-  public mounted(): void {
-    if (window.location.pathname !== "/404") {
-      window.location.href = "/404";
-    }
-  }
+  public isLocation404: boolean = false;
 
-  get isLocation404(): boolean {
-    return (window && window.location.pathname === '/404');
+  public created(): void {
+    if (window.location.pathname !== '/404') {
+      window.location.href = '/404';
+    } else {
+      this.isLocation404 = true;
+    }
   }
 }
 </script>

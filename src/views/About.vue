@@ -1,12 +1,12 @@
 <template>
-  <section class="container">
+  <section class="container view-wrapper">
     <div class="tile is-parent is-8 is-vertical is-notification-tile">
       <div class="notification tile is-child is-primary">
         <div>
-          <font-awesome-icon icon="info" size="2x" />
+          <font-awesome-icon icon="info-circle" size="2x" />
           <span class="title">About Page</span>
         </div>
-        <p class="subtitle">About page/application/company description.</p>
+        <p class="subtitle">Very interesting information may go here.</p>
       </div>
     </div>
   </section>
@@ -19,5 +19,5 @@ import { MetaInfoAbout } from "@/config/metaInfo.config";
 @Component({
   metaInfo: MetaInfoAbout
 })
-export default class About extends Vue { }
+export default class About extends Vue {}
 </script>

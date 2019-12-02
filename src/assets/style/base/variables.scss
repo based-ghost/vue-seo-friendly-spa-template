@@ -1,9 +1,10 @@
 ﻿$color-hero-is-dark: #282c34;
 $color-nav-bar: #20232a;
 $color-green-highlight: #67dea9;
+$navbar-height: 4.25rem;
 
 @mixin browserIsIE {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  @media all and (-ms-high-contrast: none) {
     @content;
   }
 }

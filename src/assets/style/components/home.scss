@@ -2,61 +2,47 @@
   background-color: $color-hero-is-dark;
 
   .hero-body {
-    padding: 2.25rem 1.5rem;
+    padding: 1.25rem 1.5rem 2.5rem;
 
     svg {
-      margin-right: 0.35rem;
-      font-size: 1.25em !important;
       color: $color-green-highlight;
+    }
 
-      @include centerStackedColumnContent {
-        font-size: 1.075em !important;
+    .container {
+      > .subtitle {
+        svg {
+          font-size: 90%;
+          margin-right: 0.6rem;
+        }
       }
-    }
 
-    hr {
-      background-color: white;
-      height: 1px;
-      margin: 0 0 1.75em 0;
-      opacity: 0.5;
-    }
-
-    .blog-title-img {
-      padding-bottom: 0.5rem;
+      hr {
+        background-color: hsla(0,0%,100%,.45);
+        height: 1px;
+        margin: 0 auto 1.75em auto;
+        opacity: 0.6;
+        width: 75%;
+      }
     }
 
     .subtitle {
       color: #fff;
-      font-size: 1.25em;
-
-      @include centerStackedColumnContent {
-        line-height: 1.6;
-        font-size: 1.025em;
-      }
+      font-size: 1.1em;
 
       &:first-of-type {
         margin-top: -0.025rem;
       }
 
       &:not(:last-child) {
-        margin-bottom: 0.9rem;
-
-        @include centerStackedColumnContent {
-          margin-bottom: 0.8rem;
-        }
+        margin-bottom: 0.75rem;
       }
-    }
-
-    code {
-      background-color: #4e525a;
-      color: $color-green-highlight;
-      font-size: 1em;
-      font-weight: 600;
-      padding: 0.085em 0.12em 0.085em;
-      font-family: inherit;
 
       @include centerStackedColumnContent {
-        font-size: 0.95em;
+        line-height: 1.6;
+        font-size: 1.025em;
+        &:not(:last-child) {
+          margin-bottom: 0.65rem;
+        }
       }
     }
   }
@@ -80,8 +66,8 @@
 }
 
 .dashboard-content {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   code {
     background-color: rgba(103, 222, 169, 0.25);
@@ -89,8 +75,8 @@
   }
 
   hr {
-    background-color: #dbdbdb;
-    margin: 1rem 0;
+    background-color: hsla(0,100%,0%,.125);
+    margin: 0.5rem 0;
     height: 1px;
   }
 
@@ -103,9 +89,9 @@
         font-weight: 600;
       }
     }
-
-    > hr {
-      @media (min-width: 769px) {
+    
+    @media (min-width: 769px) {
+      > hr {
         display: none;
       }
     }

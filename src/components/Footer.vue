@@ -1,7 +1,13 @@
 ﻿<template functional>
   <footer class="footer">
     <div class="buttons">
-      <a class="button is-medium" aria-label="GitHub">
+      <a
+        target="_blank"
+        aria-label="GitHub"
+        class="button is-medium"
+        rel="noopener noreferrer"
+        href="https://github.com/based-ghost"
+      >
         <font-awesome-icon :icon="['fab', 'github']"/>
       </a>
       <a class="button is-medium" aria-label="Twitter">

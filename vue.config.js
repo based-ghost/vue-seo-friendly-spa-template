@@ -4,6 +4,32 @@ const cheerio = require("cheerio");
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
 
 module.exports = {
+  // https://github.com/visualfanatic/vue-svg-loader
+  chainWebpack: config => {
+    const svgRule = config.module.rule("svg");
+    svgRule.uses.clear();
+
+    svgRule
+      .use("babel-loader")
+      .loader("babel-loader")
+      .end()
+      .oneOf("inline")
+      .resourceQuery(/inline/)
+      .use("vue-svg-loader")
+      .loader("vue-svg-loader")
+      .end()
+      .end()
+      .oneOf("external")
+      .use("file-loader")
+      .loader("file-loader")
+      .options({
+        name: "assets/[name].[hash:8].[ext]",
+        svgo: {
+          plugins: [{ prefixIds: true }]
+        }
+      });
+  },
+
   // https://cli.vuejs.org/guide/webpack.html
   configureWebpack: config => {
     if (process.env.NODE_ENV !== "production") {
@@ -22,24 +48,20 @@ module.exports = {
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about", "/404"],
+          renderAfterDocumentEvent: 'prerender-event',
           renderer: new PrerenderSPAPlugin.PuppeteerRenderer({}),
           postProcess(context) {
             if (context.route === "/404") {
               context.outputPath = path.join(config.output.path, "/404.html");
             }
 
-            const $ = cheerio.load(context.html);
-
-            // Remove duplicate preload scripts (should be taken care of in .js bundle - this removes the preload warnings in Chrome)
             // Remove google analytics script (will be readded by client)
-            const headEl = $("head");
-            headEl.children('link[rel="preload"][as="script"]').remove();
-            headEl.children('script[src*="google-analytics"]').remove();
-
             // Add data-server-rendered="true" to #app (dynamically add here rather than hard code in index.html)
-            $("#app").attr("data-server-rendered", "true");
-
+            const $ = cheerio.load(context.html);
+            $('head').children('script[src*="google-analytics"]').remove();
+            $('#app').attr('data-server-rendered', 'true');
             context.html = $.html();
+
             return context;
           }
         })

@@ -1,30 +1,31 @@
 ﻿import Vue from "vue";
-import { library, config } from "@fortawesome/fontawesome-svg-core";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import {
-  faHome,
-  faInfo,
   faCheck,
+  faInfoCircle,
+  faAngleDoubleUp,
+  faExternalLinkAlt,
   faExclamationCircle
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
+  faVuejs,
   faGithub,
   faMediumM,
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 
-// Prevents adding of @fortawesome/fontawesome-svg-core/styles.css - global css will have only what we need
-config.autoAddCss = false;
-
 library.add(
-  faHome,
-  faInfo,
+  faVuejs,
   faCheck,
   faGithub,
   faMediumM,
   faTwitter,
+  faInfoCircle,
+  faAngleDoubleUp,
+  faExternalLinkAlt,
   faExclamationCircle
 );
 

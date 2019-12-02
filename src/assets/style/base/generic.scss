@@ -11,11 +11,28 @@
   }
 }
 
-.image {
-  &.is-154x154 {
-    height: 154px;
-    width: 154px;
-  }
+code {
+  background-color: #444850;
+  color: $color-green-highlight;
+  padding: 0.15em 0.45em 0.15em;
+  border-radius: 0.3em;
+  font-size: 90%;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+}
+
+.view-wrapper {
+  padding-top: $navbar-height;
+}
+
+.vue-svg {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.is-158x158 {
+  height: 158px;
+  width: 158px;
 }
 
 .subtitle {
@@ -23,72 +40,25 @@
   font-size: 1.6em;
   letter-spacing: 0.01em;
 
+  &.is-tile-subtitle {
+    font-size: 1.25em;
+    margin-bottom: 0.55rem;
+    > strong {
+      font-weight: 900;
+    }
+  }
+
   @include renderTabletTitleText {
     font-size: 1.35em;
+    &.is-tile-subtitle {
+      font-size: 1.125em;
+    }
   }
 
   @include renderMobileTitleText {
     font-size: 1.125em;
-  }
-
-  &.is-tile-subtitle {
-    font-size: 1.25em;
-    margin-bottom: 0.55rem;
-
-    > strong {
-      font-weight: 900;
-    }
-
-    @include renderTabletTitleText {
-      font-size: 1.125em;
-    }
-
-    @include renderMobileTitleText {
+    &.is-tile-subtitle {
       font-size: 1em;
-    }
-  }
-}
-
-.footer {
-  color: #fff;
-  background-color: $color-nav-bar;
-  padding: 3rem 1.5rem 3rem;
-  font-size: 1.15rem;
-  width: 100%;
-  margin: auto;
-
-  @include centerStackedColumnContent {
-    font-size: 1rem;
-  }
-
-  .content {
-    text-align: center;
-    word-spacing: 0.05rem;
-  }
-
-  .buttons {
-    margin-bottom: 0rem;
-
-    > .button {
-      margin-bottom: 0;
-      margin-right: 0 !important;
-      color: #fff;
-      background-color: transparent;
-      border-color: transparent;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-
-      &:first-child {
-        margin-left: auto !important;
-      }
-
-      &:last-child {
-        margin-right: auto !important;
-      }
-
-      .icon {
-        align-items: baseline;
-      }
     }
   }
 }
@@ -128,27 +98,27 @@
       min-height: 115px;
     }
 
-    @include renderMobileTitleText {
-      svg {
-        vertical-align: -0.225em;
-      }
-    }
-
     .title {
       font-size: 2em;
       font-weight: 700;
       margin-left: 0.75rem;
-
-      @include renderMobileTitleText {
-        font-size: 1.5em;
-      }
     }
 
     .subtitle {
       font-size: 1.6em;
       margin-top: 0.25rem;
+    }
 
-      @include renderMobileTitleText {
+    @include renderMobileTitleText {
+      svg {
+        vertical-align: -0.225em;
+      }
+
+      .title {
+        font-size: 1.5em;
+      }
+
+      .subtitle {
         font-size: 1.05em;
       }
     }

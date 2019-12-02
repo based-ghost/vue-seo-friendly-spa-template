@@ -1,22 +1,24 @@
 <template>
   <div id="app">
-    <nav-bar/>
+    <nav-bar />
     <transition :name="$route.meta.transitionName" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
-    <app-footer/>
+    <back-to-top />
+    <app-footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AppFooter, NavBar } from "@/components";
+import { AppFooter, NavBar, BackToTop } from "@/components";
 
 @Component({
   components: {
     NavBar,
-    AppFooter
+    AppFooter,
+    BackToTop,
   }
 })
-export default class App extends Vue { }
+export default class App extends Vue {}
 </script>
