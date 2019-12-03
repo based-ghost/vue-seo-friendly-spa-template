@@ -6,7 +6,7 @@ Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). 
 ![demo](./demo/VueSeoFriendlyDemo.gif)
 
 ## General Overview
-This template reflects some of the setup I went through when experimenting with the creation of my own static front-end personal site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live here: https://basedghostdevelopment.com. After playing around with this process I figured I'd build a higher-level abstraction of that project for quick re-use in the future.
+This template reflects some of the setup I went through when experimenting with the creation of my own static front-end personal site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live [here](https://basedghostdevelopment.com). After playing around with this process I figured I'd build a higher-level abstraction of that project for quick re-use in the future.
 
 ## Technology Stack Overview
 
