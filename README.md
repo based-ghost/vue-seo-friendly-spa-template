@@ -6,7 +6,7 @@ Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). 
 ![demo](./demo/VueSeoFriendlyDemo.gif)
 
 ## General Overview
-This template mimics the setup I went through when experimenting with the creation of my own static front-end blog site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live here: https://basedghostdevelopment.com. After playing around with this process & technologies I figured I'd build a higher-level (yet still feature-rich) abstraction of that project for quick re-use in the future.
+This template reflects some of the setup I went through when experimenting with the creation of my own static front-end personal site that was to be hosted on Netlify (using GitHub as a repository/pipeline). You can find that experiment live here: https://basedghostdevelopment.com. After playing around with this process I figured I'd build a higher-level abstraction of that project for quick re-use in the future.
 
 ## Technology Stack Overview
 
@@ -18,18 +18,45 @@ initial scaffolding
 
 [`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
   
-I have it configured to use a utility function called `buildMetaInfo` which returns an object of type `MetaInfo` - in the component options of the component, you must declare the `metaInfo()` method, which must return an object of type `MetaInfo`:
+I have it configured to use a readonly objects of type `MetaInfo` (defined in `@/config/metaInfo.config.ts`) - in the component options of the component, you must declare the `metaInfo` prop, which takes the object as its value:
 
-e.g. `About.vue`
+`metaInfo.config.ts`
 ```typescript
-    import { buildMetaInfo } from '@/utils/metaInfo';
+import { MetaInfo } from 'vue-meta';
 
-    @Component({
-        metaInfo() {
-            return buildMetaInfo(RoutesConfig.About.meta.metaInfo);
-        },
-    })
-    export default class About extends Vue { }
+export const MetaInfoAbout = Object.freeze<MetaInfo>({
+  title: 'About',
+  titleTemplate: '%s | VueSeoFriendlySpaTemplate',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'About',
+      vmid: 'og:title',
+    },
+    {
+      property: 'og:description',
+      content: 'About page description - limit of 160 characters (try for 150-155).',
+      vmid: 'og:description',
+    },
+    {
+      name: 'description',
+      content: 'About page description - limit of 160 characters (try for 150-155).',
+    },
+  ],
+});
+```
+
+`About.vue`
+```typescript
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { MetaInfoAbout } from "@/config/metaInfo.config";
+
+@Component({
+  metaInfo: MetaInfoAbout
+})
+export default class About extends Vue {}
+</script>
 ```
 
 ### vue-analytics
@@ -44,18 +71,21 @@ My preferred configuration:
 
 `main.ts`
 ```typescript
-    import Vue from 'vue';
-    import router from '@/router';
-    import VueAnalytics from 'vue-analytics';
+import Vue from 'vue';
+import router from '@/router';
+import VueAnalytics from 'vue-analytics';
 
-    Vue.use(VueAnalytics, {
-        id: 'UA-xxxxxxxxx-x',
-        checkDuplicatedScript: true,
-        router,
-        debug: {
-            sendHitTask: (process.env.NODE_ENV === 'production'),
-        },
-    });
+const isProd = (process.env.NODE_ENV === 'production');
+
+Vue.use(VueAnalytics, {
+  id: 'UA-xxxxxxxxx-x',
+  checkDuplicatedScript: true,
+  router,
+  debug: {
+    enabled: !isProd,
+    sendHitTask: isProd,
+  },
+});
 ```
 
 ### prerender-spa-plugin
