@@ -3,7 +3,7 @@ Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). 
 
 Features:
 - TypeScript
-- Custom `BackToTop.vue` component that uses [`vue-scroll-to`](https://github.com/rigor789/vue-scrollto)
+- Custom `BackToTop.vue` component that uses [`vue-scrollto`](https://github.com/rigor789/vue-scrollto)
 - Configured to allow custom SVG loading with [`vue-svg-loader`](https://github.com/visualfanatic/vue-svg-loader)
 - Google analytics management with [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics)
 - Route meta tag management with [`vue-meta`](https://github.com/nuxt/vue-meta)
