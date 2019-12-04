@@ -97,26 +97,67 @@ Configured in the app as follows:
 `main.ts` - need to fire an event after the app is mounted to let the prerenderer know when to pick up from. 
 `vue.config.js` - add the `renderAfterDocument` property to the renderer (value matching the event name dispatched in `main.ts`).
 
-<strong>Note:</strong> This is only needed if you need to await the result of an async request. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal).
+<strong>Note:</strong> `renderAfterDocument` is only needed if you need to await the result of an async request and/or any of the prerendered markup relies on javascript. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal. I also found in more complex applications that the `mounted()` callback fires prematurely before some of the more deeply nested child components finish rendering - making use of `$nextTick` here solves this issue.
 
 `main.ts`
 ```typescript
-// Mount app to Vue instance
-// mounted() has callback to fire event that the prerender plugin listens for in order to take its snapshot
+import Vue from "vue";
+import App from "@/App.vue";
+import router from "@/router";
+
+const prerenderEventName = 'prerender-event';
+
+// In the mounted callback dispatch the event telling prerendered app when to pick up from.
+// Wrap in this.$nextTick callback to ensure all components/child components have finished mounting/rendering.
 new Vue({
-     router,
-     render: (h) => h(App),
-     mounted() {
-         document.dispatchEvent(new Event('render-event'));
-     },
+  router,
+  render: (h) => h(App),
+  mounted: function () {
+    this.$nextTick(function () {
+      document.dispatchEvent(new Event(prerenderEventName));
+    });
+  }
 }).$mount('#app');
 ```
 
 `vue.config.js`
 ```javascript
-renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-  renderAfterDocumentEvent: 'render-event'
-}),
+const path = require("path");
+const cheerio = require("cheerio");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+
+module.exports = {
+  configureWebpack: (config) => {
+    if (process.env.NODE_ENV !== "production") {
+      return {};
+    }
+
+    return {
+      plugins: [
+        new PrerenderSPAPlugin({
+          staticDir: config.output.path,
+          routes: ["/", "/about", "/404"],
+          renderAfterDocumentEvent: 'prerender-event',
+          renderer: new PrerenderSPAPlugin.PuppeteerRenderer({}),
+          postProcess(context) {
+            if (context.route === "/404") {
+              context.outputPath = path.join(config.output.path, "/404.html");
+            }
+
+            // Remove google analytics script (will be readded by client)
+            // Add data-server-rendered="true" to #app (dynamically add here rather than hard code in index.html)
+            const $ = cheerio.load(context.html);
+            $('head').children('script[src*="google-analytics"]').remove();
+            $('#app').attr('data-server-rendered', 'true');
+            context.html = $.html();
+
+            return context;
+          }
+        })
+      ]
+    };
+  }
+};
 ```
 
 Remainder of the configuration takes place in `vue.config.js` file where the plugin is added and configured. In the `postProcess` callback I am editing the prerendered content using `cheerio` so you can load the raw prerendered html string into a usable document and modify it using JQuery-like syntax, rather than parsing a long string and calling .replace. I found that adding a `defer` attribute to all the `script tags` is optimal since the initial render will not need any javascript loaded - this will allow the browser to load the scripts when needed and improve initial load performance.
