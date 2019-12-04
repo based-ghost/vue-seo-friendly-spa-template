@@ -1,5 +1,13 @@
 # vue-seo-friendly-spa-template
-Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). You can find the React version here: [react-seo-friendly-spa-template](https://github.com/based-ghost/react-seo-friendly-spa-template)
+Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). You can find the React version here: [react-seo-friendly-spa-template](https://github.com/based-ghost/react-seo-friendly-spa-template).
+
+Features:
+- TypeScript
+- Custom `BackToTop.vue` component that uses [`vue-scroll-to`](https://github.com/rigor789/vue-scrollto)
+- Configured to allow custom SVG loading with [`vue-svg-loader`](https://github.com/visualfanatic/vue-svg-loader)
+- Google analytics management with [`vue-analytics`](https://github.com/MatteoGabriele/vue-analytics)
+- Route meta tag management with [`vue-meta`](https://github.com/nuxt/vue-meta)
+- Configured to serve prerendered static HTML with [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin)
 
 ## Demo
 
