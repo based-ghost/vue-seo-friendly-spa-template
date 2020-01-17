@@ -20,7 +20,7 @@
     "vue-analytics": "^5.22.1",
     "vue-meta": "^2.3.2",
     "vue-property-decorator": "^8.3.0",
-    "vue-router": "^3.1.4",
+    "vue-router": "^3.1.5",
     "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
@@ -31,11 +31,11 @@
     "css-loader": "^3.4.2",
     "file-loader": "^5.0.2",
     "image-webpack-loader": "^6.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^8.0.2",
     "sitemap-generator": "^8.4.2",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "url-loader": "^3.0.0",
     "vue-style-loader": "^4.1.2",
     "vue-svg-loader": "^0.15.0",
