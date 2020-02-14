@@ -18,11 +18,11 @@ export default class NavBar extends Vue {
   public show: boolean = false;
 
   public created(): void {
-    window.addEventListener('scroll', this.handleScroll);
+    document.addEventListener('scroll', this.handleScroll, true);
   }
 
   public beforeDestroy(): void {
-    window.removeEventListener('scroll', this.handleScroll);
+    document.removeEventListener('scroll', this.handleScroll, true);
   }
 
   public handleScroll(): void {

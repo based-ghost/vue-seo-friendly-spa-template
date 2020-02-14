@@ -1,13 +1,14 @@
 import Vue from "vue";
-import "@/assets/style/main.scss";
 import App from "@/App.vue";
+import "@/registerServiceWorker";
+import "@/assets/style/main.scss";
 import router from "@/router";
 import Meta from "vue-meta";
 import VueAnalytics from "vue-analytics";
 import VueScrollTo from 'vue-scrollto';
 import "@/config/fa.config";
-import "@/registerServiceWorker";
 
+const googleTrackingNum = 'UA-xxxxxxxxx-x';
 const prerenderEventName = 'prerender-event';
 const isProd = (process.env.NODE_ENV === 'production');
 
@@ -16,7 +17,7 @@ Vue.use(Meta);
 
 // Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {
-  id: 'UA-xxxxxxxxx-x',
+  id: googleTrackingNum,
   checkDuplicatedScript: true,
   router,
   debug: {
