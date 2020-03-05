@@ -4,7 +4,7 @@
   "description": "Vue.js PWA/SPA template configured for SEO",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "sitemap": "node sitemap-generator"
   },
