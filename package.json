@@ -24,11 +24,11 @@
     "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.2.3",
-    "@vue/cli-plugin-pwa": "^4.2.3",
-    "@vue/cli-plugin-typescript": "^4.2.3",
-    "@vue/cli-service": "^4.2.3",
-    "css-loader": "^3.4.2",
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-pwa": "^4.3.0",
+    "@vue/cli-plugin-typescript": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "css-loader": "^3.5.0",
     "file-loader": "^6.0.0",
     "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.13.1",
