@@ -1,8 +1,6 @@
 ﻿import { RouteConfig } from "vue-router";
 
-export type RoutesConfig = { [key: string]: RouteConfig; };
-
-export const RoutesConfig = Object.freeze<RoutesConfig>({
+export const RoutesConfig = Object.freeze<Record<string, RouteConfig>>({
   Home: {
     path: "/",
     name: "Home",

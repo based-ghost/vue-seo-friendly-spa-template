@@ -3,9 +3,7 @@ export type FeatureInfo = {
   readonly description: string;
 };
 
-export type FeatureInfoConfig = { [key: string]: FeatureInfo; };
-
-export const FeatureInfoConfig = Object.freeze<FeatureInfoConfig>({
+export const FeatureInfoConfig = Object.freeze<Record<string, FeatureInfo>>({
   typescript: {
     description: 'TypeScript + class-based component syntax'
   },

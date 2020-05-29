@@ -77,14 +77,10 @@ import { FeatureInfoConfig, FeatureInfo } from "@/config/features.config";
   metaInfo: MetaInfoHome
 })
 export default class Home extends Vue {
-  public readonly featureInfoConfig: FeatureInfoConfig = FeatureInfoConfig;
+  public readonly featureInfoConfig: Record<string, FeatureInfo> = FeatureInfoConfig;
 
   get featureInfoList(): FeatureInfo[] {
-    const arr: FeatureInfo[] = [];
-    Object.keys(this.featureInfoConfig).forEach((key: string): void => {
-      arr.push({ ...this.featureInfoConfig[key] });
-    });
-    return arr;
+    return Object.keys(this.featureInfoConfig).map((key) => this.featureInfoConfig[key]);
   }
 }
 </script>

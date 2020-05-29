@@ -34,6 +34,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { RouteConfig } from "vue-router";
 import { RoutesConfig } from "@/config/routes.config";
 import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
 
@@ -43,6 +44,6 @@ import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
   }
 })
 export default class NavBar extends Vue {
-  public readonly routesConfig: RoutesConfig = RoutesConfig;
+  public readonly routesConfig: Record<string, RouteConfig> = RoutesConfig;
 }
 </script>
