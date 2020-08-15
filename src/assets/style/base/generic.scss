@@ -1,6 +1,6 @@
 ﻿.title {
-  color: $color-hero-is-dark;
   font-weight: 700;
+  color: $color-hero-is-dark;
 
   @include renderTabletTitleText {
     font-size: 1.75em;
@@ -12,11 +12,11 @@
 }
 
 code {
+  font-size: 90%;
+  border-radius: 0.3em;
   background-color: #444850;
   color: $color-green-highlight;
   padding: 0.15em 0.45em 0.15em;
-  border-radius: 0.3em;
-  font-size: 90%;
   transition: color 0.2s ease-out, background-color 0.2s ease-out;
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
@@ -26,23 +26,24 @@ code {
 }
 
 .vue-svg {
-  height: 100% !important;
   width: 100% !important;
+  height: 100% !important;
 }
 
 .is-158x158 {
-  height: 158px;
   width: 158px;
+  height: 158px;
 }
 
 .subtitle {
-  color: $color-hero-is-dark;
   font-size: 1.6em;
   letter-spacing: 0.01em;
+  color: $color-hero-is-dark;
 
   &.is-tile-subtitle {
     font-size: 1.25em;
     margin-bottom: 0.55rem;
+
     > strong {
       font-weight: 900;
     }

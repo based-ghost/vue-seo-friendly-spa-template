@@ -38,8 +38,8 @@ Vue.use(VueScrollTo, {
 new Vue({
   router,
   render: (h) => h(App),
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted: function() {
+    this.$nextTick(() => {
       document.dispatchEvent(new Event(prerenderEventName));
     });
   }

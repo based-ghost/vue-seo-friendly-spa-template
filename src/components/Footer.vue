@@ -8,13 +8,13 @@
         rel="noopener noreferrer"
         href="https://github.com/based-ghost"
       >
-        <font-awesome-icon :icon="['fab', 'github']"/>
+        <font-awesome-icon :icon="['fab', 'github']" />
       </a>
       <a class="button is-medium" aria-label="Twitter">
-        <font-awesome-icon :icon="['fab', 'twitter']"/>
+        <font-awesome-icon :icon="['fab', 'twitter']" />
       </a>
       <a class="button is-medium" aria-label="Medium">
-        <font-awesome-icon :icon="['fab', 'medium-m']"/>
+        <font-awesome-icon :icon="['fab', 'medium-m']" />
       </a>
     </div>
     <div class="content">VueSeoFriendlySpaTemplate.com &copy; 2019</div>

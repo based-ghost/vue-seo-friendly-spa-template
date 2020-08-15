@@ -2,9 +2,9 @@
   <a
     href="#"
     id="back-to-top"
+    :class="{ show }"
     v-scroll-to="'#app'"
     aria-label="BackToTop"
-    :class="{'show': show}"
   >
     <font-awesome-icon icon="angle-double-up" />
   </a>
