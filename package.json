@@ -16,7 +16,7 @@
     "bulma": "^0.9.0",
     "cheerio": "^1.0.0-rc.3",
     "register-service-worker": "^1.7.1",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-analytics": "^5.22.1",
     "vue-class-component": "^7.2.5",
     "vue-meta": "^2.4.0",
@@ -25,10 +25,10 @@
     "vue-scrollto": "^2.18.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.3",
-    "@vue/cli-plugin-pwa": "^4.5.3",
-    "@vue/cli-plugin-typescript": "^4.5.3",
-    "@vue/cli-service": "^4.5.3",
+    "@vue/cli-plugin-babel": "^4.5.4",
+    "@vue/cli-plugin-pwa": "^4.5.4",
+    "@vue/cli-plugin-typescript": "^4.5.4",
+    "@vue/cli-service": "^4.5.4",
     "css-loader": "^4.2.1",
     "file-loader": "^6.0.0",
     "image-webpack-loader": "^6.0.0",
@@ -36,10 +36,10 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^9.0.3",
     "sitemap-generator": "^8.5.0",
-    "typescript": "^3.9.7",
+    "typescript": "^4.0.2",
     "url-loader": "^4.1.0",
     "vue-style-loader": "^4.1.2",
     "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   }
 }
