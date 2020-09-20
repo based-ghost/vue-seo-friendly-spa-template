@@ -4,7 +4,7 @@
     id="back-to-top"
     :class="{ show }"
     v-scroll-to="'#app'"
-    aria-label="BackToTop"
+    aria-label="Back to top"
   >
     <font-awesome-icon icon="angle-double-up" />
   </a>
@@ -26,9 +26,11 @@ export default class NavBar extends Vue {
   }
 
   public handleScroll(): void {
-    if ((window.scrollY || window.pageYOffset) > 100) {
+    const scrollYPos = (window.scrollY || window.pageYOffset);
+
+    if (scrollYPos > 100) {
       this.show = true;
-    } else if ((window.scrollY || window.pageYOffset) === 0) {
+    } else if (scrollYPos === 0) {
       this.show = false;
     }
   }

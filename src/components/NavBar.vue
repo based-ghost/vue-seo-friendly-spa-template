@@ -10,19 +10,19 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link :to="routesConfig.Home.path" class="navbar-item">
-          <span>{{routesConfig.Home.name}}</span>
+        <router-link :to="{ name: 'Home' }" class="navbar-item">
+          <span>Home</span>
         </router-link>
-        <router-link :to="routesConfig.About.path" class="navbar-item">
-          <span>{{routesConfig.About.name}}</span>
+        <router-link :to="{ name: 'About' }" class="navbar-item">
+          <span>About</span>
         </router-link>
         <div class="seperator" />
         <a
           target="_blank"
-          rel="noopener noreferrer"
           aria-label="GitHub"
-          href="https://github.com/based-ghost"
           class="navbar-item"
+          rel="noopener noreferrer"
+          href="https://github.com/based-ghost"
         >
           <span>GitHub</span>
           <font-awesome-icon icon="external-link-alt" />
@@ -34,8 +34,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RouteConfig } from "vue-router";
-import { RoutesConfig } from "@/config/routes.config";
 import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
 
 @Component({
@@ -43,7 +41,5 @@ import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
     VueSeoLogo
   }
 })
-export default class NavBar extends Vue {
-  public readonly routesConfig: Record<string, RouteConfig> = RoutesConfig;
-}
+export default class NavBar extends Vue {}
 </script>

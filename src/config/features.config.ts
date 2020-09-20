@@ -3,7 +3,7 @@ export type FeatureInfo = {
   readonly description: string;
 };
 
-export const FeatureInfoConfig = Object.freeze<Record<string, FeatureInfo>>({
+export const FeatureInfoConfig: Record<string, FeatureInfo> = {
   typescript: {
     description: 'TypeScript + class-based component syntax'
   },
@@ -29,4 +29,4 @@ export const FeatureInfoConfig = Object.freeze<Record<string, FeatureInfo>>({
     description: 'Configured to allow loading of your own SVG images using',
     package: 'vue-svg-loader'
   },
-});
+};

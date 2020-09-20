@@ -1,7 +1,7 @@
 import { MetaInfo } from 'vue-meta';
 
 // Home.vue
-export const MetaInfoHome = Object.freeze<MetaInfo>({
+export const MetaInfoHome: MetaInfo = {
   title: 'Home',
   titleTemplate: '%s | VueSeoFriendlySpaTemplate',
   meta: [
@@ -20,10 +20,10 @@ export const MetaInfoHome = Object.freeze<MetaInfo>({
       content: 'Home page description - limit of 160 characters (try for 150-155).',
     },
   ],
-});
+};
 
 // About.vue
-export const MetaInfoAbout = Object.freeze<MetaInfo>({
+export const MetaInfoAbout: MetaInfo = {
   title: 'About',
   titleTemplate: '%s | VueSeoFriendlySpaTemplate',
   meta: [
@@ -42,4 +42,4 @@ export const MetaInfoAbout = Object.freeze<MetaInfo>({
       content: 'About page description - limit of 160 characters (try for 150-155).',
     },
   ],
-});
+};
