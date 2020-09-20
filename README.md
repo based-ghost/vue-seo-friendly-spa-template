@@ -25,14 +25,15 @@ initial scaffolding
 ### vue-meta
 
 [`vue-meta`](https://github.com/nuxt/vue-meta) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
-  
+
 I have it configured to use a readonly objects of type `MetaInfo` (defined in `@/config/metaInfo.config.ts`) - in the component options of the component, you must declare the `metaInfo` prop, which takes the object as its value:
 
 `metaInfo.config.ts`
 ```typescript
 import { MetaInfo } from 'vue-meta';
 
-export const MetaInfoAbout = Object.freeze<MetaInfo>({
+// About.vue
+export const MetaInfoAbout: MetaInfo = {
   title: 'About',
   titleTemplate: '%s | VueSeoFriendlySpaTemplate',
   meta: [
@@ -51,7 +52,7 @@ export const MetaInfoAbout = Object.freeze<MetaInfo>({
       content: 'About page description - limit of 160 characters (try for 150-155).',
     },
   ],
-});
+};
 ```
 
 `About.vue`
@@ -83,10 +84,11 @@ import Vue from 'vue';
 import router from '@/router';
 import VueAnalytics from 'vue-analytics';
 
+const googleTrackingNum = 'UA-xxxxxxxxx-x';
 const isProd = (process.env.NODE_ENV === 'production');
 
 Vue.use(VueAnalytics, {
-  id: 'UA-xxxxxxxxx-x',
+  id: googleTrackingNum,
   checkDuplicatedScript: true,
   router,
   debug: {
@@ -102,7 +104,7 @@ Vue.use(VueAnalytics, {
 
 Configured in the app as follows:
 
-`main.ts` - need to fire an event after the app is mounted to let the prerenderer know when to pick up from. 
+`main.ts` - need to fire an event after the app is mounted to let the prerenderer know when to pick up from.
 `vue.config.js` - add the `renderAfterDocument` property to the renderer (value matching the event name dispatched in `main.ts`).
 
 <strong>Note:</strong> `renderAfterDocument` is only needed if you need to await the result of an async request and/or any of the prerendered markup relies on javascript. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal. I also found in more complex applications that the `mounted()` callback fires prematurely before some of the more deeply nested child components finish rendering - making use of `$nextTick` here solves this issue.
@@ -115,13 +117,13 @@ import router from "@/router";
 
 const prerenderEventName = 'prerender-event';
 
-// In the mounted callback dispatch the event telling prerendered app when to pick up from.
-// Wrap in this.$nextTick callback to ensure all components/child components have finished mounting/rendering.
+// In the mounted callback dispatch the event telling prerendered app to render
+// ...wrap in this.$nextTick callback to ensure all components/child components have finished mounting
 new Vue({
   router,
   render: (h) => h(App),
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted: function() {
+    this.$nextTick(() => {
       document.dispatchEvent(new Event(prerenderEventName));
     });
   }
@@ -142,6 +144,7 @@ module.exports = {
 
     return {
       plugins: [
+        // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about", "/404"],
