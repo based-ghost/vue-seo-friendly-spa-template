@@ -1,8 +1,6 @@
 import Vue from "vue";
-import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
-import NotFound from "@/views/NotFound.vue";
 import Router, { RouteConfig } from "vue-router";
+import { Home, About, NotFound } from '@/views';
 
 Vue.use(Router);
 
@@ -21,7 +19,7 @@ export const routes: RouteConfig[] = [
     name: 'About',
     component: About,
     meta: {
-      transitionName: 'pageSlideDown',
+      transitionName: 'page-slide-down',
       icon: 'info'
     }
   },
@@ -37,6 +35,10 @@ export default new Router({
   base: process.env.BASE_URL,
   linkExactActiveClass: 'is-active',
   scrollBehavior() {
-    return { x: 0, y: 0 };
-  },
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 250); // Timout delay set to match animation duration of from-page
+    });
+  }
 });

@@ -4,6 +4,15 @@ const cheerio = require("cheerio");
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
 
 module.exports = {
+  // define port
+  devServer: {
+    //proxy: 'http://160.153.250.157:33000', // option A
+    //host: 'http://localhost', // option B
+    port: '3000', // option C - recommended
+    hot: true,
+    disableHostCheck: true
+  },
+
   // https://github.com/visualfanatic/vue-svg-loader
   chainWebpack: config => {
     const svgRule = config.module.rule("svg");
@@ -37,11 +46,8 @@ module.exports = {
     }
 
     return {
-      devtool: false,
       performance: {
         hints: false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
       },
       plugins: [
         // https://github.com/chrisvfritz/prerender-spa-plugin

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar />
+    <navbar />
     <transition :name="$route.meta.transitionName" mode="out-in">
       <router-view />
     </transition>
@@ -11,11 +11,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AppFooter, NavBar, BackToTop } from "@/components";
+import { AppFooter, Navbar, BackToTop } from "@/components";
 
 @Component({
   components: {
-    NavBar,
+    Navbar,
     AppFooter,
     BackToTop,
   }

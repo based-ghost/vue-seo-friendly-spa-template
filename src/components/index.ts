@@ -1,9 +1,10 @@
-import NavBar from './NavBar.vue';
+import Navbar from './Navbar.vue';
 import AppFooter from './Footer.vue';
 import BackToTop from './BackToTop.vue';
 
+
 export {
-  NavBar,
+  Navbar,
   AppFooter,
-  BackToTop,
+  BackToTop
 };

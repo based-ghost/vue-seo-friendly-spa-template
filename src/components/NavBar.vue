@@ -5,6 +5,7 @@
         <vue-seo-logo
           role="img"
           width="170"
+          height="68"
           id="vue-seo-logo"
           aria-hidden="true"
         />
@@ -41,5 +42,5 @@ import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
     VueSeoLogo
   }
 })
-export default class NavBar extends Vue {}
+export default class Navbar extends Vue {}
 </script>

@@ -1,6 +1,6 @@
-export type FeatureInfo = {
-  readonly package?: string;
-  readonly description: string;
+export interface FeatureInfo {
+  package?: string;
+  description: string;
 };
 
 export const FeatureInfoConfig: Record<string, FeatureInfo> = {
