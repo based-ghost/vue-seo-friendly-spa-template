@@ -11,11 +11,8 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link :to="{ name: 'Home' }" class="navbar-item">
-          <span>Home</span>
-        </router-link>
-        <router-link :to="{ name: 'About' }" class="navbar-item">
-          <span>About</span>
+        <router-link v-for="route in navLinkRoutes" :key="route.name" :to="route.path" class="navbar-item">
+          <span>{{route.name}}</span>
         </router-link>
         <div class="seperator" />
         <a
@@ -36,11 +33,16 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
+import { RouteConfig } from "vue-router";
 
 @Component({
   components: {
     VueSeoLogo
   }
 })
-export default class Navbar extends Vue {}
+export default class Navbar extends Vue {
+  public navLinkRoutes: RouteConfig[] = (
+    this.$router.options.routes || []
+  ).filter(({ name }) => !!name);
+}
 </script>

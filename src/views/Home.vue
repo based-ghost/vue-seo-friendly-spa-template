@@ -5,10 +5,7 @@
         <div class="container has-text-centered">
           <div class="is-flex is-horizontal-center">
             <figure class="image is-158x158">
-              <font-awesome-icon
-                class="vue-svg"
-                :icon="['fab', 'vuejs']"
-              />
+              <font-awesome-icon class="vue-svg" :icon="['fab', 'vuejs']" />
             </figure>
           </div>
           <h1 class="title blog-title">SEO Friendly SPA</h1>

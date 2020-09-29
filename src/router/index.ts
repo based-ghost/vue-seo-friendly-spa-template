@@ -4,7 +4,7 @@ import { Home, About, NotFound } from '@/views';
 
 Vue.use(Router);
 
-export const routes: RouteConfig[] = [
+const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'Home',
