@@ -17,7 +17,7 @@ import { AppFooter, Navbar, BackToTop } from "@/components";
   components: {
     Navbar,
     AppFooter,
-    BackToTop,
+    BackToTop
   }
 })
 export default class App extends Vue {}

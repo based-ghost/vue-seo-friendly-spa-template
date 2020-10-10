@@ -41,8 +41,6 @@ import { RouteConfig } from "vue-router";
   }
 })
 export default class Navbar extends Vue {
-  public navLinkRoutes: RouteConfig[] = (
-    this.$router.options.routes || []
-  ).filter(({ name }) => !!name);
+  public navLinkRoutes: RouteConfig[] = (this.$router.options.routes || []).filter(({ name }) => !!name);
 }
 </script>

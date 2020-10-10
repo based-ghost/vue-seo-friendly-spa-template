@@ -8,29 +8,31 @@ import VueAnalytics from "vue-analytics";
 import VueScrollTo from 'vue-scrollto';
 import "@/config/fa.config";
 
-const googleTrackingNum = 'UA-xxxxxxxxx-x';
+const googleTrackingNo = 'UA-xxxxxx-x';
 const prerenderEventName = 'prerender-event';
 const isProd = (process.env.NODE_ENV === 'production');
 
 // Register vue-meta
-Vue.use(Meta);
+Vue.use(Meta, {
+  refreshOnceOnNavigation: true
+});
 
 // Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {
-  id: googleTrackingNum,
+  id: googleTrackingNo,
   checkDuplicatedScript: true,
   router,
   debug: {
     enabled: !isProd,
-    sendHitTask: isProd,
-  },
+    sendHitTask: isProd
+  }
 });
 
 // Register & configure vue-scroll-to package used by BackToTop.vue component
 Vue.use(VueScrollTo, {
   duration: 500,
   container: 'body',
-  easing: 'ease-in-out',
+  easing: 'ease-in-out'
 });
 
 // In the mounted callback dispatch the event telling prerendered app to render
@@ -38,7 +40,7 @@ Vue.use(VueScrollTo, {
 new Vue({
   router,
   render: (h) => h(App),
-  mounted: function() {
+  mounted() {
     this.$nextTick(() => {
       document.dispatchEvent(new Event(prerenderEventName));
     });

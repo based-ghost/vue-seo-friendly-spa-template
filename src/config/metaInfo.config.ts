@@ -8,18 +8,18 @@ export const MetaInfoHome: MetaInfo = {
     {
       property: 'og:title',
       content: 'Home',
-      vmid: 'og:title',
+      vmid: 'og:title'
     },
     {
       property: 'og:description',
       content: 'Home page description - limit of 160 characters (try for 150-155).',
-      vmid: 'og:description',
+      vmid: 'og:description'
     },
     {
       name: 'description',
-      content: 'Home page description - limit of 160 characters (try for 150-155).',
-    },
-  ],
+      content: 'Home page description - limit of 160 characters (try for 150-155).'
+    }
+  ]
 };
 
 // About.vue
@@ -30,16 +30,16 @@ export const MetaInfoAbout: MetaInfo = {
     {
       property: 'og:title',
       content: 'About',
-      vmid: 'og:title',
+      vmid: 'og:title'
     },
     {
       property: 'og:description',
       content: 'About page description - limit of 160 characters (try for 150-155).',
-      vmid: 'og:description',
+      vmid: 'og:description'
     },
     {
       name: 'description',
-      content: 'About page description - limit of 160 characters (try for 150-155).',
-    },
-  ],
+      content: 'About page description - limit of 160 characters (try for 150-155).'
+    }
+  ]
 };

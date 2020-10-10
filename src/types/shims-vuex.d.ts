@@ -1,3 +1,3 @@
-declare module "vuex" {
+declare module 'vuex' {
   export type Store<T> = any;
 }
