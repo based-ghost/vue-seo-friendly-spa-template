@@ -20,11 +20,9 @@ export default class NotFound extends Vue {
   public isLocation404: boolean = false;
 
   public created(): void {
-    if (window.location.pathname !== '/404') {
-      window.location.href = '/404';
-    } else {
-      this.isLocation404 = true;
-    }
+    (window.location.pathname !== '/404')
+      ? window.location.href = '/404'
+      : this.isLocation404 = true;
   }
 }
 </script>

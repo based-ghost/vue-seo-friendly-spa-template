@@ -10,7 +10,7 @@
           </div>
           <h1 class="title blog-title">SEO Friendly SPA</h1>
           <hr>
-          <h2 v-for="(feature, index) in featureInfoList" :key="index" class="subtitle">
+          <h2 v-for="(feature, index) in featureList" :key="index" class="subtitle">
             <font-awesome-icon icon="check" />
             {{feature.description}}
             <code v-if="feature.package">
@@ -76,7 +76,7 @@ import { FeatureInfoConfig, FeatureInfo } from "@/config/features.config";
 export default class Home extends Vue {
   public readonly featureInfoConfig: Record<string, FeatureInfo> = FeatureInfoConfig;
 
-  get featureInfoList(): FeatureInfo[] {
+  get featureList(): FeatureInfo[] {
     return Object.keys(this.featureInfoConfig).map((key) => this.featureInfoConfig[key]);
   }
 }

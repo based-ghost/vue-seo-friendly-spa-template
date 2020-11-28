@@ -11,8 +11,8 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link v-for="route in navLinkRoutes" :key="route.name" :to="route.path" class="navbar-item">
-          <span>{{route.name}}</span>
+        <router-link v-for="link in navLinks" :key="link.name" :to="link.path" class="navbar-item">
+          <span>{{link.name}}</span>
         </router-link>
         <div class="seperator" />
         <a
@@ -41,6 +41,6 @@ import { RouteConfig } from "vue-router";
   }
 })
 export default class Navbar extends Vue {
-  public navLinkRoutes: RouteConfig[] = (this.$router.options.routes || []).filter(({ name }) => !!name);
+  public navLinks: RouteConfig[] = (this.$router.options.routes || []).filter(({ name }) => !!name);
 }
 </script>

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router, { RouteConfig } from "vue-router";
-import { Home, About, NotFound } from '@/views';
+import { Home, About, NotFound } from "@/views";
 
 Vue.use(Router);
 
@@ -10,8 +10,7 @@ const routes: RouteConfig[] = [
     name: 'Home',
     component: Home,
     meta: {
-      transitionName: 'fade',
-      icon: 'home'
+      transitionName: 'fade'
     }
   },
   {
@@ -19,8 +18,7 @@ const routes: RouteConfig[] = [
     name: 'About',
     component: About,
     meta: {
-      transitionName: 'page-slide-down',
-      icon: 'info'
+      transitionName: 'page-slide-down'
     }
   },
   {
