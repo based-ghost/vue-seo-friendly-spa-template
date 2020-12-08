@@ -74,10 +74,6 @@ import { FeatureInfoConfig, FeatureInfo } from "@/config/features.config";
   metaInfo: MetaInfoHome
 })
 export default class Home extends Vue {
-  public readonly featureInfoConfig: Record<string, FeatureInfo> = FeatureInfoConfig;
-
-  get featureList(): FeatureInfo[] {
-    return Object.keys(this.featureInfoConfig).map((key) => this.featureInfoConfig[key]);
-  }
+  public readonly featureList: FeatureInfo[] = Object.values(FeatureInfoConfig);
 }
 </script>

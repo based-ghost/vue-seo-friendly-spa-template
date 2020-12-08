@@ -17,7 +17,9 @@
         <font-awesome-icon :icon="['fab', 'medium-m']" />
       </a>
     </div>
-    <div class="content">VueSeoFriendlySpaTemplate.com &copy; 2019</div>
+    <div class="content">
+      VueSeoFriendlySpaTemplate.com &copy; 2019
+    </div>
   </footer>
 </template>
 

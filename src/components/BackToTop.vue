@@ -4,7 +4,7 @@
     id="back-to-top"
     :class="{ show }"
     v-scroll-to="'#app'"
-    aria-label="Back to top"
+    aria-label="back to top"
   >
     <font-awesome-icon icon="angle-double-up" />
   </a>
