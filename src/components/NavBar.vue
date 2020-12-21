@@ -11,7 +11,12 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link v-for="link in navLinks" :key="link.name" :to="link.path" class="navbar-item">
+        <router-link
+          v-for="link in navLinks"
+          :key="link.name"
+          :to="link.path"
+          class="navbar-item"
+        >
           <span>{{link.name}}</span>
         </router-link>
         <div class="seperator" />
