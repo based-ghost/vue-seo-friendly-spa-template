@@ -26,7 +26,8 @@ export default class NavBar extends Vue {
   }
 
   public handleScroll(): void {
-    const scrollYPos = (window.scrollY || window.pageYOffset);
+    const scrollYPos = window.scrollY || window.pageYOffset;
+
     if (scrollYPos > 100) {
       this.show = true;
     } else if (scrollYPos === 0) {
