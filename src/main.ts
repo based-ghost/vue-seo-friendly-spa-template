@@ -8,7 +8,7 @@ import VueAnalytics from "vue-analytics";
 import VueScrollTo from 'vue-scrollto';
 import "@/config/fa.config";
 
-const googleTrackingNo = 'UA-xxxxxx-x';
+const googleTrackingNo = 'UA-0000000-0';
 const prerenderEventName = 'prerender-event';
 const isProd = (process.env.NODE_ENV === 'production');
 

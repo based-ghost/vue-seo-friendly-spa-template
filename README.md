@@ -40,18 +40,18 @@ export const MetaInfoAbout: MetaInfo = {
     {
       property: 'og:title',
       content: 'About',
-      vmid: 'og:title',
+      vmid: 'og:title'
     },
     {
       property: 'og:description',
       content: 'About page description - limit of 160 characters (try for 150-155).',
-      vmid: 'og:description',
+      vmid: 'og:description'
     },
     {
       name: 'description',
-      content: 'About page description - limit of 160 characters (try for 150-155).',
-    },
-  ],
+      content: 'About page description - limit of 160 characters (try for 150-155).'
+    }
+  ]
 };
 ```
 
@@ -84,17 +84,18 @@ import Vue from 'vue';
 import router from '@/router';
 import VueAnalytics from 'vue-analytics';
 
-const googleTrackingNum = 'UA-xxxxxxxxx-x';
+const googleTrackingNo = 'UA-0000000-0';
 const isProd = (process.env.NODE_ENV === 'production');
 
+// Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {
-  id: googleTrackingNum,
+  id: googleTrackingNo,
   checkDuplicatedScript: true,
   router,
   debug: {
     enabled: !isProd,
-    sendHitTask: isProd,
-  },
+    sendHitTask: isProd
+  }
 });
 ```
 
@@ -105,9 +106,9 @@ Vue.use(VueAnalytics, {
 Configured in the app as follows:
 
 `main.ts` - need to fire an event after the app is mounted to let the prerenderer know when to pick up from.
-`vue.config.js` - add the `renderAfterDocument` property to the renderer (value matching the event name dispatched in `main.ts`).
+`vue.config.js` - add the `renderAfterDocumentEvent` property to the renderer (value matching the event name dispatched in `main.ts`).
 
-<strong>Note:</strong> `renderAfterDocument` is only needed if you need to await the result of an async request and/or any of the prerendered markup relies on javascript. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal. I also found in more complex applications that the `mounted()` callback fires prematurely before some of the more deeply nested child components finish rendering - making use of `$nextTick` here solves this issue.
+<strong>Note:</strong> `renderAfterDocumentEvent` is only needed if you need to await the result of an async request and/or any of the prerendered markup relies on javascript. In the default state of this app, it is not needed, but I left it in just in case as the impact to load time is minimal. I also found in more complex applications that the `mounted()` callback fires prematurely before some of the more deeply nested child components finish rendering - making use of `$nextTick` here solves this issue.
 
 `main.ts`
 ```typescript
@@ -122,7 +123,7 @@ const prerenderEventName = 'prerender-event';
 new Vue({
   router,
   render: (h) => h(App),
-  mounted: function() {
+  mounted() {
     this.$nextTick(() => {
       document.dispatchEvent(new Event(prerenderEventName));
     });
@@ -143,6 +144,9 @@ module.exports = {
     }
 
     return {
+      performance: {
+        hints: false,
+      },
       plugins: [
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({

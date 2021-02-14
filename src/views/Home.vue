@@ -13,8 +13,8 @@
           <h2 v-for="(feature, index) in featureList" :key="index" class="subtitle">
             <font-awesome-icon icon="check" />
             {{feature.description}}
-            <code v-if="feature.package">
-              {{feature.package}}
+            <code v-if="feature.packageName">
+              {{feature.packageName}}
             </code>
           </h2>
         </div>

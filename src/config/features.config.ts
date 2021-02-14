@@ -1,9 +1,9 @@
-export interface FeatureInfo {
-  package?: string;
+export type FeatureInfo = Readonly<{
   description: string;
-};
+  packageName?: string;
+}>;
 
-export const FeatureInfoConfig: Record<string, FeatureInfo> = {
+export const FeatureInfoConfig: { [key: string]: FeatureInfo } = {
   typescript: {
     description: 'TypeScript + class-based component syntax'
   },
@@ -15,18 +15,18 @@ export const FeatureInfoConfig: Record<string, FeatureInfo> = {
   },
   vmeta: {
     description: 'Meta tags dynamically handled per route using',
-    package: 'vue-meta'
+    packageName: 'vue-meta'
   },
   vanalytics: {
     description: 'Google Analytics ready to go and easily configurable using',
-    package: 'vue-analytics'
+    packageName: 'vue-analytics'
   },
   prerender: {
     description: 'Configured to serve prerendered html using',
-    package: 'prerender-spa-plugin'
+    packageName: 'prerender-spa-plugin'
   },
   vsvg: {
     description: 'Configured to allow loading of your own SVG images using',
-    package: 'vue-svg-loader'
+    packageName: 'vue-svg-loader'
   },
 };
