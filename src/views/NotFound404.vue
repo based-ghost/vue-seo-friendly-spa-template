@@ -16,7 +16,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class NotFound extends Vue {
+export default class NotFound404 extends Vue {
   public isLocation404: boolean = false;
 
   public created(): void {

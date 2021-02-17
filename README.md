@@ -84,8 +84,8 @@ import Vue from 'vue';
 import router from '@/router';
 import VueAnalytics from 'vue-analytics';
 
-const googleTrackingNo = 'UA-0000000-0';
-const isProd = (process.env.NODE_ENV === 'production');
+const googleTrackingNo = 'UA-000000-01';
+const isProd = process.env.NODE_ENV === 'production';
 
 // Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {

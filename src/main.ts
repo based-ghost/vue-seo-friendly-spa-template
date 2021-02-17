@@ -8,9 +8,9 @@ import VueAnalytics from "vue-analytics";
 import VueScrollTo from 'vue-scrollto';
 import "@/config/fa.config";
 
-const googleTrackingNo = 'UA-0000000-0';
+const googleTrackingNo = 'UA-000000-01';
 const prerenderEventName = 'prerender-event';
-const isProd = (process.env.NODE_ENV === 'production');
+const isProd = process.env.NODE_ENV === 'production';
 
 // Register vue-meta
 Vue.use(Meta, {

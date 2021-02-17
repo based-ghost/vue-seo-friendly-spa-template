@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router, { RouteConfig } from "vue-router";
-import { Home, About, NotFound } from "@/views";
+import { Home, About, NotFound404 } from "@/views";
 
 Vue.use(Router);
 
@@ -23,7 +23,7 @@ const routes: RouteConfig[] = [
   },
   {
     path: '*',
-    component: NotFound
+    component: NotFound404
   }
 ];
 

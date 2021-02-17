@@ -10,7 +10,11 @@
           </div>
           <h1 class="title blog-title">SEO Friendly SPA</h1>
           <hr>
-          <h2 v-for="(feature, index) in featureList" :key="index" class="subtitle">
+          <h2
+            v-for="(feature, index) in featureList"
+            :key="index"
+            class="subtitle"
+          >
             <font-awesome-icon icon="check" />
             {{feature.description}}
             <code v-if="feature.packageName">
