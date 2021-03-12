@@ -1,7 +1,7 @@
-const SitemapGenerator = require("sitemap-generator");
+const SitemapGenerator = require('sitemap-generator');
+const _sitemapUrl = 'https://www.vueseofriendlyspatemplate.com';
 
-const _sitemapUrl = "https://www.vueseofriendlyspatemplate.com";
-
+// create generator
 const generator = SitemapGenerator(_sitemapUrl, {
   lastMod: true,
   stripQuerystring: true,
@@ -9,13 +9,14 @@ const generator = SitemapGenerator(_sitemapUrl, {
 });
 
 // register event listener (SUCCESS => sitemaps created)
-generator.on("done", () => {
+generator.on('done', () => {
   console.log(`sitemap.xml successfully created for URL: ${_sitemapUrl}\n`);
 });
 
 // register event listener (ERROR => { code: 404, message: 'Not found.', url: 'http://example.com/foo' })
-generator.on("error", error => {
+generator.on('error', (error) => {
   console.error(`${JSON.stringify(error)}\n`);
 });
 
+// start the crawler
 generator.start();
