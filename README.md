@@ -30,7 +30,7 @@ I have it configured to use a readonly objects of type `MetaInfo` (defined in `@
 
 `metaInfo.config.ts`
 ```typescript
-import { MetaInfo } from 'vue-meta';
+import type { MetaInfo } from 'vue-meta';
 
 // About.vue
 export const MetaInfoAbout: MetaInfo = {
@@ -89,9 +89,9 @@ const isProd = process.env.NODE_ENV === 'production';
 
 // Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {
+  router,
   id: googleTrackingNo,
   checkDuplicatedScript: true,
-  router,
   debug: {
     enabled: !isProd,
     sendHitTask: isProd

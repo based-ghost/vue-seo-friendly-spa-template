@@ -19,9 +19,9 @@ Vue.use(Meta, {
 
 // Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
 Vue.use(VueAnalytics, {
+  router,
   id: googleTrackingNo,
   checkDuplicatedScript: true,
-  router,
   debug: {
     enabled: !isProd,
     sendHitTask: isProd

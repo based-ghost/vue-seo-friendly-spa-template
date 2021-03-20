@@ -72,7 +72,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { MetaInfoHome } from "@/config/metaInfo.config";
-import { FeatureInfoConfig, FeatureInfo } from "@/config/features.config";
+import { FeatureInfoConfig } from "@/config/features.config";
+
+import type { FeatureInfo } from "@/config/features.config";
 
 @Component({
   metaInfo: MetaInfoHome

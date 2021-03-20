@@ -1,6 +1,8 @@
 import Vue from "vue";
-import Router, { RouteConfig } from "vue-router";
+import Router from "vue-router";
 import { Home, About, NotFound404 } from "@/views";
+
+import type { RouteConfig } from "vue-router";
 
 Vue.use(Router);
 

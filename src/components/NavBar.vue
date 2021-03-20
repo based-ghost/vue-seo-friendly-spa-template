@@ -38,7 +38,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
-import { RouteConfig } from "vue-router";
+
+import type { RouteConfig } from "vue-router";
 
 @Component({
   components: {

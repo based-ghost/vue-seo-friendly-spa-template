@@ -1,4 +1,4 @@
-import { MetaInfo } from 'vue-meta';
+import type { MetaInfo } from 'vue-meta';
 
 // Home.vue
 export const MetaInfoHome: MetaInfo = {
