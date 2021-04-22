@@ -29,13 +29,11 @@ module.exports = {
       .end()
       .end()
       .oneOf("external")
-      .use("file-loader")
-      .loader("file-loader")
+      .use("url-loader")
+      .loader("url-loader")
       .options({
-        name: "assets/[name].[hash:8].[ext]",
-        svgo: {
-          plugins: [{ prefixIds: true }]
-        }
+        limit: 10240,
+        name: "assets/[name].[hash:8].[ext]"
       });
   },
 
