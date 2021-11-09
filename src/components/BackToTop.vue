@@ -1,42 +1,45 @@
+<script setup>
+  import { ref, unref, onUnmounted, onMounted } from 'vue';
+
+  const show = ref(false);
+
+  function handleScroll() {
+    const showVal = unref(show);
+    const { pageYOffset } = window;
+
+    if (
+      (!showVal && pageYOffset > 100) ||
+      (showVal && pageYOffset === 0)
+    ) {
+      show.value = !showVal;
+    }
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+      capture: false
+    });
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+</script>
+
 <template>
   <a
     href="#"
     id="back-to-top"
     :class="{ show }"
-    v-scroll-to="'#app'"
     aria-label="Back to top"
+    v-scroll-to="{ element: '#app' }"
   >
     <font-awesome-icon icon="angle-double-up" />
   </a>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component
-export default class NavBar extends Vue {
-  public show: boolean = false;
-
-  public created(): void {
-    document.addEventListener('scroll', this.handleScroll);
-  }
-
-  public beforeDestroy(): void {
-    document.removeEventListener('scroll', this.handleScroll);
-  }
-
-  private handleScroll(): void {
-    const scrollYPos = window.scrollY || window.pageYOffset;
-    if (scrollYPos > 100) {
-      this.show = true;
-    } else if (scrollYPos === 0) {
-      this.show = false;
-    }
-  }
-}
-</script>
-
-<style lang="scss" scoped>
+<style lang="scss">
   #back-to-top {
     opacity: 0;
     width: 3.5rem;
@@ -49,10 +52,10 @@ export default class NavBar extends Vue {
     position: fixed;
     user-select: none;
     border-radius: 50%;
-    background: rgb(37, 40, 47);
+    background: #67dea9;
+    border: 1px solid transparent;
     -webkit-tap-highlight-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px;
     transition: opacity 0.4s ease, bottom 0.4s ease;
 
     &.show {
@@ -62,8 +65,8 @@ export default class NavBar extends Vue {
 
     > svg {
       display: block;
-      color: #67dea9;
-      font-size: 1.75em;
+      color: #20232a;
+      font-size: 1.8em;
       padding-left: 0.1rem;
       margin: 0.75rem auto auto auto;
     }

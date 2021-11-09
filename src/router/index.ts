@@ -1,44 +1,52 @@
-import Vue from "vue";
-import Router from "vue-router";
-import { Home, About, NotFound404 } from "@/views";
+import { About, Home, NotFound } from '@/views';
+import { createRouter, createWebHistory } from 'vue-router';
 
-import type { RouteConfig } from "vue-router";
+import type { RouteRecordRaw } from 'vue-router';
 
-Vue.use(Router);
+const DESC_SUFFIX = 'description - length <= 160 chars.';
 
-const routes: RouteConfig[] = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
     component: Home,
     meta: {
-      transitionName: 'fade'
-    }
+      transition: 'fade',
+      title: 'Home',
+      description: `Home ${DESC_SUFFIX}`
+    },
   },
   {
     path: '/about',
     name: 'About',
     component: About,
     meta: {
-      transitionName: 'page-slide-down'
-    }
+      transition: 'fade',
+      title: 'About',
+      description: `About ${DESC_SUFFIX}`
+    },
   },
   {
-    path: '*',
-    component: NotFound404
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound
   }
 ];
 
-export default new Router({
+function scrollBehavior() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ left: 0, top: 0 });
+    }, 250);
+  });
+}
+
+// Create new instance of vue-router
+const router = createRouter({
   routes,
-  mode: 'history',
-  base: process.env.BASE_URL,
+  scrollBehavior,
   linkExactActiveClass: 'is-active',
-  scrollBehavior() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ x: 0, y: 0 })
-      }, 250); // Timout delay set to match animation duration of from-page
-    });
-  }
+  history: createWebHistory(process.env.BASE_URL)
 });
+
+export default router;

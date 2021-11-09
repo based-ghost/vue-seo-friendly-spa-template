@@ -1,48 +1,22 @@
-import Vue from "vue";
-import App from "@/App.vue";
-import "@/registerServiceWorker";
-import "@/assets/style/main.scss";
-import router from "@/router";
-import Meta from "vue-meta";
-import VueAnalytics from "vue-analytics";
+import { createApp } from 'vue';
+import App from '@/App.vue';
+
+import '@/registerServiceWorker';
+import '@/assets/style/main.scss';
+import '@/config/fa.config';
+
+import router from '@/router';
+import VueGtag from 'vue-gtag-next';
 import VueScrollTo from 'vue-scrollto';
-import "@/config/fa.config";
+import { vClickOutside } from '@/directives';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { META_MANAGER, VUE_GTAG_OPTIONS, VUE_SCROLLTO_OPTIONS } from '@/config';
 
-const googleTrackingNo = 'UA-000000-01';
-const prerenderEventName = 'prerender-event';
-const isProd = process.env.NODE_ENV === 'production';
-
-// Register vue-meta
-Vue.use(Meta, {
-  refreshOnceOnNavigation: true
-});
-
-// Register vue-analytics (Google Analytics Configuration - replace 'id' with trackingid)
-Vue.use(VueAnalytics, {
-  router,
-  id: googleTrackingNo,
-  checkDuplicatedScript: true,
-  debug: {
-    enabled: !isProd,
-    sendHitTask: isProd
-  }
-});
-
-// Register & configure vue-scroll-to package used by BackToTop.vue component
-Vue.use(VueScrollTo, {
-  duration: 500,
-  container: 'body',
-  easing: 'ease-in-out'
-});
-
-// In the mounted callback dispatch the event telling prerendered app to render
-// ...wrap in this.$nextTick callback to ensure all components/child components have finished mounting
-new Vue({
-  router,
-  render: (h) => h(App),
-  mounted() {
-    this.$nextTick(() => {
-      document.dispatchEvent(new Event(prerenderEventName));
-    });
-  }
-}).$mount('#app');
+createApp(App)
+  .use(router)
+  .use(META_MANAGER)
+  .use(VueGtag, VUE_GTAG_OPTIONS)
+  .use(VueScrollTo, VUE_SCROLLTO_OPTIONS)
+  .directive('click-outside', vClickOutside)
+  .component('font-awesome-icon', FontAwesomeIcon)
+  .mount('#app');

@@ -1,7 +1,9 @@
+@use '../base/variables.scss' as *;
+
 .footer {
   color: #fff;
   background-color: $color-nav-bar;
-  padding: 3rem 1.5rem 3rem;
+  padding: 3rem 1.5rem;
   font-size: 1.15rem;
   width: 100%;
   margin: auto;
@@ -10,18 +12,14 @@
     font-size: 1rem;
   }
 
-  .content {
-    text-align: center;
-    word-spacing: 0.05rem;
-  }
-
   .buttons {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 
     > .button {
       margin-bottom: 0;
       margin-right: 0 !important;
       color: #fff;
+      font-size: 1.4rem;
       background-color: transparent;
       border-color: transparent;
       padding-left: 0.5em;
@@ -31,7 +29,7 @@
       &:hover {
         color: $color-green-highlight;
       }
-      
+
       &:first-child {
         margin-left: auto !important;
       }

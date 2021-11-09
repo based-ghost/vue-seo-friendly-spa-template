@@ -1,27 +1,41 @@
-﻿.title {
+﻿@use './variables.scss' as *;
+
+body {
+  background-color: $theme-primary-body-bg-color;
+  transition: background-color 0.2s ease-out;
+
+  &.secondary-theme {
+    background-color: $theme-secondary-body-bg-color;
+  }
+}
+
+svg {
+  max-width: 100%;
+}
+
+.title {
   font-weight: 700;
   color: $color-hero-is-dark;
 
-  @include renderTabletTitleText {
+  @include renderTabletDevice {
     font-size: 1.75em;
   }
 
-  @include renderMobileTitleText {
+  @include renderMobileDevice {
     font-size: 1.5em;
   }
 }
 
 code {
   font-size: 90%;
-  border-radius: 0.3em;
-  background-color: #444850;
+  border-radius: 3px;
+  background-color: $theme-secondary-code-bg-color;
   color: $color-green-highlight;
-  padding: 0.15em 0.45em 0.15em;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  padding: 0.275em 0.45em;
 }
 
 .view-wrapper {
+  min-height: 875px;
   padding-top: $navbar-height;
 }
 
@@ -30,9 +44,9 @@ code {
   height: 100% !important;
 }
 
-.is-158x158 {
-  width: 158px;
-  height: 158px;
+.is-132x132 {
+  width: 132px;
+  height: 132px;
 }
 
 .subtitle {
@@ -40,27 +54,12 @@ code {
   letter-spacing: 0.01em;
   color: $color-hero-is-dark;
 
-  &.is-tile-subtitle {
-    font-size: 1.25em;
-    margin-bottom: 0.55rem;
-
-    > strong {
-      font-weight: 900;
-    }
-  }
-
-  @include renderTabletTitleText {
+  @include renderTabletDevice {
     font-size: 1.35em;
-    &.is-tile-subtitle {
-      font-size: 1.125em;
-    }
   }
 
-  @include renderMobileTitleText {
+  @include renderMobileDevice {
     font-size: 1.125em;
-    &.is-tile-subtitle {
-      font-size: 1em;
-    }
   }
 }
 
@@ -69,16 +68,9 @@ code {
   justify-content: center;
 }
 
-.is-notification-tile {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4rem !important;
-  padding-bottom: 42rem !important;
-
-  &.is-not-found-tile {
-    padding-top: 15rem !important;
-    padding-bottom: 20rem !important;
-  }
+.notification-tile {
+  margin: 0 auto;
+  padding: 15rem 0 20rem !important;
 
   .notification {
     color: #fff;
@@ -94,27 +86,17 @@ code {
       background-color: #E93E60;
     }
 
-    &.hide {
-      visibility: hidden;
-    }
-
-    /* IE fix for min-heigh on tiles */
-    @include browserIsIE {
-      min-height: 115px;
-    }
-
     .title {
       font-size: 2em;
-      font-weight: 700;
-      margin-left: 0.75rem;
+      margin-left: 0.85rem;
     }
 
     .subtitle {
       font-size: 1.6em;
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
     }
 
-    @include renderMobileTitleText {
+    @include renderMobileDevice {
       svg {
         vertical-align: -0.225em;
       }

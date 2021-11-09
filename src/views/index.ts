@@ -1,9 +1,3 @@
-import Home from './Home.vue';
-import About from './About.vue';
-import NotFound404 from './NotFound404.vue';
-
-export {
-  Home,
-  About,
-  NotFound404
-};
+export { default as Home } from './Home.vue';
+export { default as About } from './About.vue';
+export { default as NotFound } from './NotFound.vue';

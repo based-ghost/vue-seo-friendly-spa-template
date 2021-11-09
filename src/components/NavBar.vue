@@ -1,23 +1,36 @@
+<script setup>
+  import { VueSEO } from '@/icons';
+  import ToggleTheme from './ToggleTheme.vue';
+</script>
+
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
-        <vue-seo-logo
+        <VueSEO
           role="img"
-          width="170"
-          height="68"
+          width="167"
+          height="65"
           id="vue-seo-logo"
           aria-hidden="true"
         />
       </div>
       <div class="navbar-routes">
         <router-link
-          v-for="link in navLinks"
-          :key="link.name"
-          :to="link.path"
+          :to="{ name: 'Home' }"
           class="navbar-item"
         >
-          <span>{{link.name}}</span>
+          <span>Home</span>
+        </router-link>
+        <router-link
+          :to="{ name: 'About' }"
+          class="navbar-item"
+        >
+          <span>About</span>
         </router-link>
         <div class="seperator" />
         <a
@@ -30,23 +43,10 @@
           <span>GitHub</span>
           <font-awesome-icon icon="external-link-alt" />
         </a>
+        <div class="navbar-theme-toggle">
+          <ToggleTheme />
+        </div>
       </div>
     </div>
   </nav>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import VueSeoLogo from "@/assets/img/VueSeoLogo.svg?inline";
-
-import type { RouteConfig } from "vue-router";
-
-@Component({
-  components: {
-    VueSeoLogo
-  }
-})
-export default class Navbar extends Vue {
-  public readonly navLinks: RouteConfig[] = this.$router.options.routes.filter((x) => x.name);
-}
-</script>

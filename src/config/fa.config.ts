@@ -1,23 +1,25 @@
-﻿import Vue from "vue";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+﻿import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
+  faSun,
+  faMoon,
   faCheck,
   faInfoCircle,
   faAngleDoubleUp,
   faExternalLinkAlt,
   faExclamationCircle
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 import {
   faVuejs,
   faGithub,
   faMediumM,
   faTwitter
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 
 library.add(
+  faSun,
+  faMoon,
   faVuejs,
   faCheck,
   faGithub,
@@ -28,5 +30,3 @@ library.add(
   faExternalLinkAlt,
   faExclamationCircle
 );
-
-Vue.component("font-awesome-icon", FontAwesomeIcon);

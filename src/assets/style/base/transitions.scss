@@ -8,59 +8,24 @@
   opacity: 0;
 }
 
-.rubber-band-animation {
-  animation: rubberBand 1s;
+.rubber-band-enter-active {
+  animation: rubberBand_animation 1s;
 }
 
-.page-slide-down-enter-active {
-  animation: pageEnterSlideDown both cubic-bezier(0.4, 0, 0, 1.5);
-  animation-duration: 0.35s;
-}
-
-.page-slide-down-leave-active {
-  animation: pageLeaveFadeOut ease;
-  animation-duration: 0.25s;
-}
-
-@keyframes pageLeaveFadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes pageEnterSlideDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -150px, 0);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes rubberBand {
+@keyframes rubberBand_animation {
   from {
     transform: scale3d(1, 1, 1);
-  }
-  30% {
+  } 30% {
     transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
+  } 40% {
     transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
+  } 50% {
     transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
+  } 65% {
     transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
+  } 75% {
     transform: scale3d(1.05, 0.95, 1);
-  }
-  to {
+  } to {
     transform: scale3d(1, 1, 1);
   }
 }

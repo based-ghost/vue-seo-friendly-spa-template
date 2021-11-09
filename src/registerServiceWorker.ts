@@ -1,10 +1,14 @@
-/* tslint:disable:no-console */
+/* eslint-disable no-console */
+
 import { register } from 'register-service-worker';
 
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
-      console.log('Service worker is active.');
+      console.log(
+        'App is being served from cache by a service worker.\n' +
+        'For more details, visit https://goo.gl/AFskqB'
+      );
     },
     registered() {
       console.log('Service worker has been registered.');
@@ -15,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
     updatefound() {
       console.log('New content is downloading.');
     },
-    updated(reg) {
+    updated() {
       console.log('New content is available; please refresh.');
     },
     offline() {
