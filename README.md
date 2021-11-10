@@ -1,4 +1,6 @@
 # vue-seo-friendly-spa-template
+Built using Vue 3.0.
+
 Vue.js PWA/SPA template configured for SEO (initially scaffolded with vue-cli). You can find the React version here: [react-seo-friendly-spa-template](https://github.com/based-ghost/react-seo-friendly-spa-template).
 
 Features:
