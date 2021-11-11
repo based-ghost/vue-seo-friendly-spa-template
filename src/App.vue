@@ -14,7 +14,9 @@
   useMeta({
     charset: 'utf8',
     og: {
-      type: 'website'
+      locale: 'en_US',
+      type: 'website',
+      site_name: 'VueSeoFriendlySpa'
     },
     htmlAttrs: {
       amp: true,
