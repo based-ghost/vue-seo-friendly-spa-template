@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+package-lock.json
 /dist
 
 # Visual Studio 2015 cache/options directory
