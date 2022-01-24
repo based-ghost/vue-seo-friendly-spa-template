@@ -13,7 +13,7 @@
       <div class="brand-wrapper">
         <VueSEO
           role="img"
-          width="167"
+          width="162"
           height="65"
           id="vue-seo-logo"
           aria-hidden="true"
