@@ -30,7 +30,7 @@
       </a>
     </div>
     <div class="content has-text-centered">
-      Copyright © 2022 vueseofriendlyspa.com
+      Copyright © {{new Date().getFullYear()}} vueseofriendlyspa.com
     </div>
   </footer>
 </template>
