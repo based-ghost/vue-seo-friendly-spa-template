@@ -15,7 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "bulma": "^0.9.3",
     "cheerio": "^1.0.0-rc.10",
-    "core-js": "^3.20.3",
+    "core-js": "^3.21.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.29",
     "vue-gtag-next": "^1.14.0",
@@ -24,8 +24,8 @@
     "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
     "@vue/cli-plugin-babel": "~4.5.15",
     "@vue/cli-plugin-eslint": "~4.5.15",
     "@vue/cli-plugin-pwa": "~4.5.15",
@@ -41,7 +41,7 @@
     "eslint-plugin-vue": "^8.4.0",
     "prerender-spa-plugin": "^3.4.0",
     "prettier": "^2.5.1",
-    "sass": "^1.49.0",
+    "sass": "^1.49.7",
     "sass-loader": "^10.2.0",
     "sitemap-generator": "^8.5.1",
     "typescript": "^4.5.5",
