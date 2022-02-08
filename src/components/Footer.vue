@@ -26,7 +26,7 @@
         rel="noopener noreferrer"
         href="https://github.com/based-ghost"
       >
-        <font-awesome-icon :icon="['fab', 'medium-m']" />
+        <font-awesome-icon :icon="['fab', 'etsy']" />
       </a>
     </div>
     <div class="content has-text-centered">
