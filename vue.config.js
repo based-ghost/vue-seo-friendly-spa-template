@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const cheerio = require("cheerio");
-const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const PrerenderSPAPlugin = require("prerender-spa-plugin-next");
+const PuppeteerRenderer = require("@prerenderer/renderer-puppeteer");
 
 module.exports = {
   lintOnSave: false,
@@ -12,25 +13,24 @@ module.exports = {
     // host: 'http://localhost', // option B
     port: "3000", // option C - recommended
     hot: true,
-    disableHostCheck: true
   },
 
   // https://cli.vuejs.org/guide/webpack.html
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     if (process.env.NODE_ENV !== "production") {
       return {};
     }
 
     return {
       performance: {
-        hints: false
+        hints: false,
       },
       plugins: [
         // https://github.com/chrisvfritz/prerender-spa-plugin
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about"],
-          renderer: new PrerenderSPAPlugin.PuppeteerRenderer({}),
+          renderer: PuppeteerRenderer,
           postProcess(context) {
             if (context.route === "/404") {
               context.outputPath = path.join(config.output.path, "/404.html");
@@ -42,9 +42,9 @@ module.exports = {
             context.html = $.html();
 
             return context;
-          }
-        })
-      ]
+          },
+        }),
+      ],
     };
   },
 
@@ -60,7 +60,7 @@ module.exports = {
       cacheId: "VueSeoSpa",
       exclude: [/_redirects/],
       navigateFallback: "/index.html",
-      navigateFallbackWhitelist: [/^((?!\/404).)*$/]
-    }
-  }
+      navigateFallbackAllowlist: [/^((?!\/404).)*$/],
+    },
+  },
 };
