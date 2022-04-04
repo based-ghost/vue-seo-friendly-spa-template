@@ -1,7 +1,5 @@
 <script setup>
-  import { defineProps } from 'vue';
-
-  defineProps({
+  const props = defineProps({
     title: {
       type: String,
       required: true
