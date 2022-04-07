@@ -1,7 +1,5 @@
-import { useMeta } from 'vue-meta';
 import { useRoute } from 'vue-router';
-
-import type { MetaSourceProxy } from 'vue-meta';
+import { useMeta, type MetaSourceProxy } from 'vue-meta';
 
 export default function useMetaRoute(): MetaSourceProxy {
   const route = useRoute();
