@@ -15,6 +15,20 @@ module.exports = {
     hot: true,
   },
 
+  // https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags
+  // Setting compiler flag __VUE_OPTIONS_API__ to false reduces bundle size
+  chainWebpack: (config) => {
+    config
+      .plugin("feature-flags")
+      .tap((args) => {
+        const disable = JSON.stringify(false);
+        args[0].__VUE_OPTIONS_API__ = disable;
+        args[0].__VUE_PROD_DEVTOOLS__ = disable;
+
+        return args;
+      });
+  },
+
   // https://cli.vuejs.org/guide/webpack.html
   configureWebpack: (config) => {
     if (process.env.NODE_ENV !== "production") {
