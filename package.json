@@ -15,7 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "bulma": "^0.9.3",
     "cheerio": "^1.0.0-rc.10",
-    "core-js": "^3.22.0",
+    "core-js": "^3.22.1",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.33",
     "vue-gtag-next": "^1.14.0",
