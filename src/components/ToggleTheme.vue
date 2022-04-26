@@ -1,6 +1,6 @@
 <script setup>
   import { ref, unref } from 'vue';
-  import { useTheme, Theme } from '@/compositions';
+  import { useTheme, Theme } from '@/composables';
 
   const focused = ref(false);
   const { theme, setTheme, themeCls } = useTheme();

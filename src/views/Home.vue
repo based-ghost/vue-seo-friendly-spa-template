@@ -1,5 +1,5 @@
 <script setup>
-  import { useMetaRoute, useTheme } from '@/compositions';
+  import { useMetaRoute, useTheme } from '@/composables';
   import { FEATURES, PACKAGES, LOREM_IPSUM_TEXT } from '@/config';
 
   useMetaRoute();

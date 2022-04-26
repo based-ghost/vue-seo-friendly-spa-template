@@ -1,6 +1,6 @@
 <script setup>
   import { Alert } from '@/components';
-  import { useMetaRoute } from '@/compositions';
+  import { useMetaRoute } from '@/composables';
 
   useMetaRoute();
 </script>

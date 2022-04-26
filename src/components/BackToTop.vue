@@ -7,10 +7,7 @@
     const showVal = unref(show);
     const { pageYOffset } = window;
 
-    if (
-      (!showVal && pageYOffset > 100) ||
-      (showVal && pageYOffset === 0)
-    ) {
+    if ((!showVal && pageYOffset > 100) || (showVal && pageYOffset === 0)) {
       show.value = !showVal;
     }
   }

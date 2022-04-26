@@ -8,14 +8,13 @@ export const Theme = {
 export type Theme = typeof Theme[keyof typeof Theme];
 
 const theme = ref<Theme>(Theme.PRIMARY);
+const themeCls = computed(() => `${unref(theme)}-theme`);
+
+const setTheme = (val: Theme): void => {
+  theme.value = val;
+};
 
 export default function useTheme() {
-  const themeCls = computed(() => `${unref(theme)}-theme`);
-
-  const setTheme = (val: Theme) => {
-    theme.value = val;
-  };
-
   return {
     theme,
     setTheme,

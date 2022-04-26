@@ -2,7 +2,7 @@
   import { watch, unref } from 'vue';
   import { useRouter } from 'vue-router';
   import { useGtag } from 'vue-gtag-next';
-  import { useTheme } from '@/compositions';
+  import { useTheme } from '@/composables';
   import { useMeta, useActiveMeta } from 'vue-meta';
   import { Navbar, AppFooter, BackToTop } from '@/components';
 
