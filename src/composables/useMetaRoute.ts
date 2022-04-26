@@ -4,7 +4,6 @@ import { useMeta, type MetaSourceProxy } from 'vue-meta';
 export default function useMetaRoute(): MetaSourceProxy {
   const route = useRoute();
   const { title, description } = route?.meta ?? {};
-
   const url = window?.location.href || 'unknown';
 
   const { meta } = useMeta({

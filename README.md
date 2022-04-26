@@ -28,23 +28,27 @@ initial scaffolding
 
 [`vue-meta`](https://github.com/nuxt/vue-meta/tree/next) - plugin that allows you to manage your app's meta information, much like [`react-helmet`](https://github.com/nfl/react-helmet) does for React. However, instead of setting your data as props passed to a proprietary component, you simply export it as part of your component's data using the metaInfo property.
 
-I have meta data configured to be handled via a simple, reusable compostion (`@/compositions/useMetaRoute.ts`) - simply import and execute this composable function in the `setup` function of your component and it will attempt to resolve any meta data definitions you configure for that route:
+I have meta data configured to be handled via a simple, reusable compostion (`@/composables/useMetaRoute.ts`) - simply import and execute this composable function in the `setup` function of your component and it will attempt to resolve any meta data definitions you configure for that route:
 
 `useMetaRoute.ts`
 ```typescript
-import { useMeta } from 'vue-meta';
 import { useRoute } from 'vue-router';
-
-import type { MetaSourceProxy } from 'vue-meta';
+import { useMeta, type MetaSourceProxy } from 'vue-meta';
 
 export default function useMetaRoute(): MetaSourceProxy {
   const route = useRoute();
   const { title, description } = route?.meta ?? {};
+  const url = window?.location.href || 'unknown';
 
   const { meta } = useMeta({
     title,
     description,
+    link: {
+      rel: 'canonical',
+      href: url
+    },
     og: {
+      url,
       title,
       description
     }
@@ -58,7 +62,7 @@ export default function useMetaRoute(): MetaSourceProxy {
 ```typescript
 <script setup>
   import { Alert } from '@/components';
-  import { useMetaRoute } from '@/compositions';
+  import { useMetaRoute } from '@/composables';
 
   useMetaRoute();
 </script>
@@ -132,7 +136,8 @@ Configured in the app as follows:
 ```javascript
 const path = require("path");
 const cheerio = require("cheerio");
-const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const PrerenderSPAPlugin = require("prerender-spa-plugin-next");
+const PuppeteerRenderer = require("@prerenderer/renderer-puppeteer");
 
 module.exports = {
   lintOnSave: false,
@@ -141,7 +146,6 @@ module.exports = {
   devServer: {
     port: "3000",
     hot: true,
-    disableHostCheck: true,
   },
 
   configureWebpack: (config) => {
@@ -158,7 +162,7 @@ module.exports = {
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about"],
-          renderer: new PrerenderSPAPlugin.PuppeteerRenderer({}),
+          renderer: PuppeteerRenderer,
           postProcess(context) {
             if (context.route === "/404") {
               context.outputPath = path.join(config.output.path, "/404.html");
