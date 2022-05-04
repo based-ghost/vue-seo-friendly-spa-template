@@ -1,12 +1,12 @@
-﻿// Custom variables/mixins
-@use 'base/variables.scss';
+﻿// overrides + custom variables/mixins
+@use 'base/variables';
 
-// Bulma library
-@use '../../../node_modules/bulma/bulma.sass';
+// node_module imports
+@use 'bulma/bulma';
 
-// Custom
-@use 'base/generic.scss';
-@use 'base/transitions.scss';
-@use 'components/home.scss';
-@use 'components/navbar.scss';
-@use 'components/footer.scss';
+// custom modules
+@use 'base/generic';
+@use 'base/transitions';
+@use 'components/home';
+@use 'components/navbar';
+@use 'components/footer';
