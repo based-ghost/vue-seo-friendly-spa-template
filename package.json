@@ -24,8 +24,8 @@
     "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "@vue/cli-plugin-babel": "~5.0.4",
     "@vue/cli-plugin-eslint": "~5.0.4",
     "@vue/cli-plugin-pwa": "~5.0.4",
@@ -37,11 +37,11 @@
     "@vue/server-renderer": "^3.2.33",
     "eslint": "^8.15.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.7.1",
+    "eslint-plugin-vue": "^9.0.1",
     "prerender-spa-plugin-next": "^4.2.0",
     "prettier": "^2.6.2",
     "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
+    "sass-loader": "^13.0.0",
     "sitemap-generator": "^8.5.1",
     "typescript": "^4.6.4",
     "vue-loader": "^17.0.0"
