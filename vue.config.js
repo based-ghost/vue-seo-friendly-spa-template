@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const cheerio = require("cheerio");
+const { defineConfig } = require("@vue/cli-service");
 const PrerenderSPAPlugin = require("prerender-spa-plugin-next");
 const PuppeteerRenderer = require("@prerenderer/renderer-puppeteer");
 
-module.exports = {
+module.exports = defineConfig({
   lintOnSave: false,
+  transpileDependencies: true,
 
   // define port
   devServer: {
@@ -77,4 +79,4 @@ module.exports = {
       navigateFallbackAllowlist: [/^((?!\/404).)*$/],
     },
   },
-};
+});
