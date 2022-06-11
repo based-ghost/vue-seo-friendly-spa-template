@@ -7,7 +7,6 @@ const PuppeteerRenderer = require("@prerenderer/renderer-puppeteer");
 
 module.exports = defineConfig({
   lintOnSave: false,
-  transpileDependencies: true,
 
   // define port
   devServer: {
@@ -46,7 +45,7 @@ module.exports = defineConfig({
         new PrerenderSPAPlugin({
           staticDir: config.output.path,
           routes: ["/", "/about"],
-          renderer: PuppeteerRenderer,
+          renderer: new PuppeteerRenderer(),
           postProcess(context) {
             if (context.route === "/404") {
               context.outputPath = path.join(config.output.path, "/404.html");
