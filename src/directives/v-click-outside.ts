@@ -11,7 +11,7 @@ const vClickOutside: Directive = {
       return;
     }
 
-    el.clickOutsideEvent = function (e) {
+    el.clickOutsideEvent = function (e: Event) {
       e.stopPropagation();
       if (el !== e.target && !el.contains(e.target)) {
         callback(e);

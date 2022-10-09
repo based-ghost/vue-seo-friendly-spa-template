@@ -1,38 +1,20 @@
-<script setup>
-  const props = defineProps({
-    title: {
-      type: String,
-      required: true
-    },
-    subTitle: {
-      type: String,
-      required: true
-    },
-    show: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-    className: {
-      type: String,
-      required: false,
-      default: 'is-primary'
-    },
-    iconName: {
-      type: String,
-      required: false,
-      default: 'info-circle'
-    },
-    iconSize: {
-      type: String,
-      required: false,
-      default: '2x'
-    },
-    transitionName: {
-      type: String,
-      required: false,
-      default: 'rubber-band'
-    }
+<script setup lang="ts">
+  interface Props {
+    title: string
+    subTitle: string
+    show?: boolean
+    className?: string
+    iconName?: string
+    iconSize?: string
+    transitionName?: string
+  }
+
+  const props = withDefaults(defineProps<Props>(), {
+    show: true,
+    className: 'is-primary',
+    iconName: 'info-circle',
+    iconSize: '2x',
+    transitionName: 'rubber-band'
   });
 </script>
 

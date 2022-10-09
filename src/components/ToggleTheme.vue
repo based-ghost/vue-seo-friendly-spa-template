@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { ref, unref } from 'vue';
   import { useTheme, Theme } from '@/composables';
 

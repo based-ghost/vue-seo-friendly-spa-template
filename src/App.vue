@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { watch, unref } from 'vue';
   import { useRouter } from 'vue-router';
   import { useGtag } from 'vue-gtag-next';
@@ -57,7 +57,7 @@
   <router-view v-slot="{ Component, route }">
     <transition
       mode="out-in"
-      :name="route.meta.transition"
+      :name="(route.meta.transition as string)"
     >
       <component :is="Component" />
     </transition>

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { ref, unref, onUnmounted, onMounted } from 'vue';
 
   const show = ref(false);

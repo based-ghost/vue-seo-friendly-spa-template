@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { useMetaRoute, useTheme } from '@/composables';
   import { FEATURES, PACKAGES, LOREM_IPSUM_TEXT } from '@/config';
 

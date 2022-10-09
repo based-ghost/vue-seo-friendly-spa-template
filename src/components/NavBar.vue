@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { VueSEO } from '@/icons';
   import ToggleTheme from './ToggleTheme.vue';
 </script>

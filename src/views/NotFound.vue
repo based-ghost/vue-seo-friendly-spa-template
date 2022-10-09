@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import { unref } from 'vue';
   import { Alert } from '@/components';
   import { useRouter } from 'vue-router';
