@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { useMetaRoute, useTheme } from '@/composables';
+  import { useMetaRoute, useSharedTheme } from '@/composables';
   import { FEATURES, PACKAGES, LOREM_IPSUM_TEXT } from '@/config';
 
   useMetaRoute();
-  const { themeCls } = useTheme();
+  const { themeCls } = useSharedTheme();
 </script>
 
 <template>

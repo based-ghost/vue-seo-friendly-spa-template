@@ -1,2 +1,2 @@
-export { default as useTheme, Theme } from './useTheme';
+export { useSharedTheme, Theme } from './useSharedTheme';
 export { default as useMetaRoute } from './useMetaRoute';

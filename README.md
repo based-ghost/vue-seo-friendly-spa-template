@@ -60,7 +60,7 @@ export default function useMetaRoute(): MetaSourceProxy {
 
 `About.vue`
 ```typescript
-<script setup>
+<script setup lang="ts">
   import { Alert } from '@/components';
   import { useMetaRoute } from '@/composables';
 
@@ -96,7 +96,7 @@ export const VUE_GTAG_OPTIONS: Options = {
 
 `App.vue`
 ```typescript
-<script setup>
+<script setup lang="ts">
   import { watch, unref } from 'vue';
   import { useRouter } from 'vue-router';
   import { useGtag } from 'vue-gtag-next';

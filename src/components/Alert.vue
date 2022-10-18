@@ -9,7 +9,7 @@
     transitionName?: string
   }
 
-  const props = withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<Props>(), {
     show: true,
     className: 'is-primary',
     iconName: 'info-circle',

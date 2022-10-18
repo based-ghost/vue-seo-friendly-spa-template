@@ -2,14 +2,14 @@
   import { watch, unref } from 'vue';
   import { useRouter } from 'vue-router';
   import { useGtag } from 'vue-gtag-next';
-  import { useTheme } from '@/composables';
+  import { useSharedTheme } from '@/composables';
   import { useMeta, useActiveMeta } from 'vue-meta';
   import { Navbar, AppFooter, BackToTop } from '@/components';
 
   const router = useRouter();
   const { pageview } = useGtag();
-  const { themeCls } = useTheme();
   const activeMeta = useActiveMeta();
+  const { themeCls } = useSharedTheme();
 
   useMeta({
     charset: 'utf8',

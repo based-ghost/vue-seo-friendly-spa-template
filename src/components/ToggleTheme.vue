@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import { ref, unref } from 'vue';
-  import { useTheme, Theme } from '@/composables';
+  import { useSharedTheme, Theme } from '@/composables';
 
   const focused = ref(false);
-  const { theme, setTheme, themeCls } = useTheme();
+  const { theme, setTheme, themeCls } = useSharedTheme();
 
   function removeFocus() {
     focused.value = false;
