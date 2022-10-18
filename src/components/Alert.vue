@@ -33,7 +33,9 @@
             :size="iconSize"
             :icon="iconName"
           />
-          <span class="title">{{ title }}</span>
+          <span class="title">
+            {{ title }}
+          </span>
         </div>
         <p class="subtitle">
           {{ subTitle }}

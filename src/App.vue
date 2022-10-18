@@ -54,14 +54,14 @@
     </template>
   </metainfo>
   <Navbar />
-  <router-view v-slot="{ Component, route }">
+  <RouterView v-slot="{ Component, route }">
     <transition
       mode="out-in"
       :name="(route.meta.transition as string)"
     >
       <component :is="Component" />
     </transition>
-  </router-view>
+  </RouterView>
   <BackToTop />
   <AppFooter />
 </template>

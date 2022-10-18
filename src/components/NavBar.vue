@@ -20,18 +20,18 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link
+        <RouterLink
           :to="{ name: 'Home' }"
           class="navbar-item"
         >
           <span>Home</span>
-        </router-link>
-        <router-link
+        </RouterLink>
+        <RouterLink
           :to="{ name: 'About' }"
           class="navbar-item"
         >
           <span>About</span>
-        </router-link>
+        </RouterLink>
         <div class="seperator" />
         <a
           target="_blank"
