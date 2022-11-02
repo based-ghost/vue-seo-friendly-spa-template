@@ -28,7 +28,9 @@
           >
             <font-awesome-icon icon="check" />
             {{ description }}
-            <code v-if="package_name">{{ package_name }}</code>
+            <code v-if="package_name">
+              {{ package_name }}
+            </code>
           </p>
         </div>
       </div>
@@ -36,8 +38,8 @@
     <section :class="['container dashboard-content', themeCls]">
       <div class="columns">
         <div
-          v-for="{ package_name, description_1, description_2 } in PACKAGES"
-          :key="package_name"
+          v-for="({ package_name, description_1, description_2 }, index) in PACKAGES"
+          :key="index"
           class="column"
         >
           <p class="title">{{ package_name }}</p>

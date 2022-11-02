@@ -12,9 +12,9 @@ function useTheme() {
   const theme = ref<Theme>(Theme.PRIMARY);
   const themeCls = computed(() => `${unref(theme)}-theme`);
 
-  function setTheme(val: Theme): void {
+  const setTheme = (val: Theme) => {
     theme.value = val;
-  }
+  };
 
   return {
     theme,

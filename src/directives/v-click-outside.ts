@@ -2,11 +2,14 @@ import type { Directive } from 'vue';
 
 const vClickOutside: Directive = {
   mounted(el, binding, vNode) {
-    const { value: callback } = binding;
+    const { value: callbackFn } = binding;
 
-    if (typeof callback !== 'function') {
+    if (typeof callbackFn !== 'function') {
       const compName = vNode.component;
-      const warnMsg = `[v-click-outside]: provided expression '${callback}' is not a function, but has to be ${compName ? `- Found in component '${compName}` : ''}`.trim();
+      const warnMsg =
+        `[v-click-outside]: provided expression '${callbackFn}' is not a function, but has to be ${
+          compName ? `- Found in component '${compName}` : ''
+        }`.trim();
       console.warn(warnMsg);
       return;
     }
@@ -14,7 +17,7 @@ const vClickOutside: Directive = {
     el.clickOutsideEvent = function (e: Event) {
       e.stopPropagation();
       if (el !== e.target && !el.contains(e.target)) {
-        callback(e);
+        callbackFn(e);
       }
     }
 

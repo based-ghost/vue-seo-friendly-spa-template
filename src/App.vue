@@ -29,7 +29,6 @@
       const { currentRoute, getRoutes } = router;
       const { path } = unref(currentRoute);
       const isValidPath = getRoutes().some((x) => x.path === path);
-
       if (isValidPath) {
         pageview(path);
       }
@@ -42,8 +41,8 @@
     { deep: true }
   );
 
-  watch(themeCls, (themeCls) => {
-    document.body.className = themeCls;
+  watch(themeCls, (value) => {
+    document.body.className = value;
   });
 </script>
 

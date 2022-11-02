@@ -6,17 +6,13 @@
   function handleScroll() {
     const showVal = unref(show);
     const { pageYOffset } = window;
-
     if ((!showVal && pageYOffset > 100) || (showVal && pageYOffset === 0)) {
       show.value = !showVal;
     }
   }
 
   onMounted(() => {
-    window.addEventListener('scroll', handleScroll, {
-      passive: true,
-      capture: false
-    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
   });
 
   onUnmounted(() => {

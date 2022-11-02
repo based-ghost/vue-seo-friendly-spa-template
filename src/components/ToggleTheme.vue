@@ -10,9 +10,10 @@
   }
 
   function toggleTheme() {
-    const nextTheme = unref(theme) === Theme.PRIMARY ? Theme.SECONDARY : Theme.PRIMARY;
     focused.value = true;
-    setTheme(nextTheme);
+    setTheme(
+      unref(theme) === Theme.PRIMARY ? Theme.SECONDARY : Theme.PRIMARY
+    );
   }
 </script>
 
