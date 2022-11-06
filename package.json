@@ -40,7 +40,7 @@
     "eslint-plugin-vue": "^9.7.0",
     "prerender-spa-plugin-next": "^4.2.3",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0",
+    "sass": "^1.56.0",
     "sass-loader": "^13.1.0",
     "sitemap-generator": "^8.5.1",
     "typescript": "^4.8.4",
