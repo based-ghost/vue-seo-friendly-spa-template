@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "noImplicitAny": false,
     "noImplicitThis": true,
     "jsx": "preserve",
     "moduleResolution": "node",
+    "ignoreDeprecations": "5.0",
     "skipLibCheck": true,
     "importHelpers": true,
     "esModuleInterop": true,
@@ -24,8 +25,7 @@
     "lib": [
       "ESNext",
       "dom",
-      "dom.iterable",
-      "scripthost"
+      "dom.iterable"
     ]
   },
   "include": [
